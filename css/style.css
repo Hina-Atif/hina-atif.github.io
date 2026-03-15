@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #0d1b2a;
+  color: #fff;
+  overflow-x: hidden;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="32" width="32"><circle cx="16" cy="16" r="6" fill="pink"/></svg>'), auto;
+}
+
+.floating-bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0d1b2a, #1f2a44);
+  z-index: -1;
+  animation: float 20s infinite linear;
+}
+
+@keyframes float {
+  0% {background-position: 0 0;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0 0;}
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #ff4c9e, #f9a0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.popup-text {
+  animation: popup 1s ease forwards;
+}
+
+@keyframes popup {
+  0% {opacity:0; transform:scale(0.5);}
+  100% {opacity:1; transform:scale(1);}
+}
+
+.intro-text, .skills, .socials, .resume-btn {
+  margin: 20px 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  color: #ff7eb9;
+  text-decoration: none;
+}
+
+.resume-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid #ff7eb9;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.popup-quote {
+  font-style: italic;
+  animation: quotePopup 3s infinite alternate;
+  text-shadow: 0 0 8px #ff7eb9;
+}
+
+@keyframes quotePopup {
+  0% {opacity: 0;}
+  50% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+@media screen and (max-width: 768px) {
+  .container {padding: 30px 10px;}
+}
