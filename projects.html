@@ -1,93 +1,141 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Projects | Hina Atif</title>
-    <style>
-        body{
-            margin:0;
-            font-family:Arial;
-            background:#0b0b0f;
-            color:white;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects | Hina Atif</title>
 
-        nav{
-            display:flex;
-            justify-content:space-between;
-            padding:20px 80px;
-        }
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#0b0b0f;
+    color:white;
+    overflow-x:hidden;
+    position:relative;
+}
 
-        .logo{
-            font-size:28px;
-            font-weight:bold;
-            background:linear-gradient(90deg,#ff7a18,#ff00ff,#00c6ff);
-            -webkit-background-clip:text;
-            color:transparent;
-        }
+/* Animated background dots */
+.dot {
+    position:absolute;
+    width:8px;
+    height:8px;
+    background:#00c6ff;
+    border-radius:50%;
+    opacity:0.6;
+    animation: floatDots 20s linear infinite;
+}
 
-        nav ul{
-            list-style:none;
-            display:flex;
-            gap:30px;
-        }
+@keyframes floatDots {
+    0% {transform: translateY(0) translateX(0);}
+    50% {transform: translateY(-600px) translateX(300px);}
+    100% {transform: translateY(0) translateX(0);}
+}
 
-        nav ul li a{
-            color:white;
-            text-decoration:none;
-        }
+/* Navigation */
+nav{
+    display:flex;
+    justify-content:space-between;
+    padding:20px 80px;
+    position:fixed;
+    width:100%;
+    z-index:100;
+}
 
-        nav ul li a:hover{
-            color:#00c6ff;
-        }
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    background:linear-gradient(90deg,#ff7a18,#ff00ff,#00c6ff);
+    -webkit-background-clip:text;
+    color:transparent;
+}
 
-        .container{
-            text-align:center;
-            padding:120px 20px;
-            max-width:1200px;
-            margin:auto;
-        }
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
 
-        .projects{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-            gap:30px;
-            margin-top:40px;
-        }
+nav ul li a{
+    color:white;
+    text-decoration:none;
+}
 
-        .card{
-            background:#15151c;
-            border-radius:10px;
-            overflow:hidden;
-            transition:0.3s;
-        }
+nav ul li a:hover{
+    color:#00c6ff;
+}
 
-        .card img{
-            width:100%;
-            height:160px;
-            object-fit:cover;
-        }
+/* Container */
+.container{
+    text-align:center;
+    padding:160px 20px 80px 20px;
+    max-width:1200px;
+    margin:auto;
+}
 
-        .card a{
-            display:block;
-            padding:20px;
-            color:white;
-            text-decoration:none;
-            font-weight:bold;
-        }
+/* Project cards */
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    margin-top:40px;
+}
 
-        .card:hover{
-            transform:translateY(-8px);
-            background:#1d1d27;
-        }
+.card{
+    background:#15151c;
+    border-radius:10px;
+    overflow:hidden;
+    transition:0.3s;
+}
 
-        footer{
-            text-align:center;
-            padding:40px;
-            color:#aaa;
-        }
+.card img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+}
 
-    </style>
+.card a{
+    display:block;
+    padding:20px;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:16px;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    background:#1d1d27;
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:40px;
+    color:#aaa;
+}
+
+/* Cursor */
+#cursor{
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:#00c6ff;
+    position:fixed;
+    pointer-events:none;
+    transform:translate(-50%, -50%);
+    z-index:999;
+    box-shadow:0 0 15px #00c6ff;
+}
+</style>
+
 </head>
 <body>
+
+<!-- Floating dots background -->
+<div id="dots"></div>
+
+<div id="cursor"></div>
 
 <nav>
     <div class="logo">Hina Atif</div>
@@ -105,57 +153,62 @@
     <p>Click on any project to view it on GitHub.</p>
 
     <div class="projects">
-
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa">
-            <a href="https://github.com/Hina-Atif/AWS-EC2-DOCKER-DEPLOYMENT-HINA-ATIF" target="_blank">
-                AWS EC2 Docker Deployment
+            <img src="https://images.unsplash.com/photo-1581091870626-3b00cf4cd1ef">
+            <a href="https://github.com/Hina-Atif/SkyRoute-Air-Ticket-Booking-Platform" target="_blank">
+                SkyRoute Air Ticket Booking Platform
             </a>
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f">
-            <a href="https://github.com/Hina-Atif/static-website-deployment-on-s3-hina-atif" target="_blank">
-                Static Website on S3
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+            <a href="https://github.com/Hina-Atif/CloudTel-Telecom-Self-Service-Platform" target="_blank">
+                CloudTel Telecom Self-Service Platform
             </a>
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31">
-            <a href="https://github.com/Hina-Atif/aws-vpc-networking-project" target="_blank">
-                AWS VPC Networking
+            <img src="https://images.unsplash.com/photo-1591696205602-fce4b1e8f32e">
+            <a href="https://github.com/Hina-Atif/CloudBank-Microservices-Banking-Platform" target="_blank">
+                CloudBank Microservices Banking Platform
             </a>
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72">
-            <a href="https://github.com/Hina-Atif/aws-serverless-data-management" target="_blank">
-                Serverless Data Management
+            <img src="https://images.unsplash.com/photo-1556228724-4a5b820aeaa3">
+            <a href="https://github.com/Hina-Atif/CloudWatch-Lite-Monitoring-Platform" target="_blank">
+                CloudWatch Lite Monitoring Platform
             </a>
         </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c">
-            <a href="https://github.com/Hina-Atif/Scalable-Node.js-Deployment-on-AWS-ECS-Fargate" target="_blank">
-                Node.js ECS Fargate Deployment
-            </a>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64">
-            <a href="https://github.com/Hina-Atif/aws-python-http-api-project" target="_blank">
-                Python HTTP API Project
-            </a>
-        </div>
-
-    </div> <!-- projects -->
-
-</div> <!-- container -->
+    </div>
+</div>
 
 <footer>
     ✦ Hina Atif<br>
     © 2026 All Rights Reserved.
 </footer>
+
+<script>
+// Cursor
+const cursor = document.getElementById("cursor");
+document.addEventListener("mousemove", e=>{
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+});
+
+// Floating dots
+const dotsContainer = document.getElementById("dots");
+for(let i=0;i<40;i++){
+    let dot = document.createElement("div");
+    dot.classList.add("dot");
+    dot.style.left = Math.random()*window.innerWidth + "px";
+    dot.style.top = Math.random()*window.innerHeight + "px";
+    dot.style.width = 4 + Math.random()*6 + "px";
+    dot.style.height = dot.style.width;
+    dot.style.animationDuration = 10 + Math.random()*20 + "s";
+    dotsContainer.appendChild(dot);
+}
+</script>
 
 </body>
 </html>
