@@ -1,4 +1,4 @@
-// Add simple pop-up animation for quotes (optional)
+// Rotating Motivational Quotes
 const quotes = [
   "Dream big, work hard, automate everything.",
   "Code, Deploy, Repeat.",
