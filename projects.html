@@ -6,24 +6,91 @@
 
 <style>
 
-body{margin:0;font-family:Arial;background:#0b0b0f;color:white}
+body{
+margin:0;
+font-family:Arial;
+background:#0b0b0f;
+color:white;
+}
 
-nav{display:flex;justify-content:space-between;padding:20px 80px}
+nav{
+display:flex;
+justify-content:space-between;
+padding:20px 80px;
+}
 
-.logo{font-size:28px;font-weight:bold;background:linear-gradient(90deg,#ff7a18,#ff00ff,#00c6ff);-webkit-background-clip:text;color:transparent}
+.logo{
+font-size:28px;
+font-weight:bold;
+background:linear-gradient(90deg,#ff7a18,#ff00ff,#00c6ff);
+-webkit-background-clip:text;
+color:transparent;
+}
 
-nav ul{list-style:none;display:flex;gap:30px}
+nav ul{
+list-style:none;
+display:flex;
+gap:30px;
+}
 
-nav ul li a{color:white;text-decoration:none}
+nav ul li a{
+color:white;
+text-decoration:none;
+}
 
-.container{text-align:center;padding:120px 20px}
+nav ul li a:hover{
+color:#00c6ff;
+}
 
-footer{text-align:center;padding:40px;color:#aaa}
+.container{
+text-align:center;
+padding:120px 20px;
+max-width:1200px;
+margin:auto;
+}
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.card{
+background:#15151c;
+border-radius:10px;
+overflow:hidden;
+transition:0.3s;
+}
+
+.card img{
+width:100%;
+height:160px;
+object-fit:cover;
+}
+
+.card a{
+display:block;
+padding:20px;
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+.card:hover{
+transform:translateY(-8px);
+background:#1d1d27;
+}
+
+footer{
+text-align:center;
+padding:40px;
+color:#aaa;
+}
 
 </style>
 
 </head>
-
 <body>
 
 <nav>
@@ -42,10 +109,55 @@ footer{text-align:center;padding:40px;color:#aaa}
 <div class="container">
 
 <h1>My Projects</h1>
+<p>Here are some exciting projects I’m currently working on. Click any project to view it on GitHub.</p>
 
-<p>Explore my DevOps and Cloud projects on GitHub.</p>
+<div class="projects">
 
+<div class="card">
+<img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa">
+<a href="https://github.com/Hina-Atif/AWS-EC2-DOCKER-DEPLOYMENT-HINA-ATIF" target="_blank">
+AWS EC2 Docker Deployment
+</a>
 </div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f">
+<a href="https://github.com/Hina-Atif/static-website-deployment-on-s3-hina-atif" target="_blank">
+Static Website on S3
+</a>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31">
+<a href="https://github.com/Hina-Atif/aws-vpc-networking-project" target="_blank">
+AWS VPC Networking
+</a>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72">
+<a href="https://github.com/Hina-Atif/aws-serverless-data-management" target="_blank">
+Serverless Data Management
+</a>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c">
+<a href="https://github.com/Hina-Atif/Scalable-Node.js-Deployment-on-AWS-ECS-Fargate" target="_blank">
+Node.js ECS Fargate Deployment
+</a>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1508780709619-79562169bc64">
+<a href="https://github.com/Hina-Atif/aws-python-http-api-project" target="_blank">
+Python HTTP API Project
+</a>
+</div>
+
+</div> <!-- projects -->
+
+</div> <!-- container -->
 
 <footer>
 
