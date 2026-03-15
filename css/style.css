@@ -1,113 +1,113 @@
-/* General Body */
-body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  background: #0d1b2a;
-  color: #fff;
-  overflow-x: hidden;
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="32" width="32"><circle cx="16" cy="16" r="6" fill="pink"/></svg>'), auto;
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#0b0b0f;
+color:white;
 }
 
-/* Floating Background */
-.floating-bg {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #0d1b2a, #1f2a44);
-  z-index: -1;
-  animation: float 20s infinite linear;
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 80px;
+background:#0b0b0f;
 }
 
-@keyframes float {
-  0% {background-position: 0 0;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0 0;}
+.logo{
+font-size:28px;
+font-weight:bold;
+background:linear-gradient(90deg,#ff7a18,#ff00ff,#00c6ff);
+-webkit-background-clip:text;
+color:transparent;
 }
 
-/* Container */
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 50px 20px;
-  text-align: center;
+nav ul{
+list-style:none;
+display:flex;
+gap:30px;
 }
 
-/* Navbar */
-.navbar {
-  text-align: center;
-  padding: 15px;
-  background-color: #0a1626;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+nav ul li a{
+text-decoration:none;
+color:white;
+font-size:16px;
 }
 
-.navbar a {
-  color: #ff7eb9;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
+nav ul li a:hover{
+color:#00c6ff;
 }
 
-.navbar a:hover {
-  color: #f9a0ff;
+.hero{
+text-align:center;
+padding:120px 20px;
 }
 
-/* Gradient Text & Popup Animations */
-.gradient-text {
-  background: linear-gradient(to right, #ff4c9e, #f9a0ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.hero h1{
+font-size:60px;
+margin:10px 0;
 }
 
-.popup-text {
-  animation: popup 1s ease forwards;
+.hero h2{
+color:#ccc;
+font-weight:normal;
 }
 
-@keyframes popup {
-  0% {opacity:0; transform:scale(0.5);}
-  100% {opacity:1; transform:scale(1);}
+.hero p{
+max-width:800px;
+margin:auto;
+color:#aaa;
+line-height:1.6;
 }
 
-/* Intro, Skills, Socials */
-.intro-text, .skills, .socials, .resume-btn {
-  margin: 20px 0;
+.gradient{
+background:linear-gradient(90deg,#ff7a18,#ff00ff,#00c6ff);
+-webkit-background-clip:text;
+color:transparent;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
+.btn{
+display:inline-block;
+margin-top:30px;
+padding:12px 28px;
+border-radius:25px;
+background:linear-gradient(90deg,#ff7a18,#ff00ff,#00c6ff);
+color:white;
+text-decoration:none;
 }
 
-a {
-  color: #ff7eb9;
-  text-decoration: none;
+.container{
+padding:80px;
+text-align:center;
 }
 
-.resume-btn {
-  display: inline-block;
-  padding: 10px 20px;
-  border: 2px solid #ff7eb9;
-  border-radius: 5px;
-  margin-top: 20px;
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+margin-top:40px;
 }
 
-/* Motivational Quote Animation */
-.popup-quote {
-  font-style: italic;
-  animation: quotePopup 3s infinite alternate;
-  text-shadow: 0 0 8px #ff7eb9;
+.card{
+background:#15151c;
+padding:30px;
+border-radius:12px;
+transition:0.3s;
 }
 
-@keyframes quotePopup {
-  0% {opacity: 0;}
-  50% {opacity: 1;}
-  100% {opacity: 0;}
+.card:hover{
+transform:translateY(-8px);
+background:#1d1d27;
 }
 
-/* Responsive */
-@media screen and (max-width: 768px) {
-  .container {padding: 30px 10px;}
-  .navbar a {margin: 0 10px;}
+.card a{
+color:white;
+text-decoration:none;
+font-size:18px;
+}
+
+footer{
+text-align:center;
+padding:40px;
+color:#aaa;
+font-size:14px;
 }
