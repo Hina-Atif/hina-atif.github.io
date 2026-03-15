@@ -5,11 +5,175 @@
 
 <title>Hina Atif | DevOps Engineer</title>
 
-<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#0b0b0f;
+color:white;
+overflow-x:hidden;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 80px;
+position:relative;
+z-index:2;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+background:linear-gradient(90deg,#ff7a18,#ff00ff,#00c6ff);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:30px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+font-size:16px;
+}
+
+nav ul li a:hover{
+color:#00c6ff;
+}
+
+.hero{
+text-align:center;
+padding:120px 20px;
+position:relative;
+z-index:2;
+}
+
+.hero img{
+width:180px;
+border-radius:50%;
+margin-bottom:20px;
+box-shadow:0 0 25px rgba(0,198,255,0.6);
+}
+
+.hero h1{
+font-size:60px;
+margin:10px 0;
+}
+
+.hero h2{
+color:#ccc;
+font-weight:normal;
+}
+
+.hero p{
+max-width:800px;
+margin:auto;
+color:#aaa;
+line-height:1.6;
+}
+
+.gradient{
+background:linear-gradient(90deg,#ff7a18,#ff00ff,#00c6ff);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.btn{
+display:inline-block;
+margin-top:30px;
+padding:12px 30px;
+border-radius:25px;
+background:linear-gradient(90deg,#ff7a18,#ff00ff,#00c6ff);
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+.btn:hover{
+opacity:0.8;
+}
+
+.container{
+padding:80px;
+text-align:center;
+}
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.card{
+background:#15151c;
+padding:20px;
+border-radius:12px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+background:#1d1d27;
+}
+
+.card img{
+width:100%;
+border-radius:8px;
+margin-bottom:10px;
+}
+
+.card a{
+color:white;
+text-decoration:none;
+font-size:18px;
+font-weight:bold;
+}
+
+footer{
+text-align:center;
+padding:40px;
+color:#aaa;
+font-size:14px;
+}
+
+#cursor{
+width:20px;
+height:20px;
+border-radius:50%;
+background:linear-gradient(90deg,#ff7a18,#ff00ff,#00c6ff);
+position:fixed;
+pointer-events:none;
+transform:translate(-50%,-50%);
+z-index:999;
+box-shadow:0 0 20px #00c6ff;
+}
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:0;
+}
+
+</style>
 
 </head>
 
 <body>
+
+<div id="cursor"></div>
+
+<canvas id="bg"></canvas>
 
 <nav>
 
@@ -27,6 +191,8 @@
 
 <section class="hero">
 
+<img src="assets/images/hina.png">
+
 <h3>Hello,</h3>
 
 <h1>I'm <span class="gradient">Hina Atif</span></h1>
@@ -37,7 +203,7 @@
 
 <p>
 
-I'm a DevOps Engineer from Karachi, Pakistan focused on building scalable cloud infrastructure and automating modern deployment pipelines.
+I'm a DevOps Engineer based in Karachi, Pakistan, focused on building scalable cloud infrastructure and automating modern software delivery pipelines.
 
 </p>
 
@@ -45,24 +211,105 @@ I'm a DevOps Engineer from Karachi, Pakistan focused on building scalable cloud 
 
 <p>
 
-My work centers around containerization, cloud-native systems, and infrastructure automation using technologies like Docker, Kubernetes, CI/CD pipelines, and AWS.
+I work with technologies like Docker, Kubernetes, CI/CD pipelines, and AWS cloud platforms to build efficient, automated systems that bridge development and operations.
 
 </p>
 
-<br>
+<a class="btn" href="assets/images/Hina%20Aatif%20Resume.pdf" download>
 
-<a class="btn" href="resume.pdf">Download Resume</a>
+Download Resume
+
+</a>
 
 </section>
 
+<div class="container">
+
+<h1>Featured Projects</h1>
+
+<div class="projects">
+
+<div class="card">
+<img src="assets/images/project1.png">
+<a href="https://github.com/Hina-Atif/AWS-EC2-DOCKER-DEPLOYMENT-HINA-ATIF">
+AWS EC2 Docker Deployment
+</a>
+</div>
+
+<div class="card">
+<img src="assets/images/project2.png">
+<a href="https://github.com/Hina-Atif/static-website-deployment-on-s3-hina-atif">
+Static Website Deployment on S3
+</a>
+</div>
+
+<div class="card">
+<img src="assets/images/project3.png">
+<a href="https://github.com/Hina-Atif/aws-vpc-networking-project">
+AWS VPC Networking Project
+</a>
+</div>
+
+</div>
+
+</div>
+
 <footer>
 
-✦ Hina Atif  
+✦ Hina Atif
+
 <br>
+
 © 2026 All Rights Reserved.
 
 </footer>
 
-</body>
+<script>
 
+const cursor = document.getElementById("cursor");
+
+document.addEventListener("mousemove", e => {
+cursor.style.left = e.clientX + "px";
+cursor.style.top = e.clientY + "px";
+});
+
+const canvas = document.getElementById("bg");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+
+for(let i=0;i<80;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*2
+})
+}
+
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+ctx.fillStyle="rgba(0,198,255,0.6)";
+
+particles.forEach(p=>{
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+ctx.fill();
+p.y+=0.3;
+if(p.y>canvas.height)p.y=0;
+})
+
+requestAnimationFrame(animate)
+
+}
+
+animate()
+
+</script>
+
+</body>
 </html>
