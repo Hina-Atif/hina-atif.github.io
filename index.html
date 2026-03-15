@@ -1,88 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hina Atif - DevOps Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects | Hina Atif</title>
+
+<style>
+body {
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#0b0b0f;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* Cursor */
+#cursor{
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:#00c6ff;
+    position:fixed;
+    pointer-events:none;
+    transform:translate(-50%, -50%);
+    z-index:999;
+    box-shadow:0 0 15px #00c6ff;
+}
+
+/* Navigation */
+nav{
+    display:flex;
+    justify-content:space-between;
+    padding:20px 80px;
+    position:fixed;
+    width:100%;
+    z-index:100;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    background:linear-gradient(90deg,#ff7a18,#ff00ff,#00c6ff);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+}
+
+nav ul li a:hover{
+    color:#00c6ff;
+}
+
+/* Container */
+.container{
+    text-align:center;
+    padding:160px 20px 80px 20px;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* Section headings */
+.section-heading{
+    font-weight:bold;
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+/* Project cards */
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    margin-top:40px;
+}
+
+.card{
+    background:#15151c;
+    border-radius:10px;
+    overflow:hidden;
+    transition:0.3s;
+}
+
+.card img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+}
+
+.card a{
+    display:block;
+    padding:20px;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:16px;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    background:#1d1d27;
+}
+
+/* Contact form */
+.contact-form{
+    margin-top:80px;
+    text-align:left;
+    max-width:600px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.contact-form h2{
+    font-weight:bold;
+    font-size:24px;
+    margin-bottom:20px;
+}
+
+.contact-form label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:5px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:12px;
+    border-radius:8px;
+    border:none;
+    background:#15151c;
+    color:white;
+    font-size:16px;
+    resize:none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    outline:none;
+    box-shadow:0 0 8px #00c6ff;
+}
+
+.contact-form button{
+    margin-top:20px;
+    padding:12px 30px;
+    border-radius:20px;
+    border:none;
+    background:#00c6ff;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    font-size:16px;
+}
+
+footer{
+    text-align:center;
+    padding:40px;
+    color:#aaa;
+    margin-top:60px;
+}
+
+</style>
 </head>
 <body>
-  <!-- Animated Dots Background -->
-  <canvas id="dots-bg"></canvas>
 
-  <!-- Header -->
-  <header>
-    <h1 id="my-name">Hina Atif</h1>
-    <nav>
-      <a href="#projects">My Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<div id="cursor"></div>
 
-  <!-- Hero Section -->
-  <section id="hero">
-    <h2>Hi, I'm <span class="highlight">Hina</span> – DevOps Cloud Engineer</h2>
-    <p class="quote" id="quote-hero">"Cloud is the limit – deploy with confidence."</p>
-  </section>
+<nav>
+    <div class="logo">Hina Atif</div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="posts.html">Posts</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
 
-  <!-- Tech Stack Section -->
-  <section id="tech-stack">
-    <h2>Tech Stack</h2>
-    <div class="stack-icons">
-      <div class="stack-item"><i class="fab fa-aws"></i><p>AWS</p></div>
-      <div class="stack-item"><i class="fab fa-docker"></i><p>Docker</p></div>
-      <div class="stack-item"><i class="fas fa-server"></i><p>Kubernetes</p></div>
-      <div class="stack-item"><i class="fas fa-cogs"></i><p>Terraform</p></div>
-      <div class="stack-item"><i class="fab fa-linux"></i><p>Linux</p></div>
-      <div class="stack-item"><i class="fab fa-python"></i><p>Python</p></div>
-      <div class="stack-item"><i class="fas fa-project-diagram"></i><p>CI/CD</p></div>
+<div class="container">
+
+    <!-- Featured Projects -->
+    <div class="featured-projects">
+        <h1 class="section-heading">Featured Projects</h1>
+        <div class="projects">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1581091870626-3b00cf4cd1ef">
+                <a href="https://github.com/Hina-Atif/SkyRoute-Air-Ticket-Booking-Platform" target="_blank">
+                    SkyRoute Air Ticket Booking Platform
+                </a>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+                <a href="https://github.com/Hina-Atif/CloudTel-Telecom-Self-Service-Platform" target="_blank">
+                    CloudTel Telecom Self-Service Platform
+                </a>
+            </div>
+        </div>
     </div>
-  </section>
 
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>My Projects</h2>
-    <div class="project-cards">
+    <!-- Enterprise Projects -->
+    <div class="enterprise-projects">
+        <h1 class="section-heading">Enterprise Projects</h1>
+        <div class="projects">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1591696205602-fce4b1e8f32e">
+                <a href="https://github.com/Hina-Atif/CloudBank-Microservices-Banking-Platform" target="_blank">
+                    CloudBank Microservices Banking Platform
+                </a>
+            </div>
 
-      <div class="project-card">
-        <h3>SkyRoute – Air Ticket Booking Platform</h3>
-        <p>Cloud-based airline ticket booking system.</p>
-        <a href="https://github.com/Hina-Atif/SkyRoute-Air-Ticket-Booking-Platform" target="_blank">View Repo</a>
-      </div>
-
-      <div class="project-card">
-        <h3>CloudTel – Telecom Self-Service Platform</h3>
-        <p>Mobile packages & top-ups management platform.</p>
-        <a href="https://github.com/Hina-Atif/CloudTel-Telecom-Self-Service-Platform" target="_blank">View Repo</a>
-      </div>
-
-      <div class="project-card">
-        <h3>CloudBank – Microservices Banking Platform</h3>
-        <p>Online banking app with cloud microservices.</p>
-        <a href="https://github.com/Hina-Atif/CloudBank-Microservices-Banking-Platform" target="_blank">View Repo</a>
-      </div>
-
-      <div class="project-card">
-        <h3>CloudWatch-Lite Monitoring Platform</h3>
-        <p>Cloud infrastructure monitoring & alert system.</p>
-        <a href="https://github.com/Hina-Atif/CloudWatch-Lite-Monitoring-Platform" target="_blank">View Repo</a>
-      </div>
-
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1556228724-4a5b820aeaa3">
+                <a href="https://github.com/Hina-Atif/CloudWatch-Lite-Monitoring-Platform" target="_blank">
+                    CloudWatch Lite Monitoring Platform
+                </a>
+            </div>
+        </div>
     </div>
-  </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <form id="contact-form">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </section>
+    <!-- Contact Form -->
+    <div class="contact-form">
+        <h2>Contact Me</h2>
+        <form action="mailto:hinaatif355@gmail.com" method="POST" enctype="text/plain">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
-  <script src="script.js"></script>
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+</div>
+
+<footer>
+    ✦ Hina Atif<br>
+    © 2026 All Rights Reserved.
+</footer>
+
+<script>
+// Cursor
+const cursor = document.getElementById("cursor");
+document.addEventListener("mousemove", e=>{
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+});
+</script>
+
 </body>
 </html>
