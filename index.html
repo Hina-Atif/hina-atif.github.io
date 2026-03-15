@@ -7,14 +7,29 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <style>
-body {background: #0f172a; overflow-x:hidden; font-family:sans-serif;}
-.gradient-text {background: linear-gradient(90deg,#ff6ec4,#7873f5); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
-.floating-bg {position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;
-background: radial-gradient(circle at 30% 30%, rgba(255,110,196,0.3), transparent 70%),
-            radial-gradient(circle at 70% 70%, rgba(120,115,245,0.3), transparent 70%);
-animation: float 15s infinite alternate ease-in-out;}
-@keyframes float {0%{background-position:30% 30%,70% 70%}50%{background-position:40% 40%,60% 60%}100%{background-position:30% 30%,70% 70%;}}
-.cursor-glow {position:absolute;pointer-events:none;width:30px;height:30px;border-radius:50%;background:rgba(255,110,196,0.5);mix-blend-mode:screen;transform:translate(-50%,-50%);transition:background 0.2s;}
+body {background-color:#0f172a; color:white; font-family:sans-serif; overflow-x:hidden;}
+.gradient-text {
+  background: linear-gradient(90deg,#ff6ec4,#7873f5);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+.popup-name {font-size:2.5rem; font-weight:bold;}
+.floating-bg {
+  position: fixed; top:0; left:0; width:100%; height:100%; z-index:-1;
+  background: radial-gradient(circle at 30% 30%, rgba(255,110,196,0.2), transparent 70%),
+              radial-gradient(circle at 70% 70%, rgba(120,115,245,0.2), transparent 70%);
+  animation: float 15s infinite alternate ease-in-out;
+}
+@keyframes float {
+  0% {background-position:30% 30%,70% 70%}
+  50% {background-position:40% 40%,60% 60%}
+  100% {background-position:30% 30%,70% 70%}
+}
+.cursor-glow {
+  position:absolute; pointer-events:none; width:30px; height:30px;
+  border-radius:50%; background:rgba(255,110,196,0.4); mix-blend-mode:screen;
+  transform:translate(-50%,-50%); transition:background 0.2s;
+}
 img {border-radius:50%;}
 </style>
 </head>
@@ -23,7 +38,7 @@ img {border-radius:50%;}
 <div class="cursor-glow" id="cursor-glow"></div>
 
 <header class="flex flex-col md:flex-row justify-between items-center p-6 bg-transparent fixed w-full z-10">
-<h1 class="text-3xl font-bold gradient-text mb-4 md:mb-0">Hina Atif</h1>
+<h1 class="popup-name gradient-text" id="name-header">Hina Atif</h1>
 <nav>
 <ul class="flex flex-col md:flex-row gap-4 md:gap-6 text-white font-medium">
 <li><a href="index.html" class="hover:text-pink-400 transition">Home</a></li>
@@ -37,22 +52,29 @@ img {border-radius:50%;}
 
 <main class="flex flex-col md:flex-row items-center justify-center h-screen text-center md:text-left px-4 md:px-16 gap-12">
 <div class="w-48 h-48 md:w-64 md:h-64 overflow-hidden shadow-lg flex-shrink-0">
-<img src="https://via.placeholder.com/250" alt="Hina Atif Profile" class="w-full h-full object-cover">
+<img src="assets/images/profile.jpg" alt="Hina Atif Profile" class="w-full h-full object-cover">
 </div>
 <div>
-<h2 class="text-3xl md:text-5xl lg:text-6xl font-bold gradient-text mb-6"><span id="typed-text"></span></h2>
+<h2 class="text-3xl md:text-5xl lg:text-6xl font-bold gradient-text mb-6">
+<span id="typed-text"></span>
+</h2>
 <a href="Hina_Atif_Resume.pdf" download class="mt-6 inline-block px-6 py-3 bg-pink-500 hover:bg-pink-600 rounded-full text-white font-semibold transition">
 Download Resume</a>
 </div>
 </main>
 
 <script>
+// Typed Intro
 const text="DevOps & Cloud Engineer | Python | AWS | Docker | Kubernetes";
 let i=0; function typeWriter(){if(i<text.length){document.getElementById("typed-text").innerHTML+=text.charAt(i);i++;setTimeout(typeWriter,100);}}
 typeWriter();
 
+// Popup name animation
+gsap.from("#name-header", {duration:1.5, y:-50, opacity:0, ease:"bounce"});
+
+// Cursor Glow
 const cursor=document.getElementById('cursor-glow');
-document.addEventListener('mousemove',e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px';});
+document.addEventListener('mousemove',e=>{cursor.style.left=e.clientX+'px'; cursor.style.top=e.clientY+'px';});
 </script>
 </body>
 </html>
