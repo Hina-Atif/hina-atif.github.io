@@ -1,113 +1,43 @@
-body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#0b0b0f;
-color:white;
-}
+/* Reset & body */
+* {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif;}
+body {overflow-x:hidden; background:#0d1117; color:white;}
 
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 80px;
-background:#0b0b0f;
-}
+/* Animated dots canvas */
+#dots-bg {position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1;}
 
-.logo{
-font-size:28px;
-font-weight:bold;
-background:linear-gradient(90deg,#ff7a18,#ff00ff,#00c6ff);
--webkit-background-clip:text;
-color:transparent;
-}
+/* Header */
+header {display:flex; justify-content:space-between; align-items:center; padding:20px 50px; position:fixed; width:100%; top:0; background:rgba(0,0,0,0.5);}
+header h1 {font-size:24px; cursor:text; color: #00f0ff; animation: glowName 2s infinite alternate;}
+header nav a {color:white; margin-left:20px; text-decoration:none; font-weight:500; transition:0.3s;}
+header nav a:hover {color:#00f0ff;}
 
-nav ul{
-list-style:none;
-display:flex;
-gap:30px;
-}
+/* Hero */
+#hero {height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;}
+#hero h2 {font-size:2.2rem;}
+.highlight {color:#00f0ff;}
+.quote {color:#add8e6; font-style:italic; margin-top:10px; animation: fadeQuote 6s infinite;}
 
-nav ul li a{
-text-decoration:none;
-color:white;
-font-size:16px;
-}
+/* Tech Stack */
+#tech-stack {padding:80px 50px; text-align:center;}
+.stack-icons {display:flex; justify-content:center; flex-wrap:wrap; gap:40px; margin-top:30px;}
+.stack-item {display:flex; flex-direction:column; align-items:center; font-size:1rem; color:#00f0ff; transition:0.5s; animation: glowStack 2s infinite alternate;}
+.stack-item i {font-size:3rem; margin-bottom:10px;}
 
-nav ul li a:hover{
-color:#00c6ff;
-}
+/* Projects */
+#projects {padding:80px 50px; text-align:center;}
+.project-cards {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:30px; margin-top:30px;}
+.project-card {background:rgba(255,255,255,0.05); padding:20px; border-radius:15px; transition:0.3s; box-shadow:0 0 10px rgba(0,255,255,0.3);}
+.project-card:hover {transform:translateY(-5px); box-shadow:0 0 20px rgba(0,255,255,0.5);}
+.project-card a {display:inline-block; margin-top:10px; color:#00f0ff; text-decoration:none; font-weight:600;}
 
-.hero{
-text-align:center;
-padding:120px 20px;
-}
+/* Contact */
+#contact {padding:80px 50px; text-align:center;}
+#contact-form {display:flex; flex-direction:column; max-width:500px; margin:auto; gap:15px;}
+#contact-form input, #contact-form textarea {padding:10px; border-radius:8px; border:none; outline:none;}
+#contact-form button {padding:10px; border:none; border-radius:8px; background:#00f0ff; color:#0d1117; font-weight:600; cursor:pointer; transition:0.3s;}
+#contact-form button:hover {background:#00c0ff;}
 
-.hero h1{
-font-size:60px;
-margin:10px 0;
-}
-
-.hero h2{
-color:#ccc;
-font-weight:normal;
-}
-
-.hero p{
-max-width:800px;
-margin:auto;
-color:#aaa;
-line-height:1.6;
-}
-
-.gradient{
-background:linear-gradient(90deg,#ff7a18,#ff00ff,#00c6ff);
--webkit-background-clip:text;
-color:transparent;
-}
-
-.btn{
-display:inline-block;
-margin-top:30px;
-padding:12px 28px;
-border-radius:25px;
-background:linear-gradient(90deg,#ff7a18,#ff00ff,#00c6ff);
-color:white;
-text-decoration:none;
-}
-
-.container{
-padding:80px;
-text-align:center;
-}
-
-.projects{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-margin-top:40px;
-}
-
-.card{
-background:#15151c;
-padding:30px;
-border-radius:12px;
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-background:#1d1d27;
-}
-
-.card a{
-color:white;
-text-decoration:none;
-font-size:18px;
-}
-
-footer{
-text-align:center;
-padding:40px;
-color:#aaa;
-font-size:14px;
-}
+/* Animations */
+@keyframes glowStack {0%{text-shadow:0 0 5px #00f0ff;} 100%{text-shadow:0 0 20px #00f0ff;}}
+@keyframes glowName {0%{text-shadow:0 0 5px #00f0ff;} 100%{text-shadow:0 0 20px #00f0ff;}}
+@keyframes fadeQuote {0%,100%{opacity:0;}50%{opacity:1;}}
