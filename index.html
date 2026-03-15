@@ -1,106 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DevOps & Cloud Engineer Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hina Atif | Home</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<style>
+body {background: #0f172a; overflow-x: hidden;}
+.gradient-text {
+  background: linear-gradient(90deg,#ff6ec4,#7873f5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.floating-bg {
+  position: fixed; top:0; left:0; width:100%; height:100%; z-index:-1;
+  background: radial-gradient(circle at 30% 30%, rgba(255,110,196,0.3), transparent 70%),
+              radial-gradient(circle at 70% 70%, rgba(120,115,245,0.3), transparent 70%);
+  animation: float 15s infinite alternate ease-in-out;
+}
+@keyframes float {
+  0% {background-position: 30% 30%, 70% 70%;}
+  50% {background-position: 40% 40%, 60% 60%;}
+  100% {background-position: 30% 30%, 70% 70%;}
+}
+.cursor-glow {
+  position: absolute; pointer-events: none; width: 30px; height: 30px;
+  border-radius: 50%; background: rgba(255,110,196,0.5); mix-blend-mode: screen;
+  transform: translate(-50%, -50%); transition: background 0.2s;
+}
+</style>
 </head>
-<body class="bg-gray-900 text-white font-sans">
+<body class="text-white font-sans">
 
-  <!-- Header -->
-  <header class="flex justify-between items-center p-6 bg-gray-800 sticky top-0 z-50">
-    <h1 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-pink-500 to-yellow-400">
-      DevOps Portfolio
-    </h1>
-    <nav class="space-x-6">
-      <a href="#projects" class="hover:text-pink-400 transition-colors">Projects</a>
-      <a href="#blogs" class="hover:text-pink-400 transition-colors">Blogs</a>
-      <a href="#contact" class="hover:text-pink-400 transition-colors">Contact</a>
-    </nav>
-  </header>
+<!-- Floating Background -->
+<div class="floating-bg"></div>
+<div class="cursor-glow" id="cursor-glow"></div>
 
-  <!-- Hero Section -->
-  <section class="flex flex-col items-center justify-center text-center py-32">
-    <h2 class="text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-pink-500 to-yellow-400">DevOps & Cloud Engineer</h2>
-    <p class="text-gray-300 max-w-xl">Designing scalable cloud infrastructure, building CI/CD pipelines, and automating modern DevOps workflows using AWS, Docker, Terraform, and cloud-native technologies.</p>
-    <a href="#projects" class="mt-6 px-8 py-3 bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-500 text-black font-semibold rounded-lg hover:scale-105 transition-transform">View Projects</a>
-  </section>
+<!-- Header -->
+<header class="flex flex-col md:flex-row justify-between items-center p-6 bg-transparent fixed w-full z-10">
+<h1 class="text-3xl font-bold gradient-text mb-4 md:mb-0">Hina Atif</h1>
+<nav>
+<ul class="flex flex-col md:flex-row gap-4 md:gap-6 text-white font-medium">
+<li><a href="index.html" class="hover:text-pink-400 transition">Home</a></li>
+<li><a href="projects.html" class="hover:text-pink-400 transition">Projects</a></li>
+<li><a href="blogs.html" class="hover:text-pink-400 transition">Blogs</a></li>
+<li><a href="about.html" class="hover:text-pink-400 transition">About</a></li>
+<li><a href="contact.html" class="hover:text-pink-400 transition">Contact</a></li>
+</ul>
+</nav>
+</header>
 
-  <!-- Projects Section -->
-  <section id="projects" class="py-20 px-6">
-    <h3 class="text-4xl font-bold mb-10 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-pink-500 to-yellow-400 text-center">Featured DevOps Projects</h3>
-    
-    <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-      <!-- Project Item -->
-      <div class="p-6 border border-gray-700 rounded-lg hover:border-pink-500 transition-all">
-        <h4 class="text-2xl font-semibold mb-2">AWS EC2 Docker Deployment</h4>
-        <p class="text-gray-300 mb-4">Containerized application deployment on AWS EC2 using Docker demonstrating cloud deployment and container orchestration concepts.</p>
-        <a href="https://github.com/yourusername/aws-ec2-docker" target="_blank" class="text-pink-400 hover:underline">View Project</a>
-      </div>
+<!-- Main Intro Section -->
+<main class="flex flex-col md:flex-row items-center justify-center h-screen text-center md:text-left px-4 md:px-16 gap-12">
+  <!-- Profile Image -->
+  <div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-lg flex-shrink-0">
+    <img src="assets/images/profile.jpg" alt="Hina Atif" class="w-full h-full object-cover">
+  </div>
+  <!-- Intro & Resume -->
+  <div>
+    <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold gradient-text mb-6">
+      <span id="typed-text"></span>
+    </h2>
+    <a href="Hina_Atif_Resume.pdf" download class="mt-6 inline-block px-6 py-3 bg-pink-500 hover:bg-pink-600 rounded-full text-white font-semibold transition">
+      Download Resume
+    </a>
+  </div>
+</main>
 
-      <div class="p-6 border border-gray-700 rounded-lg hover:border-pink-500 transition-all">
-        <h4 class="text-2xl font-semibold mb-2">Static Website Deployment on AWS S3</h4>
-        <p class="text-gray-300 mb-4">Highly available static website hosting using Amazon S3 with cloud storage and public access configuration.</p>
-        <a href="https://github.com/yourusername/aws-s3-static-website" target="_blank" class="text-pink-400 hover:underline">View Project</a>
-      </div>
+<script>
+// Typed Intro
+const text = "DevOps & Cloud Engineer | Python | AWS | Docker | Kubernetes";
+let i = 0;
+function typeWriter() {
+  if(i<text.length){document.getElementById("typed-text").innerHTML+=text.charAt(i);i++;setTimeout(typeWriter,100);}
+}
+typeWriter();
 
-      <div class="p-6 border border-gray-700 rounded-lg hover:border-pink-500 transition-all">
-        <h4 class="text-2xl font-semibold mb-2">AWS Python HTTP API</h4>
-        <p class="text-gray-300 mb-4">Serverless backend API built with Python, AWS Lambda and API Gateway for scalable event-driven architecture.</p>
-        <a href="https://github.com/yourusername/aws-python-api" target="_blank" class="text-pink-400 hover:underline">View Project</a>
-      </div>
-
-      <div class="p-6 border border-gray-700 rounded-lg hover:border-pink-500 transition-all">
-        <h4 class="text-2xl font-semibold mb-2">Node.js Deployment on AWS ECS Fargate</h4>
-        <p class="text-gray-300 mb-4">Dockerized Node.js application deployed using ECS Fargate enabling serverless container orchestration.</p>
-        <a href="https://github.com/yourusername/node-ecs-fargate" target="_blank" class="text-pink-400 hover:underline">View Project</a>
-      </div>
-
-      <div class="p-6 border border-gray-700 rounded-lg hover:border-pink-500 transition-all">
-        <h4 class="text-2xl font-semibold mb-2">AWS VPC Networking Architecture</h4>
-        <p class="text-gray-300 mb-4">Designed a secure VPC architecture including public/private subnets, routing tables and NAT gateways.</p>
-        <a href="https://github.com/yourusername/aws-vpc-networking" target="_blank" class="text-pink-400 hover:underline">View Project</a>
-      </div>
-
-      <div class="p-6 border border-gray-700 rounded-lg hover:border-pink-500 transition-all">
-        <h4 class="text-2xl font-semibold mb-2">AWS Serverless Data Management</h4>
-        <p class="text-gray-300 mb-4">Cloud-native data management solution using AWS Lambda, DynamoDB and RDS for scalable backend services.</p>
-        <a href="https://github.com/yourusername/aws-serverless-data" target="_blank" class="text-pink-400 hover:underline">View Project</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Blogs Section -->
-  <section id="blogs" class="py-20 px-6 bg-gray-800">
-    <h3 class="text-4xl font-bold mb-10 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-pink-500 to-yellow-400 text-center">DevOps & Cloud Engineering Blogs</h3>
-    
-    <div class="flex flex-col md:flex-row justify-center gap-8 max-w-6xl mx-auto">
-      <a href="https://hashnode.com/@yourusername" target="_blank" class="px-6 py-4 border border-gray-700 rounded-lg hover:border-pink-500 transition-all text-center">Read on Hashnode</a>
-      <a href="https://medium.com/@yourusername" target="_blank" class="px-6 py-4 border border-gray-700 rounded-lg hover:border-pink-500 transition-all text-center">Read on Medium</a>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="py-20 px-6">
-    <h3 class="text-4xl font-bold mb-10 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-pink-500 to-yellow-400 text-center">Contact</h3>
-    
-    <div class="text-center space-y-4">
-      <p>Email: <a href="mailto:hinaatif355@gmail.com" class="text-pink-400 hover:underline">hinaatif355@gmail.com</a></p>
-      <p>GitHub: <a href="https://github.com/yourusername" target="_blank" class="text-pink-400 hover:underline">github.com/yourusername</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/yourusername" target="_blank" class="text-pink-400 hover:underline">linkedin.com/in/yourusername</a></p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="text-center py-6 mt-20 border-t border-gray-700">
-    <p>© 2026 All Rights Reserved. Made with ❤️ by DevOps Portfolio</p>
-  </footer>
-
-  <script>
-    // GSAP simple fade-in animation for sections
-    gsap.from("section", {opacity:0, y:50, duration:1, stagger:0.2});
-  </script>
+// Cursor Glow
+const cursor = document.getElementById('cursor-glow');
+document.addEventListener('mousemove', e => {cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px';});
+</script>
 </body>
 </html>
