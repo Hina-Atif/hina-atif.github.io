@@ -1,373 +1,106 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Hina Atif | DevOps & Cloud Engineer</title>
-
-<style>
-
-body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#0b0f19;
-color:white;
-}
-
-/* NAVBAR */
-
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 60px;
-background:#111827;
-position:sticky;
-top:0;
-}
-
-nav h2{
-margin:0;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-margin-left:20px;
-font-size:15px;
-}
-
-/* HERO SECTION */
-
-.hero{
-text-align:center;
-padding:120px 20px;
-}
-
-.gradient{
-font-size:60px;
-font-weight:bold;
-background:linear-gradient(90deg,#4f46e5,#06b6d4,#22c55e);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-.subtitle{
-font-size:24px;
-margin-top:10px;
-color:#9ca3af;
-}
-
-.hero p{
-max-width:700px;
-margin:auto;
-margin-top:20px;
-line-height:1.6;
-color:#cbd5e1;
-}
-
-.button{
-display:inline-block;
-margin-top:30px;
-padding:12px 28px;
-background:#4f46e5;
-border-radius:8px;
-text-decoration:none;
-color:white;
-font-weight:bold;
-}
-
-/* SECTION */
-
-section{
-max-width:1100px;
-margin:auto;
-padding:80px 20px;
-}
-
-h2{
-text-align:center;
-margin-bottom:40px;
-}
-
-/* PROJECT CARDS */
-
-.projects{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-}
-
-.card{
-background:#111827;
-padding:25px;
-border-radius:10px;
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-}
-
-.card h3{
-margin-top:0;
-}
-
-.card p{
-color:#cbd5e1;
-}
-
-.card a{
-display:inline-block;
-margin-top:10px;
-color:#60a5fa;
-text-decoration:none;
-}
-
-/* BLOG */
-
-.blog-links{
-text-align:center;
-}
-
-.blog-links a{
-display:inline-block;
-margin:10px;
-padding:12px 20px;
-background:#1f2937;
-border-radius:6px;
-color:white;
-text-decoration:none;
-}
-
-/* CONTACT */
-
-.contact{
-text-align:center;
-}
-
-.contact a{
-color:#60a5fa;
-text-decoration:none;
-}
-
-/* FOOTER */
-
-footer{
-background:#111827;
-text-align:center;
-padding:30px;
-margin-top:50px;
-color:#9ca3af;
-}
-
-</style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevOps & Cloud Engineer Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js"></script>
 </head>
-
-<body>
-
-<!-- NAVBAR -->
-
-<nav>
-
-<h2>Hina Atif</h2>
-
-<div>
-
-<a href="#projects">Projects</a> <a href="#blogs">Blogs</a> <a href="#contact">Contact</a>
-
-</div>
-
-</nav>
-
-<!-- HERO -->
-
-<div class="hero">
-
-<div class="gradient">Hina Atif</div>
-
-<div class="subtitle">DevOps & Cloud Engineer</div>
-
-<p>
-Designing scalable cloud infrastructure, building CI/CD pipelines,
-and automating modern DevOps workflows using AWS, Docker, Terraform,
-and cloud-native technologies.
-</p>
-
-<a class="button" href="#projects">View Projects</a>
-
-</div>
-
-<!-- PROJECTS -->
-
-<section id="projects">
-
-<h2>Featured DevOps Projects</h2>
-
-<div class="projects">
-
-<div class="card">
-
-<h3>AWS EC2 Docker Deployment</h3>
-
-<p>
-Containerized application deployment on AWS EC2 using Docker
-demonstrating cloud deployment and container orchestration concepts.
-</p>
-
-<a href="https://github.com/Hina-Atif/AWS-EC2-DOCKER-DEPLOYMENT-HINA-ATIF">
-View Project
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>Static Website Deployment on AWS S3</h3>
-
-<p>
-Highly available static website hosting using Amazon S3
-with cloud storage and public access configuration.
-</p>
-
-<a href="https://github.com/Hina-Atif/static-website-deployment-on-s3-hina-atif">
-View Project
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>AWS Python HTTP API</h3>
-
-<p>
-Serverless backend API built with Python,
-AWS Lambda and API Gateway for scalable event-driven architecture.
-</p>
-
-<a href="https://github.com/Hina-Atif/aws-python-http-api-project">
-View Project
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>Node.js Deployment on AWS ECS Fargate</h3>
-
-<p>
-Dockerized Node.js application deployed using ECS Fargate
-enabling serverless container orchestration.
-</p>
-
-<a href="https://github.com/Hina-Atif/Scalable-Node.js-Deployment-on-AWS-ECS-Fargate">
-View Project
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>AWS VPC Networking Architecture</h3>
-
-<p>
-Designed a secure VPC architecture including public/private
-subnets, routing tables and NAT gateways.
-</p>
-
-<a href="https://github.com/Hina-Atif/aws-vpc-networking-project">
-View Project
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>AWS Serverless Data Management</h3>
-
-<p>
-Cloud-native data management solution using
-AWS Lambda, DynamoDB and RDS for scalable backend services.
-</p>
-
-<a href="https://github.com/Hina-Atif/aws-serverless-data-management">
-View Project
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- BLOG -->
-
-<section id="blogs">
-
-<h2>DevOps & Cloud Engineering Blogs</h2>
-
-<p style="text-align:center;">
-Along with building DevOps projects I also share
-articles about cloud engineering, automation,
-and modern DevOps practices.
-</p>
-
-<div class="blog-links">
-
-<a href="https://hina-atif355.hashnode.dev">
-Read on Hashnode
-</a>
-
-<a href="https://medium.com/@hinaatif355">
-Read on Medium
-</a>
-
-</div>
-
-</section>
-
-<!-- CONTACT -->
-
-<section id="contact">
-
-<h2>Contact</h2>
-
-<div class="contact">
-
-<p>Email</p>
-
-<p>
-<a href="mailto:hinaatif355@gmail.com">
-hinaatif355@gmail.com
-</a>
-</p>
-
-<p>
-<a href="https://github.com/Hina-Atif">
-GitHub
-</a>
-</p>
-
-<p>
-<a href="https://www.linkedin.com/in/hina-atif-3627312a0/">
-LinkedIn
-</a>
-</p>
-
-</div>
-
-</section>
-
-<footer>
-
-© 2026 Hina Atif
-DevOps & Cloud Engineer
-
-</footer>
-
+<body class="bg-gray-900 text-white font-sans">
+
+  <!-- Header -->
+  <header class="flex justify-between items-center p-6 bg-gray-800 sticky top-0 z-50">
+    <h1 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-pink-500 to-yellow-400">
+      DevOps Portfolio
+    </h1>
+    <nav class="space-x-6">
+      <a href="#projects" class="hover:text-pink-400 transition-colors">Projects</a>
+      <a href="#blogs" class="hover:text-pink-400 transition-colors">Blogs</a>
+      <a href="#contact" class="hover:text-pink-400 transition-colors">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="flex flex-col items-center justify-center text-center py-32">
+    <h2 class="text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-pink-500 to-yellow-400">DevOps & Cloud Engineer</h2>
+    <p class="text-gray-300 max-w-xl">Designing scalable cloud infrastructure, building CI/CD pipelines, and automating modern DevOps workflows using AWS, Docker, Terraform, and cloud-native technologies.</p>
+    <a href="#projects" class="mt-6 px-8 py-3 bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-500 text-black font-semibold rounded-lg hover:scale-105 transition-transform">View Projects</a>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 px-6">
+    <h3 class="text-4xl font-bold mb-10 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-pink-500 to-yellow-400 text-center">Featured DevOps Projects</h3>
+    
+    <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <!-- Project Item -->
+      <div class="p-6 border border-gray-700 rounded-lg hover:border-pink-500 transition-all">
+        <h4 class="text-2xl font-semibold mb-2">AWS EC2 Docker Deployment</h4>
+        <p class="text-gray-300 mb-4">Containerized application deployment on AWS EC2 using Docker demonstrating cloud deployment and container orchestration concepts.</p>
+        <a href="https://github.com/yourusername/aws-ec2-docker" target="_blank" class="text-pink-400 hover:underline">View Project</a>
+      </div>
+
+      <div class="p-6 border border-gray-700 rounded-lg hover:border-pink-500 transition-all">
+        <h4 class="text-2xl font-semibold mb-2">Static Website Deployment on AWS S3</h4>
+        <p class="text-gray-300 mb-4">Highly available static website hosting using Amazon S3 with cloud storage and public access configuration.</p>
+        <a href="https://github.com/yourusername/aws-s3-static-website" target="_blank" class="text-pink-400 hover:underline">View Project</a>
+      </div>
+
+      <div class="p-6 border border-gray-700 rounded-lg hover:border-pink-500 transition-all">
+        <h4 class="text-2xl font-semibold mb-2">AWS Python HTTP API</h4>
+        <p class="text-gray-300 mb-4">Serverless backend API built with Python, AWS Lambda and API Gateway for scalable event-driven architecture.</p>
+        <a href="https://github.com/yourusername/aws-python-api" target="_blank" class="text-pink-400 hover:underline">View Project</a>
+      </div>
+
+      <div class="p-6 border border-gray-700 rounded-lg hover:border-pink-500 transition-all">
+        <h4 class="text-2xl font-semibold mb-2">Node.js Deployment on AWS ECS Fargate</h4>
+        <p class="text-gray-300 mb-4">Dockerized Node.js application deployed using ECS Fargate enabling serverless container orchestration.</p>
+        <a href="https://github.com/yourusername/node-ecs-fargate" target="_blank" class="text-pink-400 hover:underline">View Project</a>
+      </div>
+
+      <div class="p-6 border border-gray-700 rounded-lg hover:border-pink-500 transition-all">
+        <h4 class="text-2xl font-semibold mb-2">AWS VPC Networking Architecture</h4>
+        <p class="text-gray-300 mb-4">Designed a secure VPC architecture including public/private subnets, routing tables and NAT gateways.</p>
+        <a href="https://github.com/yourusername/aws-vpc-networking" target="_blank" class="text-pink-400 hover:underline">View Project</a>
+      </div>
+
+      <div class="p-6 border border-gray-700 rounded-lg hover:border-pink-500 transition-all">
+        <h4 class="text-2xl font-semibold mb-2">AWS Serverless Data Management</h4>
+        <p class="text-gray-300 mb-4">Cloud-native data management solution using AWS Lambda, DynamoDB and RDS for scalable backend services.</p>
+        <a href="https://github.com/yourusername/aws-serverless-data" target="_blank" class="text-pink-400 hover:underline">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blogs Section -->
+  <section id="blogs" class="py-20 px-6 bg-gray-800">
+    <h3 class="text-4xl font-bold mb-10 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-pink-500 to-yellow-400 text-center">DevOps & Cloud Engineering Blogs</h3>
+    
+    <div class="flex flex-col md:flex-row justify-center gap-8 max-w-6xl mx-auto">
+      <a href="https://hashnode.com/@yourusername" target="_blank" class="px-6 py-4 border border-gray-700 rounded-lg hover:border-pink-500 transition-all text-center">Read on Hashnode</a>
+      <a href="https://medium.com/@yourusername" target="_blank" class="px-6 py-4 border border-gray-700 rounded-lg hover:border-pink-500 transition-all text-center">Read on Medium</a>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 px-6">
+    <h3 class="text-4xl font-bold mb-10 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-pink-500 to-yellow-400 text-center">Contact</h3>
+    
+    <div class="text-center space-y-4">
+      <p>Email: <a href="mailto:hinaatif355@gmail.com" class="text-pink-400 hover:underline">hinaatif355@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/yourusername" target="_blank" class="text-pink-400 hover:underline">github.com/yourusername</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/yourusername" target="_blank" class="text-pink-400 hover:underline">linkedin.com/in/yourusername</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 mt-20 border-t border-gray-700">
+    <p>© 2026 All Rights Reserved. Made with ❤️ by DevOps Portfolio</p>
+  </footer>
+
+  <script>
+    // GSAP simple fade-in animation for sections
+    gsap.from("section", {opacity:0, y:50, duration:1, stagger:0.2});
+  </script>
 </body>
 </html>
