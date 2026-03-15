@@ -1,29 +1,23 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 
 <title>Hina Atif | DevOps Engineer</title>
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 
 body{
 margin:0;
-font-family:Arial, Helvetica, sans-serif;
+font-family:Arial;
 background:#0b0b0f;
 color:white;
-overflow-x:hidden;
 }
 
 nav{
 display:flex;
 justify-content:space-between;
-align-items:center;
 padding:20px 80px;
-position:relative;
-z-index:2;
 }
 
 .logo{
@@ -41,9 +35,8 @@ gap:30px;
 }
 
 nav ul li a{
-text-decoration:none;
 color:white;
-font-size:16px;
+text-decoration:none;
 }
 
 nav ul li a:hover{
@@ -53,25 +46,23 @@ color:#00c6ff;
 .hero{
 text-align:center;
 padding:120px 20px;
-position:relative;
-z-index:2;
 }
 
 .hero img{
 width:180px;
 border-radius:50%;
 margin-bottom:20px;
-box-shadow:0 0 25px rgba(0,198,255,0.6);
+box-shadow:0 0 20px #00c6ff;
 }
 
-.hero h1{
-font-size:60px;
-margin:10px 0;
+.name-white{
+color:white;
+font-weight:bold;
 }
 
-.hero h2{
-color:#ccc;
-font-weight:normal;
+.title-blue{
+color:#00c6ff;
+font-weight:500;
 }
 
 .hero p{
@@ -81,25 +72,14 @@ color:#aaa;
 line-height:1.6;
 }
 
-.gradient{
-background:linear-gradient(90deg,#ff7a18,#ff00ff,#00c6ff);
--webkit-background-clip:text;
-color:transparent;
-}
-
 .btn{
 display:inline-block;
 margin-top:30px;
 padding:12px 30px;
-border-radius:25px;
-background:linear-gradient(90deg,#ff7a18,#ff00ff,#00c6ff);
+background:#00c6ff;
+border-radius:20px;
 color:white;
 text-decoration:none;
-font-weight:bold;
-}
-
-.btn:hover{
-opacity:0.8;
 }
 
 .container{
@@ -116,64 +96,53 @@ margin-top:40px;
 
 .card{
 background:#15151c;
-padding:20px;
-border-radius:12px;
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-background:#1d1d27;
+border-radius:10px;
+overflow:hidden;
 }
 
 .card img{
 width:100%;
-border-radius:8px;
-margin-bottom:10px;
+height:160px;
+object-fit:cover;
 }
 
 .card a{
+display:block;
+padding:20px;
 color:white;
 text-decoration:none;
-font-size:18px;
 font-weight:bold;
+}
+
+.card:hover{
+transform:translateY(-8px);
+background:#1d1d27;
 }
 
 footer{
 text-align:center;
 padding:40px;
 color:#aaa;
-font-size:14px;
 }
 
 #cursor{
-width:20px;
-height:20px;
+width:18px;
+height:18px;
 border-radius:50%;
-background:linear-gradient(90deg,#ff7a18,#ff00ff,#00c6ff);
+background:#00c6ff;
 position:fixed;
 pointer-events:none;
 transform:translate(-50%,-50%);
 z-index:999;
-box-shadow:0 0 20px #00c6ff;
-}
-
-canvas{
-position:fixed;
-top:0;
-left:0;
-z-index:0;
+box-shadow:0 0 15px #00c6ff;
 }
 
 </style>
-
 </head>
 
 <body>
 
 <div id="cursor"></div>
-
-<canvas id="bg"></canvas>
 
 <nav>
 
@@ -195,27 +164,19 @@ z-index:0;
 
 <h3>Hello,</h3>
 
-<h1>I'm <span class="gradient">Hina Atif</span></h1>
+<h1>I'm <span class="name-white">Hina Atif</span></h1>
 
-<h2>DevOps Engineer | Cloud Automation Enthusiast</h2>
-
-<br>
-
-<p>
-
-I'm a DevOps Engineer based in Karachi, Pakistan, focused on building scalable cloud infrastructure and automating modern software delivery pipelines.
-
-</p>
-
-<br>
+<h2 class="title-blue">
+<span id="typing"></span>
+</h2>
 
 <p>
 
-I work with technologies like Docker, Kubernetes, CI/CD pipelines, and AWS cloud platforms to build efficient, automated systems that bridge development and operations.
+I'm a DevOps Engineer based in Karachi, Pakistan focused on building scalable cloud infrastructure and automating modern deployment pipelines.
 
 </p>
 
-<a class="btn" href="assets/images/Hina%20Aatif%20Resume.pdf" download>
+<a class="btn" href="assets/images/hina-resume.pdf" download="Hina_Atif_Resume">
 
 Download Resume
 
@@ -230,36 +191,53 @@ Download Resume
 <div class="projects">
 
 <div class="card">
-<img src="assets/images/project1.png">
-<a href="https://github.com/Hina-Atif/AWS-EC2-DOCKER-DEPLOYMENT-HINA-ATIF">
+<img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa">
+<a href="https://github.com/Hina-Atif/AWS-EC2-DOCKER-DEPLOYMENT-HINA-ATIF" target="_blank">
 AWS EC2 Docker Deployment
 </a>
 </div>
 
 <div class="card">
-<img src="assets/images/project2.png">
-<a href="https://github.com/Hina-Atif/static-website-deployment-on-s3-hina-atif">
-Static Website Deployment on S3
+<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f">
+<a href="https://github.com/Hina-Atif/static-website-deployment-on-s3-hina-atif" target="_blank">
+Static Website on S3
 </a>
 </div>
 
 <div class="card">
-<img src="assets/images/project3.png">
-<a href="https://github.com/Hina-Atif/aws-vpc-networking-project">
-AWS VPC Networking Project
+<img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31">
+<a href="https://github.com/Hina-Atif/aws-vpc-networking-project" target="_blank">
+AWS VPC Networking
+</a>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72">
+<a href="https://github.com/Hina-Atif/aws-serverless-data-management" target="_blank">
+Serverless Data Management
+</a>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c">
+<a href="https://github.com/Hina-Atif/Scalable-Node.js-Deployment-on-AWS-ECS-Fargate" target="_blank">
+Node.js ECS Fargate
+</a>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1508780709619-79562169bc64">
+<a href="https://github.com/Hina-Atif/aws-python-http-api-project" target="_blank">
+Python HTTP API
 </a>
 </div>
 
 </div>
-
 </div>
 
 <footer>
 
-✦ Hina Atif
-
-<br>
-
+✦ Hina Atif  
 © 2026 All Rights Reserved.
 
 </footer>
@@ -268,46 +246,30 @@ AWS VPC Networking Project
 
 const cursor = document.getElementById("cursor");
 
-document.addEventListener("mousemove", e => {
+document.addEventListener("mousemove", e=>{
 cursor.style.left = e.clientX + "px";
 cursor.style.top = e.clientY + "px";
 });
 
-const canvas = document.getElementById("bg");
-const ctx = canvas.getContext("2d");
+const text = "DevOps Engineer | Cloud Automation Enthusiast";
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+let i = 0;
 
-let particles = [];
+function typing(){
 
-for(let i=0;i<80;i++){
-particles.push({
-x:Math.random()*canvas.width,
-y:Math.random()*canvas.height,
-r:Math.random()*2
-})
-}
+if(i < text.length){
 
-function animate(){
+document.getElementById("typing").innerHTML += text.charAt(i);
 
-ctx.clearRect(0,0,canvas.width,canvas.height);
+i++;
 
-ctx.fillStyle="rgba(0,198,255,0.6)";
-
-particles.forEach(p=>{
-ctx.beginPath();
-ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-ctx.fill();
-p.y+=0.3;
-if(p.y>canvas.height)p.y=0;
-})
-
-requestAnimationFrame(animate)
+setTimeout(typing,60);
 
 }
 
-animate()
+}
+
+typing();
 
 </script>
 
