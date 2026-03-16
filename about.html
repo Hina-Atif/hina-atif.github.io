@@ -5,13 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Me - Hina Atif</title>
 <style>
-  /* Page Styles */
+  /* Dark Background and Font */
   body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background: #f0f8ff;
+    background: #0d1117; /* dark background */
+    color: #cbd5e1;
     overflow: hidden;
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="32" width="32"><circle cx="16" cy="16" r="8" fill="lightblue"/></svg>'), auto;
+    cursor: none; /* custom cursor */
   }
 
   .container {
@@ -55,12 +56,32 @@
     font-size: 0.9rem;
   }
 
+  /* LinkedIn Glowing Badge */
+  .linkedin-badge {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #0a66c2;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 0 10px #0a66c2;
+    animation: glow 2s infinite alternate;
+  }
+
+  @keyframes glow {
+    0% { box-shadow: 0 0 5px #0a66c2; }
+    50% { box-shadow: 0 0 20px #0a66c2; }
+    100% { box-shadow: 0 0 5px #0a66c2; }
+  }
+
   /* Floating background bubbles */
   .bubble {
     position: absolute;
     border-radius: 50%;
-    opacity: 0.3;
-    background: #add8e6;
+    opacity: 0.2;
+    background: #4f97ff;
     animation: float 20s linear infinite;
   }
 
@@ -69,6 +90,23 @@
     50% { transform: translateY(-50vh) scale(1.2); }
     100% { transform: translateY(-120vh) scale(1); }
   }
+
+  /* Custom Cursor */
+  .cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background: #4f97ff;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.05s ease-out;
+    z-index: 9999;
+    mix-blend-mode: difference;
+  }
+
 </style>
 </head>
 <body>
@@ -81,14 +119,16 @@
     My work involves containerization, CI/CD automation, and cloud platforms like AWS. I enjoy turning complex deployment processes into efficient automated workflows.
     <br><br>
     My technical interests include Docker, Kubernetes, Infrastructure as Code, cloud architecture, and automation with Python and Linux.
+    <br><br>
+    <strong>Experience:</strong> Dec 2024 – May 2025 | Remote | Hands-on Projects
   </p>
+  <a href="https://www.linkedin.com/in/hina-atif" target="_blank" class="linkedin-badge">LinkedIn</a>
   <footer>✦ Hina Atif © 2026 All Rights Reserved</footer>
 </div>
 
 <!-- Floating bubbles -->
 <script>
   const bubbleCount = 30;
-
   for (let i = 0; i < bubbleCount; i++) {
     const bubble = document.createElement('div');
     bubble.classList.add('bubble');
@@ -99,6 +139,14 @@
     bubble.style.animationDuration = 10 + Math.random() * 20 + 's';
     document.body.appendChild(bubble);
   }
+
+  // Custom cursor movement
+  const cursor = document.createElement('div');
+  cursor.classList.add('cursor');
+  document.body.appendChild(cursor);
+  document.addEventListener('mousemove', e => {
+    cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+  });
 </script>
 
 </body>
