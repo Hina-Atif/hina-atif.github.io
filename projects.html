@@ -6,25 +6,30 @@
 <title>Projects | Hina Atif</title>
 
 <style>
-body {
+body{
     margin:0;
     font-family:Arial, sans-serif;
     background:#0b0b0f;
     color:white;
     overflow-x:hidden;
+    position:relative;
 }
 
-/* Cursor */
-#cursor{
-    width:18px;
-    height:18px;
-    border-radius:50%;
+/* Animated background dots */
+.dot {
+    position:absolute;
+    width:8px;
+    height:8px;
     background:#00c6ff;
-    position:fixed;
-    pointer-events:none;
-    transform:translate(-50%, -50%);
-    z-index:999;
-    box-shadow:0 0 15px #00c6ff;
+    border-radius:50%;
+    opacity:0.6;
+    animation: floatDots 20s linear infinite;
+}
+
+@keyframes floatDots {
+    0% {transform: translateY(0) translateX(0);}
+    50% {transform: translateY(-600px) translateX(300px);}
+    100% {transform: translateY(0) translateX(0);}
 }
 
 /* Navigation */
@@ -54,7 +59,6 @@ nav ul{
 nav ul li a{
     color:white;
     text-decoration:none;
-    font-weight:500;
 }
 
 nav ul li a:hover{
@@ -67,13 +71,6 @@ nav ul li a:hover{
     padding:160px 20px 80px 20px;
     max-width:1200px;
     margin:auto;
-}
-
-/* Section headings */
-.section-heading{
-    font-weight:bold;
-    font-size:28px;
-    margin-bottom:20px;
 }
 
 /* Project cards */
@@ -111,67 +108,32 @@ nav ul li a:hover{
     background:#1d1d27;
 }
 
-/* Contact form */
-.contact-form{
-    margin-top:80px;
-    text-align:left;
-    max-width:600px;
-    margin-left:auto;
-    margin-right:auto;
-}
-
-.contact-form h2{
-    font-weight:bold;
-    font-size:24px;
-    margin-bottom:20px;
-}
-
-.contact-form label{
-    display:block;
-    margin-top:15px;
-    margin-bottom:5px;
-}
-
-.contact-form input,
-.contact-form textarea{
-    width:100%;
-    padding:12px;
-    border-radius:8px;
-    border:none;
-    background:#15151c;
-    color:white;
-    font-size:16px;
-    resize:none;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus{
-    outline:none;
-    box-shadow:0 0 8px #00c6ff;
-}
-
-.contact-form button{
-    margin-top:20px;
-    padding:12px 30px;
-    border-radius:20px;
-    border:none;
-    background:#00c6ff;
-    color:white;
-    font-weight:bold;
-    cursor:pointer;
-    font-size:16px;
-}
-
+/* Footer */
 footer{
     text-align:center;
     padding:40px;
     color:#aaa;
-    margin-top:60px;
 }
 
+/* Cursor */
+#cursor{
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:#00c6ff;
+    position:fixed;
+    pointer-events:none;
+    transform:translate(-50%, -50%);
+    z-index:999;
+    box-shadow:0 0 15px #00c6ff;
+}
 </style>
+
 </head>
 <body>
+
+<!-- Floating dots background -->
+<div id="dots"></div>
 
 <div id="cursor"></div>
 
@@ -187,64 +149,38 @@ footer{
 </nav>
 
 <div class="container">
+    <h1>My Projects</h1>
+    <p>Click on any project to view it on GitHub.</p>
 
-    <!-- Featured Projects -->
-    <div class="featured-projects">
-        <h1 class="section-heading">Featured Projects</h1>
-        <div class="projects">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1581091870626-3b00cf4cd1ef">
-                <a href="https://github.com/Hina-Atif/SkyRoute-Air-Ticket-Booking-Platform" target="_blank">
-                    SkyRoute Air Ticket Booking Platform
-                </a>
-            </div>
+    <div class="projects">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1581091870626-3b00cf4cd1ef">
+            <a href="https://github.com/Hina-Atif/SkyRoute-Air-Ticket-Booking-Platform" target="_blank">
+                SkyRoute Air Ticket Booking Platform
+            </a>
+        </div>
 
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
-                <a href="https://github.com/Hina-Atif/CloudTel-Telecom-Self-Service-Platform" target="_blank">
-                    CloudTel Telecom Self-Service Platform
-                </a>
-            </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+            <a href="https://github.com/Hina-Atif/CloudTel-Telecom-Self-Service-Platform" target="_blank">
+                CloudTel Telecom Self-Service Platform
+            </a>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1591696205602-fce4b1e8f32e">
+            <a href="https://github.com/Hina-Atif/CloudBank-Microservices-Banking-Platform" target="_blank">
+                CloudBank Microservices Banking Platform
+            </a>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1556228724-4a5b820aeaa3">
+            <a href="https://github.com/Hina-Atif/CloudWatch-Lite-Monitoring-Platform" target="_blank">
+                CloudWatch Lite Monitoring Platform
+            </a>
         </div>
     </div>
-
-    <!-- Enterprise Projects -->
-    <div class="enterprise-projects">
-        <h1 class="section-heading">Enterprise Projects</h1>
-        <div class="projects">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1591696205602-fce4b1e8f32e">
-                <a href="https://github.com/Hina-Atif/CloudBank-Microservices-Banking-Platform" target="_blank">
-                    CloudBank Microservices Banking Platform
-                </a>
-            </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1556228724-4a5b820aeaa3">
-                <a href="https://github.com/Hina-Atif/CloudWatch-Lite-Monitoring-Platform" target="_blank">
-                    CloudWatch Lite Monitoring Platform
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Contact Form -->
-    <div class="contact-form">
-        <h2>Contact Me</h2>
-        <form action="mailto:hinaatif355@gmail.com" method="POST" enctype="text/plain">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" required>
-
-            <label for="email">Your Email</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
-
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
-
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
-
 </div>
 
 <footer>
@@ -259,6 +195,19 @@ document.addEventListener("mousemove", e=>{
     cursor.style.left = e.clientX + "px";
     cursor.style.top = e.clientY + "px";
 });
+
+// Floating dots
+const dotsContainer = document.getElementById("dots");
+for(let i=0;i<40;i++){
+    let dot = document.createElement("div");
+    dot.classList.add("dot");
+    dot.style.left = Math.random()*window.innerWidth + "px";
+    dot.style.top = Math.random()*window.innerHeight + "px";
+    dot.style.width = 4 + Math.random()*6 + "px";
+    dot.style.height = dot.style.width;
+    dot.style.animationDuration = 10 + Math.random()*20 + "s";
+    dotsContainer.appendChild(dot);
+}
 </script>
 
 </body>
