@@ -73,6 +73,29 @@ nav ul li a:hover{
     margin:auto;
 }
 
+/* CATEGORY BOXES */
+.category-boxes{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    margin-top:40px;
+}
+
+.category{
+    padding:30px 60px;
+    background:#15151c;
+    border-radius:10px;
+    font-size:22px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.category:hover{
+    transform:translateY(-8px);
+    background:#1d1d27;
+}
+
 /* Project cards */
 .projects{
     display:grid;
@@ -96,11 +119,26 @@ nav ul li a:hover{
 
 .card a{
     display:block;
-    padding:20px;
+    padding:15px;
     color:white;
     text-decoration:none;
     font-weight:bold;
     font-size:16px;
+}
+
+/* Tech badges */
+.badges{
+    padding:0 15px 15px 15px;
+}
+
+.badge{
+    display:inline-block;
+    background:#00c6ff;
+    color:#000;
+    font-size:12px;
+    padding:4px 8px;
+    border-radius:4px;
+    margin:3px;
 }
 
 .card:hover{
@@ -132,82 +170,195 @@ footer{
 </head>
 <body>
 
-<!-- Floating dots background -->
+<!-- Floating dots -->
 <div id="dots"></div>
-
 <div id="cursor"></div>
 
 <nav>
-    <div class="logo">Hina Atif</div>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="posts.html">Posts</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
+<div class="logo">Hina Atif</div>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="posts.html">Posts</a></li>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
 </nav>
 
 <div class="container">
-    <h1>My Projects</h1>
-    <p>Click on any project to view it on GitHub.</p>
 
-    <div class="projects">
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1581091870626-3b00cf4cd1ef">
-            <a href="https://github.com/Hina-Atif/SkyRoute-Air-Ticket-Booking-Platform" target="_blank">
-                SkyRoute Air Ticket Booking Platform
-            </a>
-        </div>
+<h1>My Projects</h1>
+<p>Click on any project to view it on GitHub.</p>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
-            <a href="https://github.com/Hina-Atif/CloudTel-Telecom-Self-Service-Platform" target="_blank">
-                CloudTel Telecom Self-Service Platform
-            </a>
-        </div>
+<!-- CATEGORY BOXES -->
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1591696205602-fce4b1e8f32e">
-            <a href="https://github.com/Hina-Atif/CloudBank-Microservices-Banking-Platform" target="_blank">
-                CloudBank Microservices Banking Platform
-            </a>
-        </div>
+<div class="category-boxes">
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1556228724-4a5b820aeaa3">
-            <a href="https://github.com/Hina-Atif/CloudWatch-Lite-Monitoring-Platform" target="_blank">
-                CloudWatch Lite Monitoring Platform
-            </a>
-        </div>
-    </div>
+<div class="category" onclick="scrollToSection('featured')">
+Featured Projects
+</div>
+
+<div class="category" onclick="scrollToSection('enterprise')">
+Enterprise Projects
+</div>
+
+</div>
+
+
+<!-- FEATURED PROJECTS -->
+
+<h2 id="featured" style="margin-top:100px;">Featured Projects</h2>
+
+<div class="projects">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475">
+<a href="https://github.com/Hina-Atif/AWS-EC2-DOCKER-DEPLOYMENT-HINA-ATIF" target="_blank">
+AWS EC2 Docker Deployment
+</a>
+<div class="badges">
+<span class="badge">AWS</span>
+<span class="badge">Docker</span>
+<span class="badge">EC2</span>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
+<a href="https://github.com/Hina-Atif/static-website-deployment-on-s3-hina-atif" target="_blank">
+Static Website Deployment on S3
+</a>
+<div class="badges">
+<span class="badge">AWS</span>
+<span class="badge">S3</span>
+<span class="badge">Cloud</span>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31">
+<a href="https://github.com/Hina-Atif/aws-vpc-networking-project" target="_blank">
+AWS VPC Networking Project
+</a>
+<div class="badges">
+<span class="badge">AWS</span>
+<span class="badge">VPC</span>
+<span class="badge">Networking</span>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3">
+<a href="https://github.com/Hina-Atif/aws-serverless-data-management" target="_blank">
+AWS Serverless Data Management
+</a>
+<div class="badges">
+<span class="badge">Lambda</span>
+<span class="badge">DynamoDB</span>
+<span class="badge">Serverless</span>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31">
+<a href="https://github.com/Hina-Atif/Scalable-Node.js-Deployment-on-AWS-ECS-Fargate" target="_blank">
+Node.js Deployment on AWS ECS Fargate
+</a>
+<div class="badges">
+<span class="badge">Node.js</span>
+<span class="badge">ECS</span>
+<span class="badge">Fargate</span>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581091870626-3b00cf4cd1ef">
+<a href="https://github.com/Hina-Atif/aws-python-http-api-project" target="_blank">
+AWS Python HTTP API
+</a>
+<div class="badges">
+<span class="badge">Python</span>
+<span class="badge">API</span>
+<span class="badge">AWS</span>
+</div>
+</div>
+
+</div>
+
+
+<!-- ENTERPRISE PROJECTS -->
+
+<h2 id="enterprise" style="margin-top:100px;">Enterprise Projects</h2>
+
+<div class="projects">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581091870626-3b00cf4cd1ef">
+<a href="https://github.com/Hina-Atif/SkyRoute-Air-Ticket-Booking-Platform" target="_blank">
+SkyRoute Air Ticket Booking Platform
+</a>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+<a href="https://github.com/Hina-Atif/CloudTel-Telecom-Self-Service-Platform" target="_blank">
+CloudTel Telecom Self-Service Platform
+</a>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1591696205602-fce4b1e8f32e">
+<a href="https://github.com/Hina-Atif/CloudBank-Microservices-Banking-Platform" target="_blank">
+CloudBank Microservices Banking Platform
+</a>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1556228724-4a5b820aeaa3">
+<a href="https://github.com/Hina-Atif/CloudWatch-Lite-Monitoring-Platform" target="_blank">
+CloudWatch Lite Monitoring Platform
+</a>
+</div>
+
+</div>
+
 </div>
 
 <footer>
-    ✦ Hina Atif<br>
-    © 2026 All Rights Reserved.
+✦ Hina Atif<br>
+© 2026 All Rights Reserved.
 </footer>
 
 <script>
-// Cursor
+
+/* Scroll function */
+
+function scrollToSection(section){
+document.getElementById(section).scrollIntoView({behavior:"smooth"});
+}
+
+/* Cursor */
+
 const cursor = document.getElementById("cursor");
 document.addEventListener("mousemove", e=>{
-    cursor.style.left = e.clientX + "px";
-    cursor.style.top = e.clientY + "px";
+cursor.style.left = e.clientX + "px";
+cursor.style.top = e.clientY + "px";
 });
 
-// Floating dots
+/* Floating dots */
+
 const dotsContainer = document.getElementById("dots");
 for(let i=0;i<40;i++){
-    let dot = document.createElement("div");
-    dot.classList.add("dot");
-    dot.style.left = Math.random()*window.innerWidth + "px";
-    dot.style.top = Math.random()*window.innerHeight + "px";
-    dot.style.width = 4 + Math.random()*6 + "px";
-    dot.style.height = dot.style.width;
-    dot.style.animationDuration = 10 + Math.random()*20 + "s";
-    dotsContainer.appendChild(dot);
+let dot=document.createElement("div");
+dot.classList.add("dot");
+dot.style.left=Math.random()*window.innerWidth+"px";
+dot.style.top=Math.random()*window.innerHeight+"px";
+dot.style.width=4+Math.random()*6+"px";
+dot.style.height=dot.style.width;
+dot.style.animationDuration=10+Math.random()*20+"s";
+dotsContainer.appendChild(dot);
 }
+
 </script>
 
 </body>
