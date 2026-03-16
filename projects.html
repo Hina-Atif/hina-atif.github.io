@@ -13,28 +13,9 @@ font-family:Arial, sans-serif;
 background:#0b0b0f;
 color:white;
 overflow-x:hidden;
-position:relative;
 }
 
-/* Floating dots */
-
-.dot{
-position:absolute;
-width:8px;
-height:8px;
-background:#00c6ff;
-border-radius:50%;
-opacity:0.6;
-animation:floatDots 20s linear infinite;
-}
-
-@keyframes floatDots{
-0%{transform:translateY(0) translateX(0);}
-50%{transform:translateY(-600px) translateX(300px);}
-100%{transform:translateY(0) translateX(0);}
-}
-
-/* Navbar */
+/* NAVBAR */
 
 nav{
 display:flex;
@@ -64,20 +45,16 @@ color:white;
 text-decoration:none;
 }
 
-nav ul li a:hover{
-color:#00c6ff;
-}
-
-/* Container */
+/* CONTAINER */
 
 .container{
 text-align:center;
-padding:160px 20px 80px;
+padding:150px 40px;
 max-width:1200px;
 margin:auto;
 }
 
-/* Category boxes */
+/* CATEGORY */
 
 .category-boxes{
 display:flex;
@@ -87,33 +64,34 @@ margin-top:40px;
 }
 
 .category{
-padding:30px 60px;
+padding:25px 60px;
 background:#15151c;
 border-radius:10px;
 font-size:22px;
 font-weight:bold;
 cursor:pointer;
-transition:0.3s;
 }
 
 .category:hover{
-transform:translateY(-8px);
 background:#1d1d27;
+transform:translateY(-5px);
 }
 
-/* Project grid */
+/* PROJECT GRID */
 
 .projects{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
 gap:30px;
 margin-top:40px;
 }
 
-/* Card */
+/* CARD */
 
 .card{
 background:#15151c;
+width:280px;
 border-radius:10px;
 overflow:hidden;
 transition:0.3s;
@@ -128,8 +106,8 @@ object-fit:cover;
 
 .card-title{
 padding:15px;
-font-weight:bold;
 font-size:16px;
+font-weight:bold;
 }
 
 .tech{
@@ -140,7 +118,7 @@ padding:0 15px 10px;
 display:inline-block;
 background:#00c6ff;
 color:black;
-padding:4px 8px;
+padding:3px 8px;
 border-radius:4px;
 font-size:12px;
 margin:2px;
@@ -151,10 +129,9 @@ padding:10px 15px 15px;
 }
 
 .btn{
-display:inline-block;
 background:#00c6ff;
 color:black;
-padding:6px 12px;
+padding:6px 10px;
 border-radius:5px;
 text-decoration:none;
 font-size:13px;
@@ -162,12 +139,11 @@ margin-right:8px;
 }
 
 .card:hover{
-transform:translateY(-10px);
-background:#1d1d27;
-box-shadow:0 10px 25px rgba(0,198,255,0.4);
+transform:translateY(-8px);
+box-shadow:0 8px 20px rgba(0,198,255,0.4);
 }
 
-/* Footer */
+/* FOOTER */
 
 footer{
 text-align:center;
@@ -175,31 +151,13 @@ padding:40px;
 color:#aaa;
 }
 
-/* Cursor */
-
-#cursor{
-width:18px;
-height:18px;
-border-radius:50%;
-background:#00c6ff;
-position:fixed;
-pointer-events:none;
-transform:translate(-50%,-50%);
-z-index:999;
-box-shadow:0 0 15px #00c6ff;
-}
-
 </style>
 </head>
 
 <body>
 
-<div id="dots"></div>
-<div id="cursor"></div>
-
 <nav>
 <div class="logo">Hina Atif</div>
-
 <ul>
 <li><a href="index.html">Home</a></li>
 <li><a href="posts.html">Posts</a></li>
@@ -207,7 +165,6 @@ box-shadow:0 0 15px #00c6ff;
 <li><a href="about.html">About</a></li>
 <li><a href="contact.html">Contact</a></li>
 </ul>
-
 </nav>
 
 <div class="container">
@@ -216,27 +173,20 @@ box-shadow:0 0 15px #00c6ff;
 <p>Click project to open GitHub repository</p>
 
 <div class="category-boxes">
-
-<div class="category" onclick="scrollToSection('featured')">
-Featured Projects
+<div class="category" onclick="document.getElementById('featured').scrollIntoView()">Featured Projects</div>
+<div class="category" onclick="document.getElementById('enterprise').scrollIntoView()">Enterprise Projects</div>
 </div>
 
-<div class="category" onclick="scrollToSection('enterprise')">
-Enterprise Projects
-</div>
-
-</div>
-
-<!-- FEATURED PROJECTS -->
+<!-- FEATURED -->
 
 <h2 id="featured" style="margin-top:100px;">Featured Projects</h2>
 
 <div class="projects">
 
-<!-- Card -->
+<!-- CARD -->
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1518770660439-4636190af475">
+<img src="https://picsum.photos/400/200?1">
 <div class="card-title">AWS EC2 Docker Deployment</div>
 <div class="tech">
 <span class="badge">AWS</span>
@@ -245,77 +195,66 @@ Enterprise Projects
 </div>
 <div class="buttons">
 <a class="btn" href="https://github.com/Hina-Atif/AWS-EC2-DOCKER-DEPLOYMENT-HINA-ATIF" target="_blank">GitHub</a>
-<a class="btn" href="https://miro.medium.com/v2/resize:fit:1400/1*QX1cF1i0K9J4yG7wA0s9NQ.png" target="_blank">Architecture</a>
 </div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
+<img src="https://picsum.photos/400/200?2">
 <div class="card-title">Static Website Deployment on S3</div>
 <div class="tech">
 <span class="badge">AWS</span>
 <span class="badge">S3</span>
-<span class="badge">Cloud</span>
 </div>
 <div class="buttons">
 <a class="btn" href="https://github.com/Hina-Atif/static-website-deployment-on-s3-hina-atif" target="_blank">GitHub</a>
-<a class="btn" href="https://docs.aws.amazon.com/images/AmazonS3/latest/userguide/images/s3-website-hosting.png" target="_blank">Architecture</a>
 </div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31">
+<img src="https://picsum.photos/400/200?3">
 <div class="card-title">AWS VPC Networking</div>
 <div class="tech">
 <span class="badge">AWS</span>
 <span class="badge">VPC</span>
-<span class="badge">Networking</span>
 </div>
 <div class="buttons">
 <a class="btn" href="https://github.com/Hina-Atif/aws-vpc-networking-project" target="_blank">GitHub</a>
-<a class="btn" href="https://docs.aws.amazon.com/images/vpc/latest/userguide/images/vpc-diagram.png" target="_blank">Architecture</a>
 </div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3">
+<img src="https://picsum.photos/400/200?4">
 <div class="card-title">AWS Serverless Data Management</div>
 <div class="tech">
 <span class="badge">Lambda</span>
 <span class="badge">DynamoDB</span>
-<span class="badge">Serverless</span>
 </div>
 <div class="buttons">
 <a class="btn" href="https://github.com/Hina-Atif/aws-serverless-data-management" target="_blank">GitHub</a>
-<a class="btn" href="https://docs.aws.amazon.com/images/lambda/latest/dg/images/lambda-architecture.png" target="_blank">Architecture</a>
 </div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31">
+<img src="https://picsum.photos/400/200?5">
 <div class="card-title">Node.js ECS Fargate Deployment</div>
 <div class="tech">
 <span class="badge">Node.js</span>
 <span class="badge">ECS</span>
-<span class="badge">Fargate</span>
 </div>
 <div class="buttons">
 <a class="btn" href="https://github.com/Hina-Atif/Scalable-Node.js-Deployment-on-AWS-ECS-Fargate" target="_blank">GitHub</a>
-<a class="btn" href="https://docs.aws.amazon.com/images/AmazonECS/latest/developerguide/images/ecs_architecture.png" target="_blank">Architecture</a>
 </div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1581091870626-3b00cf4cd1ef">
+<img src="https://picsum.photos/400/200?6">
 <div class="card-title">AWS Python HTTP API</div>
 <div class="tech">
 <span class="badge">Python</span>
 <span class="badge">API</span>
-<span class="badge">AWS</span>
 </div>
 <div class="buttons">
 <a class="btn" href="https://github.com/Hina-Atif/aws-python-http-api-project" target="_blank">GitHub</a>
-<a class="btn" href="https://docs.aws.amazon.com/images/apigateway/latest/developerguide/images/api-gateway-overview.png" target="_blank">Architecture</a>
 </div>
 </div>
 
@@ -328,52 +267,32 @@ Enterprise Projects
 <div class="projects">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1581091870626-3b00cf4cd1ef">
+<img src="https://picsum.photos/400/200?7">
 <div class="card-title">SkyRoute Air Ticket Platform</div>
-<div class="tech">
-<span class="badge">Microservices</span>
-<span class="badge">Docker</span>
-<span class="badge">AWS</span>
-</div>
 <div class="buttons">
 <a class="btn" href="https://github.com/Hina-Atif/SkyRoute-Air-Ticket-Booking-Platform" target="_blank">GitHub</a>
 </div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+<img src="https://picsum.photos/400/200?8">
 <div class="card-title">CloudTel Telecom Platform</div>
-<div class="tech">
-<span class="badge">DevOps</span>
-<span class="badge">Automation</span>
-<span class="badge">Cloud</span>
-</div>
 <div class="buttons">
 <a class="btn" href="https://github.com/Hina-Atif/CloudTel-Telecom-Self-Service-Platform" target="_blank">GitHub</a>
 </div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1591696205602-fce4b1e8f32e">
+<img src="https://picsum.photos/400/200?9">
 <div class="card-title">CloudBank Microservices Platform</div>
-<div class="tech">
-<span class="badge">Microservices</span>
-<span class="badge">API</span>
-<span class="badge">Cloud</span>
-</div>
 <div class="buttons">
 <a class="btn" href="https://github.com/Hina-Atif/CloudBank-Microservices-Banking-Platform" target="_blank">GitHub</a>
 </div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1556228724-4a5b820aeaa3">
+<img src="https://picsum.photos/400/200?10">
 <div class="card-title">CloudWatch Lite Monitoring</div>
-<div class="tech">
-<span class="badge">Monitoring</span>
-<span class="badge">DevOps</span>
-<span class="badge">Observability</span>
-</div>
 <div class="buttons">
 <a class="btn" href="https://github.com/Hina-Atif/CloudWatch-Lite-Monitoring-Platform" target="_blank">GitHub</a>
 </div>
@@ -387,43 +306,6 @@ Enterprise Projects
 ✦ Hina Atif<br>
 © 2026 All Rights Reserved
 </footer>
-
-<script>
-
-function scrollToSection(section){
-document.getElementById(section).scrollIntoView({behavior:'smooth'});
-}
-
-/* Cursor */
-
-const cursor=document.getElementById("cursor");
-document.addEventListener("mousemove",e=>{
-cursor.style.left=e.clientX+"px";
-cursor.style.top=e.clientY+"px";
-});
-
-/* Floating dots */
-
-const dotsContainer=document.getElementById("dots");
-
-for(let i=0;i<40;i++){
-
-let dot=document.createElement("div");
-dot.classList.add("dot");
-
-dot.style.left=Math.random()*window.innerWidth+"px";
-dot.style.top=Math.random()*window.innerHeight+"px";
-
-dot.style.width=4+Math.random()*6+"px";
-dot.style.height=dot.style.width;
-
-dot.style.animationDuration=10+Math.random()*20+"s";
-
-dotsContainer.appendChild(dot);
-
-}
-
-</script>
 
 </body>
 </html>
