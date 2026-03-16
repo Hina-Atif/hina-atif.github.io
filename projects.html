@@ -15,7 +15,8 @@ overflow-x:hidden;
 position:relative;
 }
 
-/* Animated dots */
+/* Animated background dots */
+
 .dot{
 position:absolute;
 width:8px;
@@ -33,6 +34,7 @@ animation:floatDots 20s linear infinite;
 }
 
 /* Navigation */
+
 nav{
 display:flex;
 justify-content:space-between;
@@ -98,7 +100,7 @@ transform:translateY(-8px);
 background:#1d1d27;
 }
 
-/* Project cards */
+/* Project grid */
 
 .projects{
 display:grid;
@@ -106,6 +108,8 @@ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:30px;
 margin-top:40px;
 }
+
+/* Cards */
 
 .card{
 background:#15151c;
@@ -122,36 +126,35 @@ object-fit:cover;
 
 .card a{
 display:block;
-padding:20px;
+padding:15px;
 color:white;
 text-decoration:none;
 font-weight:bold;
 font-size:16px;
 }
 
+/* Tech stack badges */
+
+.tech{
+padding:0 15px 15px 15px;
+}
+
+.badge{
+display:inline-block;
+background:#00c6ff;
+color:black;
+padding:4px 8px;
+border-radius:5px;
+font-size:12px;
+margin:3px;
+}
+
 /* Hover effect */
 
 .card:hover{
-transform:translateY(-10px) scale(1.02);
+transform:translateY(-10px) scale(1.03);
 background:#1d1d27;
-box-shadow:0 10px 25px rgba(0,198,255,0.3);
-}
-
-/* DevOps tools */
-
-.tools{
-margin-top:80px;
-}
-
-.tools img{
-width:50px;
-margin:10px;
-}
-
-/* GitHub stats */
-
-.stats{
-margin-top:60px;
+box-shadow:0 10px 25px rgba(0,198,255,0.4);
 }
 
 /* Footer */
@@ -186,6 +189,7 @@ box-shadow:0 0 15px #00c6ff;
 
 <nav>
 <div class="logo">Hina Atif</div>
+
 <ul>
 <li><a href="index.html">Home</a></li>
 <li><a href="posts.html">Posts</a></li>
@@ -193,14 +197,13 @@ box-shadow:0 0 15px #00c6ff;
 <li><a href="about.html">About</a></li>
 <li><a href="contact.html">Contact</a></li>
 </ul>
+
 </nav>
 
 <div class="container">
 
 <h1>My Projects</h1>
-<p>Click any project to view on GitHub</p>
-
-<!-- CATEGORY BOXES -->
+<p>Click any project to open the GitHub repository.</p>
 
 <div class="category-boxes">
 
@@ -225,6 +228,11 @@ Enterprise Projects
 <a href="https://github.com/Hina-Atif/AWS-EC2-DOCKER-DEPLOYMENT-HINA-ATIF" target="_blank">
 AWS EC2 Docker Deployment
 </a>
+<div class="tech">
+<span class="badge">AWS</span>
+<span class="badge">EC2</span>
+<span class="badge">Docker</span>
+</div>
 </div>
 
 <div class="card">
@@ -232,13 +240,23 @@ AWS EC2 Docker Deployment
 <a href="https://github.com/Hina-Atif/static-website-deployment-on-s3-hina-atif" target="_blank">
 Static Website Deployment on S3
 </a>
+<div class="tech">
+<span class="badge">AWS</span>
+<span class="badge">S3</span>
+<span class="badge">Static Hosting</span>
+</div>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31">
 <a href="https://github.com/Hina-Atif/aws-vpc-networking-project" target="_blank">
-AWS VPC Networking Project
+AWS VPC Networking
 </a>
+<div class="tech">
+<span class="badge">AWS</span>
+<span class="badge">VPC</span>
+<span class="badge">Networking</span>
+</div>
 </div>
 
 <div class="card">
@@ -246,20 +264,35 @@ AWS VPC Networking Project
 <a href="https://github.com/Hina-Atif/aws-serverless-data-management" target="_blank">
 AWS Serverless Data Management
 </a>
+<div class="tech">
+<span class="badge">Lambda</span>
+<span class="badge">DynamoDB</span>
+<span class="badge">Serverless</span>
+</div>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31">
 <a href="https://github.com/Hina-Atif/Scalable-Node.js-Deployment-on-AWS-ECS-Fargate" target="_blank">
-Node.js Deployment on AWS ECS Fargate
+Node.js ECS Fargate Deployment
 </a>
+<div class="tech">
+<span class="badge">Node.js</span>
+<span class="badge">ECS</span>
+<span class="badge">Fargate</span>
+</div>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1581091870626-3b00cf4cd1ef">
 <a href="https://github.com/Hina-Atif/aws-python-http-api-project" target="_blank">
-AWS Python HTTP API Project
+AWS Python HTTP API
 </a>
+<div class="tech">
+<span class="badge">Python</span>
+<span class="badge">API</span>
+<span class="badge">AWS</span>
+</div>
 </div>
 
 </div>
@@ -275,57 +308,48 @@ AWS Python HTTP API Project
 <a href="https://github.com/Hina-Atif/SkyRoute-Air-Ticket-Booking-Platform" target="_blank">
 SkyRoute Air Ticket Booking Platform
 </a>
+<div class="tech">
+<span class="badge">Microservices</span>
+<span class="badge">Docker</span>
+<span class="badge">AWS</span>
+</div>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
 <a href="https://github.com/Hina-Atif/CloudTel-Telecom-Self-Service-Platform" target="_blank">
-CloudTel Telecom Self-Service Platform
+CloudTel Telecom Platform
 </a>
+<div class="tech">
+<span class="badge">Cloud</span>
+<span class="badge">Automation</span>
+<span class="badge">DevOps</span>
+</div>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1591696205602-fce4b1e8f32e">
 <a href="https://github.com/Hina-Atif/CloudBank-Microservices-Banking-Platform" target="_blank">
-CloudBank Microservices Banking Platform
+CloudBank Microservices Platform
 </a>
+<div class="tech">
+<span class="badge">Microservices</span>
+<span class="badge">API</span>
+<span class="badge">Cloud</span>
+</div>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1556228724-4a5b820aeaa3">
 <a href="https://github.com/Hina-Atif/CloudWatch-Lite-Monitoring-Platform" target="_blank">
-CloudWatch Lite Monitoring Platform
+CloudWatch Lite Monitoring
 </a>
+<div class="tech">
+<span class="badge">Monitoring</span>
+<span class="badge">DevOps</span>
+<span class="badge">Observability</span>
 </div>
-
 </div>
-
-<!-- DEVOPS TOOLS -->
-
-<div class="tools">
-
-<h2>DevOps Tools</h2>
-
-<img src="https://skillicons.dev/icons?i=aws">
-<img src="https://skillicons.dev/icons?i=docker">
-<img src="https://skillicons.dev/icons?i=linux">
-<img src="https://skillicons.dev/icons?i=python">
-<img src="https://skillicons.dev/icons?i=github">
-<img src="https://skillicons.dev/icons?i=jenkins">
-
-</div>
-
-<!-- GITHUB STATS -->
-
-<div class="stats">
-
-<h2>GitHub Statistics</h2>
-
-<img src="https://github-readme-stats.vercel.app/api?username=Hina-Atif&show_icons=true&theme=tokyonight">
-
-<br><br>
-
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=Hina-Atif&theme=tokyonight">
 
 </div>
 
@@ -341,6 +365,8 @@ CloudWatch Lite Monitoring Platform
 
 <script>
 
+/* Scroll */
+
 function scrollToSection(section){
 document.getElementById(section).scrollIntoView({behavior:'smooth'});
 }
@@ -348,6 +374,7 @@ document.getElementById(section).scrollIntoView({behavior:'smooth'});
 /* Cursor */
 
 const cursor=document.getElementById("cursor");
+
 document.addEventListener("mousemove",e=>{
 cursor.style.left=e.clientX+"px";
 cursor.style.top=e.clientY+"px";
@@ -358,17 +385,21 @@ cursor.style.top=e.clientY+"px";
 const dotsContainer=document.getElementById("dots");
 
 for(let i=0;i<40;i++){
+
 let dot=document.createElement("div");
+
 dot.classList.add("dot");
 
 dot.style.left=Math.random()*window.innerWidth+"px";
 dot.style.top=Math.random()*window.innerHeight+"px";
+
 dot.style.width=4+Math.random()*6+"px";
 dot.style.height=dot.style.width;
 
 dot.style.animationDuration=10+Math.random()*20+"s";
 
 dotsContainer.appendChild(dot);
+
 }
 
 </script>
