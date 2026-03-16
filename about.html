@@ -1,131 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-
-<title>About | Hina Atif</title>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me - Hina Atif</title>
 <style>
+  /* Page Styles */
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #f0f8ff;
+    overflow: hidden;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="32" width="32"><circle cx="16" cy="16" r="8" fill="lightblue"/></svg>'), auto;
+  }
 
-body{
-margin:0;
-font-family:Arial;
-background:#0b0b0f;
-color:white;
-}
+  .container {
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+    z-index: 1;
+  }
 
-nav{
-display:flex;
-justify-content:space-between;
-padding:20px 80px;
-}
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
 
-.logo{
-font-size:28px;
-font-weight:bold;
-background:linear-gradient(90deg,#ff7a18,#ff00ff,#00c6ff);
--webkit-background-clip:text;
-color:transparent;
-}
+  .wave {
+    display: inline-block;
+    animation: wave 1.5s infinite;
+    transform-origin: 70% 70%;
+  }
 
-nav ul{
-list-style:none;
-display:flex;
-gap:30px;
-}
+  @keyframes wave {
+    0% { transform: rotate(0deg); }
+    15% { transform: rotate(14deg); }
+    30% { transform: rotate(-8deg); }
+    40% { transform: rotate(14deg); }
+    50% { transform: rotate(-4deg); }
+    60% { transform: rotate(10deg); }
+    70% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+  }
 
-nav ul li a{
-color:white;
-text-decoration:none;
-}
+  p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 20px auto;
+  }
 
-nav ul li a:hover{
-color:#00c6ff;
-}
+  footer {
+    margin-top: 50px;
+    font-size: 0.9rem;
+  }
 
-.container{
-text-align:center;
-padding:120px 20px;
-max-width:900px;
-margin:auto;
-}
+  /* Floating background bubbles */
+  .bubble {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.3;
+    background: #add8e6;
+    animation: float 20s linear infinite;
+  }
 
-.container h1{
-margin-bottom:20px;
-}
-
-.container p{
-color:#aaa;
-line-height:1.6;
-}
-
-footer{
-text-align:center;
-padding:40px;
-color:#aaa;
-}
-
+  @keyframes float {
+    0% { transform: translateY(100vh) scale(1); }
+    50% { transform: translateY(-50vh) scale(1.2); }
+    100% { transform: translateY(-120vh) scale(1); }
+  }
 </style>
-
 </head>
-
 <body>
 
-<nav>
-
-<div class="logo">Hina Atif</div>
-
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="posts.html">Posts</a></li>
-<li><a href="projects.html">Projects</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-
-</nav>
-
 <div class="container">
-
-<h1>About Me</h1>
-
-<p>
-
-Hello 👋 I'm <strong>Hina Atif</strong>, a DevOps Engineer from Karachi, Pakistan.
-
-</p>
-
-<br>
-
-<p>
-
-I focus on building scalable cloud infrastructure, automating deployment pipelines, and improving system reliability using modern DevOps practices.
-
-</p>
-
-<br>
-
-<p>
-
-My work involves containerization, CI/CD automation, and cloud platforms like AWS. I enjoy turning complex deployment processes into efficient automated workflows.
-
-</p>
-
-<br>
-
-<p>
-
-My technical interests include Docker, Kubernetes, Infrastructure as Code, cloud architecture, and automation with Python and Linux.
-
-</p>
-
+  <h1>Hello <span class="wave">👋</span> I'm Hina Atif</h1>
+  <p>
+    I focus on building scalable cloud infrastructure, automating deployment pipelines, and improving system reliability using modern DevOps practices.
+    <br><br>
+    My work involves containerization, CI/CD automation, and cloud platforms like AWS. I enjoy turning complex deployment processes into efficient automated workflows.
+    <br><br>
+    My technical interests include Docker, Kubernetes, Infrastructure as Code, cloud architecture, and automation with Python and Linux.
+  </p>
+  <footer>✦ Hina Atif © 2026 All Rights Reserved</footer>
 </div>
 
-<footer>
+<!-- Floating bubbles -->
+<script>
+  const bubbleCount = 30;
 
-✦ Hina Atif  
-© 2026 All Rights Reserved.
-
-</footer>
+  for (let i = 0; i < bubbleCount; i++) {
+    const bubble = document.createElement('div');
+    bubble.classList.add('bubble');
+    const size = Math.random() * 60 + 20 + 'px';
+    bubble.style.width = size;
+    bubble.style.height = size;
+    bubble.style.left = Math.random() * 100 + 'vw';
+    bubble.style.animationDuration = 10 + Math.random() * 20 + 's';
+    document.body.appendChild(bubble);
+  }
+</script>
 
 </body>
 </html>
