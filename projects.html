@@ -1,296 +1,167 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projects | Hina Atif</title>
+<!-- Projects Section -->
+<div class="projects-grid">
+  <!-- CloudWatch Monitoring -->
+  <div class="project-card animate__animated animate__fadeInUp">
+    <div class="card-content">
+      <h3>CloudWatch Monitoring</h3>
+      <p>Real-time monitoring of AWS resources with dashboards, alarms, and notifications.</p>
+      <div class="card-footer">
+        <button class="btn" onclick="showArchitecture('cloudwatch')">View Architecture</button>
+      </div>
+    </div>
+  </div>
 
+  <!-- Python HTTP API -->
+  <div class="project-card animate__animated animate__fadeInUp">
+    <div class="card-content">
+      <h3>Python HTTP API</h3>
+      <p>RESTful API built with Python Flask for handling HTTP requests efficiently.</p>
+      <div class="card-footer">
+        <button class="btn" onclick="showArchitecture('python_api')">View Architecture</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- AWS Serverless -->
+  <div class="project-card animate__animated animate__fadeInUp">
+    <div class="card-content">
+      <h3>AWS Serverless</h3>
+      <p>Serverless application using Lambda, API Gateway, and DynamoDB for scalable solutions.</p>
+      <div class="card-footer">
+        <button class="btn" onclick="showArchitecture('serverless')">View Architecture</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sky Route -->
+  <div class="project-card animate__animated animate__fadeInUp">
+    <div class="card-content">
+      <h3>Sky Route</h3>
+      <p>Flight path optimization and route analysis using Python and AWS cloud solutions.</p>
+      <div class="card-footer">
+        <button class="btn" onclick="showArchitecture('sky_route')">View Architecture</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Architecture Popup Script -->
+<script>
+function showArchitecture(project) {
+  // Use placeholder images for now; replace these URLs with your real images
+  const architectureImages = {
+    'cloudwatch': 'https://via.placeholder.com/600x400?text=CloudWatch+Architecture',
+    'python_api': 'https://via.placeholder.com/600x400?text=Python+HTTP+API+Architecture',
+    'serverless': 'https://via.placeholder.com/600x400?text=AWS+Serverless+Architecture',
+    'sky_route': 'https://via.placeholder.com/600x400?text=Sky+Route+Architecture'
+  };
+
+  const imageSrc = architectureImages[project];
+  if (!imageSrc) return;
+
+  const popup = document.createElement('div');
+  popup.classList.add('architecture-popup');
+  popup.innerHTML = `
+    <div class="popup-content">
+      <span class="close-btn" onclick="this.parentElement.parentElement.remove()">&times;</span>
+      <img src="${imageSrc}" alt="${project} Architecture">
+    </div>
+  `;
+  document.body.appendChild(popup);
+}
+</script>
+
+<!-- Styles (matches original layout) -->
 <style>
-body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:#0b0b0f;
-    color:white;
-    overflow-x:hidden;
-    position:relative;
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
 }
 
-/* NAVBAR */
-nav{
-    display:flex;
-    justify-content:space-between;
-    padding:20px 80px;
-    position:fixed;
-    width:100%;
-    z-index:100;
-    background:#0b0b0f;
-}
-.logo{
-    font-size:28px;
-    font-weight:bold;
-    background:linear-gradient(90deg,#ff7a18,#ff00ff,#00c6ff);
-    -webkit-background-clip:text;
-    color:transparent;
-}
-nav ul{
-    list-style:none;
-    display:flex;
-    gap:30px;
-}
-nav ul li a{
-    color:white;
-    text-decoration:none;
+.project-card {
+  background: #ffffff;
+  border-radius: 12px;
+  width: 280px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* CONTAINER */
-.container{
-    text-align:center;
-    padding:160px 40px;
-    max-width:1200px;
-    margin:auto;
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.2);
 }
 
-/* CATEGORY BUTTONS */
-.category-boxes{
-    display:flex;
-    justify-content:center;
-    gap:40px;
-    margin-top:40px;
-}
-.category{
-    padding:25px 60px;
-    background:#15151c;
-    border-radius:10px;
-    font-size:22px;
-    font-weight:bold;
-    cursor:pointer;
-}
-.category:hover{
-    background:#1d1d27;
-    transform:translateY(-5px);
+.card-content {
+  padding: 20px;
 }
 
-/* PROJECT GRID */
-.projects{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
-    margin-top:40px;
-    justify-items:center;
+.card-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
 }
 
-/* CARD */
-.card{
-    background:#15151c;
-    width:280px;
-    border-radius:10px;
-    overflow:hidden;
-    transition:0.3s;
-    text-align:left;
-}
-.card img{
-    width:100%;
-    height:160px;
-    object-fit:cover;
-}
-.card-title{
-    padding:15px;
-    font-weight:bold;
-    font-size:16px;
-}
-.tech{
-    padding:0 15px 15px;
-}
-.badge{
-    display:inline-block;
-    background:#00c6ff;
-    color:black;
-    padding:4px 8px;
-    border-radius:4px;
-    font-size:12px;
-    margin:2px 2px 2px 0;
-}
-.card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 8px 20px rgba(0,198,255,0.4);
+.card-content p {
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
-/* FOOTER */
-footer{
-    text-align:center;
-    padding:40px;
-    color:#aaa;
+.card-footer {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2563eb;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn:hover {
+  background-color: #1e40af;
+}
+
+/* Popup styles */
+.architecture-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  position: relative;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.popup-content img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 </style>
-</head>
-<body>
-
-<nav>
-<div class="logo">Hina Atif</div>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="posts.html">Posts</a></li>
-<li><a href="projects.html">Projects</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</nav>
-
-<div class="container">
-<h1>My Projects</h1>
-<p>Click project to view details</p>
-
-<div class="category-boxes">
-<div class="category" onclick="document.getElementById('featured').scrollIntoView()">Featured Projects</div>
-<div class="category" onclick="document.getElementById('enterprise').scrollIntoView()">Enterprise Projects</div>
-</div>
-
-<!-- FEATURED PROJECTS -->
-<h2 id="featured" style="margin-top:100px;">Featured Projects</h2>
-<div class="projects">
-<!-- EC2 Docker -->
-<div class="card">
-<img src="https://images.unsplash.com/photo-1605745341112-85968b19335b?fit=crop&w=400&h=160">
-<div class="card-title">AWS EC2 Docker Deployment</div>
-<div class="tech">
-<span class="badge">AWS</span>
-<span class="badge">EC2</span>
-<span class="badge">Docker</span>
-<span class="badge">Linux</span>
-</div>
-</div>
-
-<!-- Static Website -->
-<div class="card">
-<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?fit=crop&w=400&h=160">
-<div class="card-title">Static Website Deployment on S3</div>
-<div class="tech">
-<span class="badge">AWS</span>
-<span class="badge">S3</span>
-<span class="badge">Cloud Hosting</span>
-</div>
-</div>
-
-<!-- VPC Networking -->
-<div class="card">
-<img src="https://images.unsplash.com/photo-1605379399642-870262d3d051?fit=crop&w=400&h=160">
-<div class="card-title">AWS VPC Networking Project</div>
-<div class="tech">
-<span class="badge">AWS</span>
-<span class="badge">VPC</span>
-<span class="badge">Subnets</span>
-<span class="badge">Routing</span>
-</div>
-</div>
-
-<!-- Serverless -->
-<div class="card">
-<img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?fit=crop&w=400&h=160">
-<div class="card-title">AWS Serverless Data Management</div>
-<div class="tech">
-<span class="badge">Lambda</span>
-<span class="badge">DynamoDB</span>
-<span class="badge">Serverless</span>
-</div>
-</div>
-
-<!-- ECS Fargate -->
-<div class="card">
-<img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?fit=crop&w=400&h=160">
-<div class="card-title">Node.js Deployment on ECS Fargate</div>
-<div class="tech">
-<span class="badge">Node.js</span>
-<span class="badge">ECS</span>
-<span class="badge">Fargate</span>
-<span class="badge">Docker</span>
-</div>
-</div>
-
-<!-- Python API -->
-<div class="card">
-<img src="https://images.unsplash.com/photo-1581091870626-3b00cf4cd1ef?fit=crop&w=400&h=160">
-<div class="card-title">AWS Python HTTP API</div>
-<div class="tech">
-<span class="badge">Python</span>
-<span class="badge">REST API</span>
-<span class="badge">AWS</span>
-</div>
-</div>
-
-<!-- CloudWatch -->
-<div class="card">
-<img src="https://images.unsplash.com/photo-1556228724-4a5b820aeaa3?fit=crop&w=400&h=160">
-<div class="card-title">CloudWatch Lite Monitoring</div>
-<div class="tech">
-<span class="badge">Monitoring</span>
-<span class="badge">Logs</span>
-<span class="badge">Metrics</span>
-</div>
-</div>
-
-<!-- CloudTrail -->
-<div class="card">
-<img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?fit=crop&w=400&h=160">
-<div class="card-title">AWS CloudTrail Security Monitoring</div>
-<div class="tech">
-<span class="badge">AWS</span>
-<span class="badge">CloudTrail</span>
-<span class="badge">Security</span>
-</div>
-</div>
-
-</div>
-
-<!-- ENTERPRISE PROJECTS -->
-<h2 id="enterprise" style="margin-top:100px;">Enterprise Projects</h2>
-<div class="projects">
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?fit=crop&w=400&h=160">
-<div class="card-title">SkyRoute Air Ticket Platform</div>
-<div class="tech">
-<span class="badge">Microservices</span>
-<span class="badge">Docker</span>
-<span class="badge">AWS</span>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?fit=crop&w=400&h=160">
-<div class="card-title">CloudTel Telecom Platform</div>
-<div class="tech">
-<span class="badge">Cloud</span>
-<span class="badge">Automation</span>
-<span class="badge">DevOps</span>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?fit=crop&w=400&h=160">
-<div class="card-title">CloudBank Microservices Platform</div>
-<div class="tech">
-<span class="badge">Microservices</span>
-<span class="badge">API</span>
-<span class="badge">Cloud</span>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?fit=crop&w=400&h=160">
-<div class="card-title">CloudWatch Lite Monitoring</div>
-<div class="tech">
-<span class="badge">Monitoring</span>
-<span class="badge">Logs</span>
-<span class="badge">Observability</span>
-</div>
-</div>
-
-</div>
-
-<footer>
-✦ Hina Atif<br>
-© 2026 All Rights Reserved
-</footer>
-
-</body>
-</html>
