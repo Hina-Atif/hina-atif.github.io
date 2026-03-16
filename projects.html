@@ -1,221 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projects | Hina Atif</title>
-
-<style>
-
-body{
-margin:0;
-font-family:Arial, sans-serif;
-background:#0b0b0f;
-color:white;
-}
-
-/* NAVBAR */
-
-nav{
-display:flex;
-justify-content:space-between;
-padding:20px 80px;
-position:fixed;
-width:100%;
-background:#0b0b0f;
-}
-
-.logo{
-font-size:28px;
-font-weight:bold;
-background:linear-gradient(90deg,#ff7a18,#ff00ff,#00c6ff);
--webkit-background-clip:text;
-color:transparent;
-}
-
-nav ul{
-list-style:none;
-display:flex;
-gap:30px;
-}
-
-nav ul li a{
-color:white;
-text-decoration:none;
-}
-
-/* CONTAINER */
-
-.container{
-text-align:center;
-padding:150px 40px;
-max-width:1200px;
-margin:auto;
-}
-
-/* CATEGORY BUTTONS */
-
-.category-boxes{
-display:flex;
-justify-content:center;
-gap:40px;
-margin-top:40px;
-}
-
-.category{
-padding:25px 60px;
-background:#15151c;
-border-radius:10px;
-font-size:22px;
-font-weight:bold;
-cursor:pointer;
-}
-
-.category:hover{
-background:#1d1d27;
-transform:translateY(-5px);
-}
-
-/* PROJECT GRID */
-
-.projects{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:30px;
-margin-top:40px;
-}
-
-/* CARD */
-
-.card{
-background:#15151c;
-width:280px;
-border-radius:10px;
-overflow:hidden;
-transition:0.3s;
-text-align:left;
-}
-
-.card img{
-width:100%;
-height:160px;
-object-fit:cover;
-}
-
-.card-title{
-padding:15px;
-font-weight:bold;
-font-size:16px;
-}
-
-.tech{
-padding:0 15px 10px;
-}
-
-.badge{
-display:inline-block;
-background:#00c6ff;
-color:black;
-padding:4px 8px;
-border-radius:4px;
-font-size:12px;
-margin:2px;
-}
-
-.buttons{
-padding:10px 15px 15px;
-}
-
-.btn{
-background:#00c6ff;
-color:black;
-padding:6px 10px;
-border-radius:5px;
-text-decoration:none;
-font-size:13px;
-}
-
-.card:hover{
-transform:translateY(-8px);
-box-shadow:0 8px 20px rgba(0,198,255,0.4);
-}
-
-footer{
-text-align:center;
-padding:40px;
-color:#aaa;
-}
-
-</style>
-</head>
-
-<body>
-
-<nav>
-<div class="logo">Hina Atif</div>
-
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="posts.html">Posts</a></li>
-<li><a href="projects.html">Projects</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</nav>
-
-<div class="container">
-
-<h1>My Projects</h1>
-<p>Click project to open GitHub repository</p>
-
-<div class="category-boxes">
-<div class="category" onclick="document.getElementById('featured').scrollIntoView()">Featured Projects</div>
-<div class="category" onclick="document.getElementById('enterprise').scrollIntoView()">Enterprise Projects</div>
-</div>
-
-<!-- FEATURED -->
-
-<h2 id="featured" style="margin-top:100px;">Featured Projects</h2>
-
 <div class="projects">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31">
+<img src="https://images.unsplash.com/photo-1605745341112-85968b19335b">
 <div class="card-title">AWS EC2 Docker Deployment</div>
 <div class="tech">
 <span class="badge">AWS</span>
 <span class="badge">EC2</span>
 <span class="badge">Docker</span>
-</div>
-<div class="buttons">
-<a class="btn" href="https://github.com/Hina-Atif/AWS-EC2-DOCKER-DEPLOYMENT-HINA-ATIF" target="_blank">GitHub</a>
+<span class="badge">Linux</span>
 </div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
+<img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa">
 <div class="card-title">Static Website Deployment on S3</div>
 <div class="tech">
 <span class="badge">AWS</span>
 <span class="badge">S3</span>
-<span class="badge">Static Hosting</span>
-</div>
-<div class="buttons">
-<a class="btn" href="https://github.com/Hina-Atif/static-website-deployment-on-s3-hina-atif" target="_blank">GitHub</a>
+<span class="badge">Cloud Hosting</span>
 </div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd">
+<img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31">
 <div class="card-title">AWS VPC Networking Project</div>
 <div class="tech">
 <span class="badge">AWS</span>
 <span class="badge">VPC</span>
-<span class="badge">Networking</span>
-</div>
-<div class="buttons">
-<a class="btn" href="https://github.com/Hina-Atif/aws-vpc-networking-project" target="_blank">GitHub</a>
+<span class="badge">Subnets</span>
+<span class="badge">Routing</span>
 </div>
 </div>
 
@@ -227,105 +40,27 @@ color:#aaa;
 <span class="badge">DynamoDB</span>
 <span class="badge">Serverless</span>
 </div>
-<div class="buttons">
-<a class="btn" href="https://github.com/Hina-Atif/aws-serverless-data-management" target="_blank">GitHub</a>
-</div>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159">
-<div class="card-title">Node.js Deployment on AWS ECS Fargate</div>
+<div class="card-title">Node.js Deployment on ECS Fargate</div>
 <div class="tech">
 <span class="badge">Node.js</span>
 <span class="badge">ECS</span>
 <span class="badge">Fargate</span>
-</div>
-<div class="buttons">
-<a class="btn" href="https://github.com/Hina-Atif/Scalable-Node.js-Deployment-on-AWS-ECS-Fargate" target="_blank">GitHub</a>
+<span class="badge">Docker</span>
 </div>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1581091870626-3b00cf4cd1ef">
-<div class="card-title">AWS Python HTTP API Project</div>
+<div class="card-title">AWS Python HTTP API</div>
 <div class="tech">
 <span class="badge">Python</span>
-<span class="badge">API</span>
+<span class="badge">REST API</span>
 <span class="badge">AWS</span>
 </div>
-<div class="buttons">
-<a class="btn" href="https://github.com/Hina-Atif/aws-python-http-api-project" target="_blank">GitHub</a>
-</div>
 </div>
 
 </div>
-
-<!-- ENTERPRISE -->
-
-<h2 id="enterprise" style="margin-top:100px;">Enterprise Projects</h2>
-
-<div class="projects">
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b">
-<div class="card-title">SkyRoute Air Ticket Platform</div>
-<div class="tech">
-<span class="badge">Microservices</span>
-<span class="badge">Docker</span>
-<span class="badge">AWS</span>
-</div>
-<div class="buttons">
-<a class="btn" href="https://github.com/Hina-Atif/SkyRoute-Air-Ticket-Booking-Platform" target="_blank">GitHub</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
-<div class="card-title">CloudTel Telecom Platform</div>
-<div class="tech">
-<span class="badge">DevOps</span>
-<span class="badge">Automation</span>
-<span class="badge">Cloud</span>
-</div>
-<div class="buttons">
-<a class="btn" href="https://github.com/Hina-Atif/CloudTel-Telecom-Self-Service-Platform" target="_blank">GitHub</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1591696205602-fce4b1e8f32e">
-<div class="card-title">CloudBank Microservices Platform</div>
-<div class="tech">
-<span class="badge">Microservices</span>
-<span class="badge">API</span>
-<span class="badge">Cloud</span>
-</div>
-<div class="buttons">
-<a class="btn" href="https://github.com/Hina-Atif/CloudBank-Microservices-Banking-Platform" target="_blank">GitHub</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1556228724-4a5b820aeaa3">
-<div class="card-title">CloudWatch Lite Monitoring</div>
-<div class="tech">
-<span class="badge">Monitoring</span>
-<span class="badge">DevOps</span>
-<span class="badge">Observability</span>
-</div>
-<div class="buttons">
-<a class="btn" href="https://github.com/Hina-Atif/CloudWatch-Lite-Monitoring-Platform" target="_blank">GitHub</a>
-</div>
-</div>
-
-</div>
-
-</div>
-
-<footer>
-✦ Hina Atif<br>
-© 2026 All Rights Reserved
-</footer>
-
-</body>
-</html>
