@@ -3,14 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hina Atif | DevOps Cloud Engineer</title>
+<title>Projects | Hina Atif</title>
+
 <style>
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0b0b0f;
-    color: white;
-    overflow-x: hidden;
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#0b0b0f;
+    color:white;
+    overflow-x:hidden;
 }
 
 /* Cursor */
@@ -33,7 +34,7 @@ nav{
     padding:20px 80px;
     position:fixed;
     width:100%;
-    z-index:1000;
+    z-index:100;
 }
 
 .logo{
@@ -60,78 +61,114 @@ nav ul li a:hover{
     color:#00c6ff;
 }
 
-/* Hero Section */
-.hero {
+/* Container */
+.container{
     text-align:center;
     padding:160px 20px 80px 20px;
+    max-width:1200px;
+    margin:auto;
 }
 
-.hero img {
-    width:180px;
-    border-radius:50%;
-    margin-bottom:20px;
-    box-shadow:0 0 20px #00c6ff;
-}
-
-.hero h1 {
-    font-size:48px;
-    margin:10px 0;
-}
-
-.name-white {
-    color:white;
+/* Section headings */
+.section-heading{
     font-weight:bold;
+    font-size:28px;
+    margin-bottom:20px;
 }
 
-.title-blue {
-    color:#00c6ff;
-    font-weight:500;
-    font-size:24px;
-    min-height:30px;
-}
-
-.hero .quote {
-    margin:20px auto;
-    font-style:italic;
-    color:#aaa;
-}
-
-/* Tech Stack */
-.tech-stack {
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:20px;
+/* Project cards */
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
     margin-top:40px;
 }
 
-.tech-stack div {
+.card{
     background:#15151c;
-    padding:15px 25px;
     border-radius:10px;
-    font-weight:bold;
-    box-shadow:0 0 10px #00c6ff;
+    overflow:hidden;
+    transition:0.3s;
 }
 
-/* Resume Button */
-.btn {
-    display:inline-block;
-    margin-top:30px;
-    padding:12px 30px;
-    background:#00c6ff;
-    border-radius:20px;
+.card img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+}
+
+.card a{
+    display:block;
+    padding:20px;
     color:white;
     text-decoration:none;
     font-weight:bold;
+    font-size:16px;
 }
 
-/* Footer */
-footer {
+.card:hover{
+    transform:translateY(-8px);
+    background:#1d1d27;
+}
+
+/* Contact form */
+.contact-form{
+    margin-top:80px;
+    text-align:left;
+    max-width:600px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.contact-form h2{
+    font-weight:bold;
+    font-size:24px;
+    margin-bottom:20px;
+}
+
+.contact-form label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:5px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:12px;
+    border-radius:8px;
+    border:none;
+    background:#15151c;
+    color:white;
+    font-size:16px;
+    resize:none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    outline:none;
+    box-shadow:0 0 8px #00c6ff;
+}
+
+.contact-form button{
+    margin-top:20px;
+    padding:12px 30px;
+    border-radius:20px;
+    border:none;
+    background:#00c6ff;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    font-size:16px;
+}
+
+footer{
     text-align:center;
     padding:40px;
     color:#aaa;
     margin-top:60px;
 }
+
 </style>
 </head>
 <body>
@@ -149,23 +186,66 @@ footer {
     </ul>
 </nav>
 
-<section class="hero">
-    <img src="assets/images/hina.png" alt="Hina Atif">
-    <h1>Hi, I'm <span class="name-white">Hina Atif</span></h1>
-    <h2 class="title-blue"><span id="typing"></span></h2>
-    <p class="quote">"Cloud is the limit – deploy with confidence."</p>
-    <a class="btn" href="assets/images/hina-resume.pdf" download="Hina_Atif_Resume">Download Resume</a>
+<div class="container">
 
-    <div class="tech-stack">
-        <div>AWS</div>
-        <div>Docker</div>
-        <div>Kubernetes</div>
-        <div>Terraform</div>
-        <div>Linux</div>
-        <div>Python</div>
-        <div>CI/CD</div>
+    <!-- Featured Projects -->
+    <div class="featured-projects">
+        <h1 class="section-heading">Featured Projects</h1>
+        <div class="projects">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1581091870626-3b00cf4cd1ef">
+                <a href="https://github.com/Hina-Atif/SkyRoute-Air-Ticket-Booking-Platform" target="_blank">
+                    SkyRoute Air Ticket Booking Platform
+                </a>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+                <a href="https://github.com/Hina-Atif/CloudTel-Telecom-Self-Service-Platform" target="_blank">
+                    CloudTel Telecom Self-Service Platform
+                </a>
+            </div>
+        </div>
     </div>
-</section>
+
+    <!-- Enterprise Projects -->
+    <div class="enterprise-projects">
+        <h1 class="section-heading">Enterprise Projects</h1>
+        <div class="projects">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1591696205602-fce4b1e8f32e">
+                <a href="https://github.com/Hina-Atif/CloudBank-Microservices-Banking-Platform" target="_blank">
+                    CloudBank Microservices Banking Platform
+                </a>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1556228724-4a5b820aeaa3">
+                <a href="https://github.com/Hina-Atif/CloudWatch-Lite-Monitoring-Platform" target="_blank">
+                    CloudWatch Lite Monitoring Platform
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form">
+        <h2>Contact Me</h2>
+        <form action="mailto:hinaatif355@gmail.com" method="POST" enctype="text/plain">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+</div>
 
 <footer>
     ✦ Hina Atif<br>
@@ -179,18 +259,6 @@ document.addEventListener("mousemove", e=>{
     cursor.style.left = e.clientX + "px";
     cursor.style.top = e.clientY + "px";
 });
-
-// Typing animation
-const text = "DevOps Cloud Engineer";
-let i = 0;
-function typing(){
-    if(i < text.length){
-        document.getElementById("typing").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typing, 80);
-    }
-}
-typing();
 </script>
 
 </body>
