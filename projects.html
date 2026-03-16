@@ -1,86 +1,168 @@
 <!-- Projects Section -->
-<div class="projects-container">
-  <!-- Existing project cards will remain untouched -->
+<div class="projects-grid">
+  <!-- Existing project cards remain untouched -->
 
   <!-- CloudWatch Monitoring -->
-  <div class="project-card">
-    <h3>CloudWatch Monitoring</h3>
-    <p>Real-time monitoring of AWS resources using CloudWatch, with alarms, dashboards, and alerts.</p>
-    <button onclick="showAWSArchitecture('cloudwatch')">View Architecture</button>
+  <div class="project-card animate__animated animate__fadeInUp">
+    <div class="card-content">
+      <h3>CloudWatch Monitoring</h3>
+      <p>Real-time monitoring of AWS resources with dashboards, alarms, and notifications.</p>
+      <div class="card-footer">
+        <button class="btn" onclick="showArchitecture('cloudwatch')">View Architecture</button>
+      </div>
+    </div>
   </div>
 
   <!-- Python HTTP API -->
-  <div class="project-card">
-    <h3>Python HTTP API</h3>
-    <p>RESTful API built with Python Flask for handling HTTP requests and responses efficiently.</p>
-    <button onclick="showAWSArchitecture('python_api')">View Architecture</button>
+  <div class="project-card animate__animated animate__fadeInUp">
+    <div class="card-content">
+      <h3>Python HTTP API</h3>
+      <p>RESTful API built with Python Flask for handling HTTP requests efficiently.</p>
+      <div class="card-footer">
+        <button class="btn" onclick="showArchitecture('python_api')">View Architecture</button>
+      </div>
+    </div>
   </div>
 
   <!-- AWS Serverless -->
-  <div class="project-card">
-    <h3>AWS Serverless</h3>
-    <p>Serverless application using Lambda, API Gateway, and DynamoDB for scalable cloud solutions.</p>
-    <button onclick="showAWSArchitecture('serverless')">View Architecture</button>
+  <div class="project-card animate__animated animate__fadeInUp">
+    <div class="card-content">
+      <h3>AWS Serverless</h3>
+      <p>Serverless application using Lambda, API Gateway, and DynamoDB for scalable solutions.</p>
+      <div class="card-footer">
+        <button class="btn" onclick="showArchitecture('serverless')">View Architecture</button>
+      </div>
+    </div>
   </div>
 
   <!-- Sky Route -->
-  <div class="project-card">
-    <h3>Sky Route</h3>
-    <p>Flight path optimization and route analysis using Python and AWS for aviation solutions.</p>
-    <button onclick="showAWSArchitecture('sky_route')">View Architecture</button>
+  <div class="project-card animate__animated animate__fadeInUp">
+    <div class="card-content">
+      <h3>Sky Route</h3>
+      <p>Flight path optimization and route analysis using Python and AWS cloud solutions.</p>
+      <div class="card-footer">
+        <button class="btn" onclick="showArchitecture('sky_route')">View Architecture</button>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- AWS Architecture Popup Script -->
+<!-- Architecture Popup Script -->
 <script>
-function showAWSArchitecture(project) {
-  let architectureInfo = '';
-  switch(project) {
-    case 'cloudwatch':
-      architectureInfo = 'CloudWatch architecture: Dashboards → Alarms → Notifications';
-      break;
-    case 'python_api':
-      architectureInfo = 'Python HTTP API architecture: Flask app → AWS EC2/Lambda → API Gateway';
-      break;
-    case 'serverless':
-      architectureInfo = 'Serverless architecture: Lambda → API Gateway → DynamoDB → S3';
-      break;
-    case 'sky_route':
-      architectureInfo = 'Sky Route architecture: Python analytics → AWS Lambda → DynamoDB → Visualization';
-      break;
-  }
-  alert(architectureInfo);
+function showArchitecture(project) {
+  const architectureImages = {
+    'cloudwatch': 'images/cloudwatch_arch.png',
+    'python_api': 'images/python_api_arch.png',
+    'serverless': 'images/serverless_arch.png',
+    'sky_route': 'images/sky_route_arch.png'
+  };
+
+  const imageSrc = architectureImages[project];
+  if (!imageSrc) return;
+
+  const popup = document.createElement('div');
+  popup.classList.add('architecture-popup');
+  popup.innerHTML = `
+    <div class="popup-content">
+      <span class="close-btn" onclick="this.parentElement.parentElement.remove()">&times;</span>
+      <img src="${imageSrc}" alt="${project} Architecture">
+    </div>
+  `;
+  document.body.appendChild(popup);
 }
 </script>
 
-<!-- Optional: Add CSS if needed for new cards to match existing style -->
+<!-- Styles (Matches existing project layout) -->
 <style>
-.projects-container {
+.projects-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
+  justify-content: center;
 }
+
 .project-card {
-  background-color: #f9f9f9;
+  background: #ffffff;
   border-radius: 12px;
-  padding: 20px;
-  width: 250px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
+  width: 280px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
+
 .project-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.2);
 }
-.project-card button {
-  margin-top: 10px;
-  padding: 8px 12px;
+
+.card-content {
+  padding: 20px;
+}
+
+.card-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.card-footer {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.btn {
+  padding: 10px 16px;
   border: none;
+  border-radius: 8px;
   background-color: #2563eb;
-  color: white;
-  border-radius: 6px;
+  color: #fff;
   cursor: pointer;
+  font-weight: 500;
 }
-.project-card button:hover {
+
+.btn:hover {
   background-color: #1e40af;
+}
+
+/* Popup styles */
+.architecture-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  position: relative;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.popup-content img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 </style>
