@@ -6,6 +6,7 @@
 <title>Projects | Hina Atif</title>
 
 <style>
+
 body{
 margin:0;
 font-family:Arial, sans-serif;
@@ -15,7 +16,7 @@ overflow-x:hidden;
 position:relative;
 }
 
-/* Animated background dots */
+/* Floating dots */
 
 .dot{
 position:absolute;
@@ -33,7 +34,7 @@ animation:floatDots 20s linear infinite;
 100%{transform:translateY(0) translateX(0);}
 }
 
-/* Navigation */
+/* Navbar */
 
 nav{
 display:flex;
@@ -71,12 +72,12 @@ color:#00c6ff;
 
 .container{
 text-align:center;
-padding:160px 20px 80px 20px;
+padding:160px 20px 80px;
 max-width:1200px;
 margin:auto;
 }
 
-/* Category Boxes */
+/* Category boxes */
 
 .category-boxes{
 display:flex;
@@ -104,18 +105,19 @@ background:#1d1d27;
 
 .projects{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:30px;
 margin-top:40px;
 }
 
-/* Cards */
+/* Card */
 
 .card{
 background:#15151c;
 border-radius:10px;
 overflow:hidden;
 transition:0.3s;
+text-align:left;
 }
 
 .card img{
@@ -124,19 +126,14 @@ height:160px;
 object-fit:cover;
 }
 
-.card a{
-display:block;
+.card-title{
 padding:15px;
-color:white;
-text-decoration:none;
 font-weight:bold;
 font-size:16px;
 }
 
-/* Tech stack badges */
-
 .tech{
-padding:0 15px 15px 15px;
+padding:0 15px 10px;
 }
 
 .badge{
@@ -144,15 +141,28 @@ display:inline-block;
 background:#00c6ff;
 color:black;
 padding:4px 8px;
-border-radius:5px;
+border-radius:4px;
 font-size:12px;
-margin:3px;
+margin:2px;
 }
 
-/* Hover effect */
+.buttons{
+padding:10px 15px 15px;
+}
+
+.btn{
+display:inline-block;
+background:#00c6ff;
+color:black;
+padding:6px 12px;
+border-radius:5px;
+text-decoration:none;
+font-size:13px;
+margin-right:8px;
+}
 
 .card:hover{
-transform:translateY(-10px) scale(1.03);
+transform:translateY(-10px);
 background:#1d1d27;
 box-shadow:0 10px 25px rgba(0,198,255,0.4);
 }
@@ -203,7 +213,7 @@ box-shadow:0 0 15px #00c6ff;
 <div class="container">
 
 <h1>My Projects</h1>
-<p>Click any project to open the GitHub repository.</p>
+<p>Click project to open GitHub repository</p>
 
 <div class="category-boxes">
 
@@ -223,81 +233,95 @@ Enterprise Projects
 
 <div class="projects">
 
+<!-- Card -->
+
 <div class="card">
 <img src="https://images.unsplash.com/photo-1518770660439-4636190af475">
-<a href="https://github.com/Hina-Atif/AWS-EC2-DOCKER-DEPLOYMENT-HINA-ATIF" target="_blank">
-AWS EC2 Docker Deployment
-</a>
+<div class="card-title">AWS EC2 Docker Deployment</div>
 <div class="tech">
 <span class="badge">AWS</span>
 <span class="badge">EC2</span>
 <span class="badge">Docker</span>
 </div>
+<div class="buttons">
+<a class="btn" href="https://github.com/Hina-Atif/AWS-EC2-DOCKER-DEPLOYMENT-HINA-ATIF" target="_blank">GitHub</a>
+<a class="btn" href="https://miro.medium.com/v2/resize:fit:1400/1*QX1cF1i0K9J4yG7wA0s9NQ.png" target="_blank">Architecture</a>
+</div>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
-<a href="https://github.com/Hina-Atif/static-website-deployment-on-s3-hina-atif" target="_blank">
-Static Website Deployment on S3
-</a>
+<div class="card-title">Static Website Deployment on S3</div>
 <div class="tech">
 <span class="badge">AWS</span>
 <span class="badge">S3</span>
-<span class="badge">Static Hosting</span>
+<span class="badge">Cloud</span>
+</div>
+<div class="buttons">
+<a class="btn" href="https://github.com/Hina-Atif/static-website-deployment-on-s3-hina-atif" target="_blank">GitHub</a>
+<a class="btn" href="https://docs.aws.amazon.com/images/AmazonS3/latest/userguide/images/s3-website-hosting.png" target="_blank">Architecture</a>
 </div>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31">
-<a href="https://github.com/Hina-Atif/aws-vpc-networking-project" target="_blank">
-AWS VPC Networking
-</a>
+<div class="card-title">AWS VPC Networking</div>
 <div class="tech">
 <span class="badge">AWS</span>
 <span class="badge">VPC</span>
 <span class="badge">Networking</span>
 </div>
+<div class="buttons">
+<a class="btn" href="https://github.com/Hina-Atif/aws-vpc-networking-project" target="_blank">GitHub</a>
+<a class="btn" href="https://docs.aws.amazon.com/images/vpc/latest/userguide/images/vpc-diagram.png" target="_blank">Architecture</a>
+</div>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3">
-<a href="https://github.com/Hina-Atif/aws-serverless-data-management" target="_blank">
-AWS Serverless Data Management
-</a>
+<div class="card-title">AWS Serverless Data Management</div>
 <div class="tech">
 <span class="badge">Lambda</span>
 <span class="badge">DynamoDB</span>
 <span class="badge">Serverless</span>
 </div>
+<div class="buttons">
+<a class="btn" href="https://github.com/Hina-Atif/aws-serverless-data-management" target="_blank">GitHub</a>
+<a class="btn" href="https://docs.aws.amazon.com/images/lambda/latest/dg/images/lambda-architecture.png" target="_blank">Architecture</a>
+</div>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31">
-<a href="https://github.com/Hina-Atif/Scalable-Node.js-Deployment-on-AWS-ECS-Fargate" target="_blank">
-Node.js ECS Fargate Deployment
-</a>
+<div class="card-title">Node.js ECS Fargate Deployment</div>
 <div class="tech">
 <span class="badge">Node.js</span>
 <span class="badge">ECS</span>
 <span class="badge">Fargate</span>
 </div>
+<div class="buttons">
+<a class="btn" href="https://github.com/Hina-Atif/Scalable-Node.js-Deployment-on-AWS-ECS-Fargate" target="_blank">GitHub</a>
+<a class="btn" href="https://docs.aws.amazon.com/images/AmazonECS/latest/developerguide/images/ecs_architecture.png" target="_blank">Architecture</a>
+</div>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1581091870626-3b00cf4cd1ef">
-<a href="https://github.com/Hina-Atif/aws-python-http-api-project" target="_blank">
-AWS Python HTTP API
-</a>
+<div class="card-title">AWS Python HTTP API</div>
 <div class="tech">
 <span class="badge">Python</span>
 <span class="badge">API</span>
 <span class="badge">AWS</span>
 </div>
+<div class="buttons">
+<a class="btn" href="https://github.com/Hina-Atif/aws-python-http-api-project" target="_blank">GitHub</a>
+<a class="btn" href="https://docs.aws.amazon.com/images/apigateway/latest/developerguide/images/api-gateway-overview.png" target="_blank">Architecture</a>
+</div>
 </div>
 
 </div>
 
-<!-- ENTERPRISE PROJECTS -->
+<!-- ENTERPRISE -->
 
 <h2 id="enterprise" style="margin-top:100px;">Enterprise Projects</h2>
 
@@ -305,49 +329,53 @@ AWS Python HTTP API
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1581091870626-3b00cf4cd1ef">
-<a href="https://github.com/Hina-Atif/SkyRoute-Air-Ticket-Booking-Platform" target="_blank">
-SkyRoute Air Ticket Booking Platform
-</a>
+<div class="card-title">SkyRoute Air Ticket Platform</div>
 <div class="tech">
 <span class="badge">Microservices</span>
 <span class="badge">Docker</span>
 <span class="badge">AWS</span>
 </div>
+<div class="buttons">
+<a class="btn" href="https://github.com/Hina-Atif/SkyRoute-Air-Ticket-Booking-Platform" target="_blank">GitHub</a>
+</div>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
-<a href="https://github.com/Hina-Atif/CloudTel-Telecom-Self-Service-Platform" target="_blank">
-CloudTel Telecom Platform
-</a>
+<div class="card-title">CloudTel Telecom Platform</div>
 <div class="tech">
-<span class="badge">Cloud</span>
-<span class="badge">Automation</span>
 <span class="badge">DevOps</span>
+<span class="badge">Automation</span>
+<span class="badge">Cloud</span>
+</div>
+<div class="buttons">
+<a class="btn" href="https://github.com/Hina-Atif/CloudTel-Telecom-Self-Service-Platform" target="_blank">GitHub</a>
 </div>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1591696205602-fce4b1e8f32e">
-<a href="https://github.com/Hina-Atif/CloudBank-Microservices-Banking-Platform" target="_blank">
-CloudBank Microservices Platform
-</a>
+<div class="card-title">CloudBank Microservices Platform</div>
 <div class="tech">
 <span class="badge">Microservices</span>
 <span class="badge">API</span>
 <span class="badge">Cloud</span>
 </div>
+<div class="buttons">
+<a class="btn" href="https://github.com/Hina-Atif/CloudBank-Microservices-Banking-Platform" target="_blank">GitHub</a>
+</div>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1556228724-4a5b820aeaa3">
-<a href="https://github.com/Hina-Atif/CloudWatch-Lite-Monitoring-Platform" target="_blank">
-CloudWatch Lite Monitoring
-</a>
+<div class="card-title">CloudWatch Lite Monitoring</div>
 <div class="tech">
 <span class="badge">Monitoring</span>
 <span class="badge">DevOps</span>
 <span class="badge">Observability</span>
+</div>
+<div class="buttons">
+<a class="btn" href="https://github.com/Hina-Atif/CloudWatch-Lite-Monitoring-Platform" target="_blank">GitHub</a>
 </div>
 </div>
 
@@ -356,16 +384,11 @@ CloudWatch Lite Monitoring
 </div>
 
 <footer>
-
-✦ Hina Atif  
-<br>
-© 2026 All Rights Reserved.
-
+✦ Hina Atif<br>
+© 2026 All Rights Reserved
 </footer>
 
 <script>
-
-/* Scroll */
 
 function scrollToSection(section){
 document.getElementById(section).scrollIntoView({behavior:'smooth'});
@@ -374,7 +397,6 @@ document.getElementById(section).scrollIntoView({behavior:'smooth'});
 /* Cursor */
 
 const cursor=document.getElementById("cursor");
-
 document.addEventListener("mousemove",e=>{
 cursor.style.left=e.clientX+"px";
 cursor.style.top=e.clientY+"px";
@@ -387,7 +409,6 @@ const dotsContainer=document.getElementById("dots");
 for(let i=0;i<40;i++){
 
 let dot=document.createElement("div");
-
 dot.classList.add("dot");
 
 dot.style.left=Math.random()*window.innerWidth+"px";
