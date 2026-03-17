@@ -108,7 +108,6 @@ nav ul li a:hover{
     text-decoration:none;
     color:inherit;
     display:block;
-    position:relative;
 }
 .card img{
     width:100%;
@@ -135,26 +134,6 @@ nav ul li a:hover{
 .card:hover{
     transform:translateY(-8px);
     box-shadow:0 8px 20px rgba(0,198,255,0.4);
-    border-top: 4px solid #66ccff; /* Light blue hover effect */
-}
-
-/* Typing animation for paragraph */
-.typing-text {
-  display: inline-block;
-  border-right: 2px solid #ff69b4;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 0;
-  color: #ff69b4;
-  font-weight: bold;
-  animation: typing 2s steps(30,end) forwards, blink 0.7s step-end infinite;
-}
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
-@keyframes blink {
-  50% { border-color: transparent; }
 }
 
 /* FOOTER */
@@ -183,14 +162,123 @@ footer{
 
 <div class="container" id="home">
 <h1>My Projects</h1>
-<p class="typing-text">Click project to view details</p> <!-- Typing animation applied here -->
+<p>Click project to view details</p>
 
 <div class="category-boxes">
 <div class="category" onclick="document.getElementById('featured').scrollIntoView()">Featured Projects</div>
 <div class="category" onclick="document.getElementById('enterprise').scrollIntoView()">Enterprise Projects</div>
 </div>
 
-<!-- You can keep all your existing project cards here as before -->
+<!-- FEATURED PROJECTS -->
+<h2 id="featured" style="margin-top:100px;">Featured Projects</h2>
+<div class="projects">
+<a href="https://github.com/Hina-Atif/AWS-EC2-DOCKER-DEPLOYMENT-HINA-ATIF" target="_blank" class="card">
+<img src="https://images.unsplash.com/photo-1605745341112-85968b19335b?fit=crop&w=400&h=160">
+<div class="card-title">AWS EC2 Docker Deployment</div>
+<div class="tech">
+<span class="badge">AWS</span>
+<span class="badge">EC2</span>
+<span class="badge">Docker</span>
+<span class="badge">Linux</span>
+</div>
+</a>
+
+<a href="https://github.com/Hina-Atif/static-website-deployment-on-s3-hina-atif" target="_blank" class="card">
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?fit=crop&w=400&h=160">
+<div class="card-title">Static Website Deployment on S3</div>
+<div class="tech">
+<span class="badge">AWS</span>
+<span class="badge">S3</span>
+<span class="badge">Cloud Hosting</span>
+</div>
+</a>
+
+<a href="https://github.com/Hina-Atif/aws-vpc-networking-project" target="_blank" class="card">
+<img src="https://images.unsplash.com/photo-1605379399642-870262d3d051?fit=crop&w=400&h=160">
+<div class="card-title">AWS VPC Networking Project</div>
+<div class="tech">
+<span class="badge">AWS</span>
+<span class="badge">VPC</span>
+<span class="badge">Subnets</span>
+<span class="badge">Routing</span>
+</div>
+</a>
+
+<a href="https://github.com/Hina-Atif/aws-serverless-data-management" target="_blank" class="card">
+<img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?fit=crop&w=400&h=160">
+<div class="card-title">AWS Serverless Data Management</div>
+<div class="tech">
+<span class="badge">Lambda</span>
+<span class="badge">DynamoDB</span>
+<span class="badge">Serverless</span>
+</div>
+</a>
+
+<a href="https://github.com/Hina-Atif/Scalable-Node.js-Deployment-on-AWS-ECS-Fargate" target="_blank" class="card">
+<img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?fit=crop&w=400&h=160">
+<div class="card-title">Node.js Deployment on ECS Fargate</div>
+<div class="tech">
+<span class="badge">Node.js</span>
+<span class="badge">ECS</span>
+<span class="badge">Fargate</span>
+<span class="badge">Docker</span>
+</div>
+</a>
+
+<a href="https://github.com/Hina-Atif/aws-python-http-api-project" target="_blank" class="card">
+<img src="https://images.unsplash.com/photo-1581091870626-3b00cf4cd1ef?fit=crop&w=400&h=160">
+<div class="card-title">AWS Python HTTP API</div>
+<div class="tech">
+<span class="badge">Python</span>
+<span class="badge">REST API</span>
+<span class="badge">AWS</span>
+</div>
+</a>
+</div>
+
+<!-- ENTERPRISE PROJECTS -->
+<h2 id="enterprise" style="margin-top:100px;">Enterprise Projects</h2>
+<div class="projects">
+<a href="https://github.com/Hina-Atif/SkyRoute-Air-Ticket-Booking-Platform" target="_blank" class="card">
+<img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?fit=crop&w=400&h=160">
+<div class="card-title">SkyRoute Air Ticket Platform</div>
+<div class="tech">
+<span class="badge">Microservices</span>
+<span class="badge">Docker</span>
+<span class="badge">AWS</span>
+</div>
+</a>
+
+<a href="https://github.com/Hina-Atif/CloudTel-Telecom-Self-Service-Platform" target="_blank" class="card">
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?fit=crop&w=400&h=160">
+<div class="card-title">CloudTel Telecom Platform</div>
+<div class="tech">
+<span class="badge">Cloud</span>
+<span class="badge">Automation</span>
+<span class="badge">DevOps</span>
+</div>
+</a>
+
+<a href="https://github.com/Hina-Atif/CloudBank-Microservices-Banking-Platform" target="_blank" class="card">
+<img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?fit=crop&w=400&h=160">
+<div class="card-title">CloudBank Microservices Platform</div>
+<div class="tech">
+<span class="badge">Microservices</span>
+<span class="badge">API</span>
+<span class="badge">Cloud</span>
+</div>
+</a>
+
+<a href="https://github.com/Hina-Atif/CloudWatch-Lite-Monitoring-Platform" target="_blank" class="card">
+<img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?fit=crop&w=400&h=160">
+<div class="card-title">CloudWatch Lite Monitoring</div>
+<div class="tech">
+<span class="badge">Monitoring</span>
+<span class="badge">Logs</span>
+<span class="badge">Observability</span>
+</div>
+</a>
+</div>
 
 <footer id="contact">
 ✦ Hina Atif<br>
