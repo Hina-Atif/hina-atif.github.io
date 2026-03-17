@@ -1,35 +1,146 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<title>Blogs | Hina Atif</title>
+<title>Posts | Hina Atif</title>
 
 <style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0b0b0f;
+  color:white;
+  overflow-x:hidden;
+  position:relative;
+}
 
-body{margin:0;font-family:Arial;background:#0b0b0f;color:white}
+/* NAV */
+nav{
+  display:flex;
+  justify-content:space-between;
+  padding:20px 80px;
+  position:relative;
+  z-index:10;
+}
 
-nav{display:flex;justify-content:space-between;padding:20px 80px}
+.logo{
+  font-size:28px;
+  font-weight:bold;
+  background:linear-gradient(90deg,#ff7a18,#ff00ff,#00c6ff);
+  -webkit-background-clip:text;
+  color:transparent;
+  animation: glowText 3s infinite alternate;
+}
 
-.logo{font-size:28px;font-weight:bold;background:linear-gradient(90deg,#ff7a18,#ff00ff,#00c6ff);-webkit-background-clip:text;color:transparent}
+/* LOGO ANIMATION */
+@keyframes glowText{
+  0%{filter: drop-shadow(0 0 5px gold);}
+  100%{filter: drop-shadow(0 0 20px gold);}
+}
 
-nav ul{list-style:none;display:flex;gap:30px}
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:30px;
+}
 
-nav ul li a{color:white;text-decoration:none}
+nav ul li a{
+  color:white;
+  text-decoration:none;
+}
 
-.container{text-align:center;padding:120px 20px;max-width:900px;margin:auto}
+nav ul li a:hover{
+  color:#00c6ff;
+}
 
-.btn{display:inline-block;padding:12px 30px;background:#00c6ff;border-radius:20px;color:white;text-decoration:none;margin-top:20px}
+/* CONTAINER */
+.container{
+  text-align:center;
+  padding:120px 20px;
+  max-width:900px;
+  margin:auto;
+  position:relative;
+  z-index:10;
+}
 
-footer{text-align:center;padding:40px;color:#aaa}
+h1{
+  color:gold;
+  font-family:Georgia, serif;
+}
 
+/* CARDS */
+.card-container{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  margin-top:40px;
+  flex-wrap:wrap;
+}
+
+.card{
+  background:#111;
+  padding:30px;
+  border-radius:15px;
+  width:260px;
+  text-decoration:none;
+  color:white;
+  transition:0.3s;
+  box-shadow:0 0 10px rgba(0,198,255,0.2);
+}
+
+.card:hover{
+  transform:translateY(-10px) scale(1.05);
+  box-shadow:0 0 25px gold;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:40px;
+  color:#aaa;
+  position:relative;
+  z-index:10;
+}
+
+/* --- PARTICLES --- */
+.particle {
+  position:absolute;
+  border-radius:50%;
+  background:rgba(0,198,255,0.4);
+  pointer-events:none;
+  width:10px;
+  height:10px;
+  mix-blend-mode:screen;
+  animation: float 5s infinite;
+}
+
+@keyframes float {
+  0% {transform: translate(0,0);}
+  50% {transform: translate(20px, -20px);}
+  100% {transform: translate(0,0);}
+}
+
+/* --- GOLD CURSOR --- */
+.cursor-shadow {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: rgba(255,215,0,0.5);
+  box-shadow: 0 0 20px 10px rgba(255,215,0,0.4);
+  transform: translate(-50%, -50%);
+  transition: transform 0.05s ease-out;
+  z-index:9999;
+  mix-blend-mode: screen;
+}
 </style>
-
 </head>
 
 <body>
 
 <nav>
-
 <div class="logo">Hina Atif</div>
 
 <ul>
@@ -39,7 +150,6 @@ footer{text-align:center;padding:40px;color:#aaa}
 <li><a href="about.html">About</a></li>
 <li><a href="contact.html">Contact</a></li>
 </ul>
-
 </nav>
 
 <div class="container">
@@ -47,30 +157,54 @@ footer{text-align:center;padding:40px;color:#aaa}
 <h1>My Blogs</h1>
 
 <p>
-
-Join me on a journey through DevOps, cloud computing, and automation.  
+Join me on a journey through DevOps, cloud computing, and automation.
 I share insights, real-world solutions, and practical DevOps strategies.
-
 </p>
 
-<a class="btn" href="https://medium.com/@hinaatif355" target="_blank">
-Follow on Medium
+<div class="card-container">
+
+<a href="#" class="card" target="_blank">
+<h3>Follow on Medium</h3>
+<p>Read my DevOps articles and real-world guides.</p>
 </a>
 
-<br><br>
-
-<a class="btn" href="https://hashnode.com/@hina-atif355" target="_blank">
-Follow on Hashnode
+<a href="#" class="card" target="_blank">
+<h3>Follow on Hashnode</h3>
+<p>Explore my blogs on cloud and automation.</p>
 </a>
 
 </div>
 
+</div>
+
 <footer>
-
 ✦ Hina Atif  
-© 2026 All Rights Reserved.
-
+© 2025 All Rights Reserved.
 </footer>
+
+<script>
+// FLOATING PARTICLES
+const numParticles = 40;
+for(let i=0; i<numParticles; i++){
+  const p = document.createElement('div');
+  p.classList.add('particle');
+  p.style.left = Math.random()*window.innerWidth+'px';
+  p.style.top = Math.random()*window.innerHeight+'px';
+  p.style.width = (5+Math.random()*10)+'px';
+  p.style.height = p.style.width;
+  p.style.animationDuration = (3+Math.random()*5)+'s';
+  document.body.appendChild(p);
+}
+
+// GOLD CURSOR
+const cursor = document.createElement('div');
+cursor.classList.add('cursor-shadow');
+document.body.appendChild(cursor);
+
+document.addEventListener('mousemove', e => {
+  cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+});
+</script>
 
 </body>
 </html>
