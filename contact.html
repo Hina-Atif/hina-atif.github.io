@@ -135,7 +135,7 @@ footer{
   z-index:10;
 }
 
-/* --- PARTICLE BACKGROUND --- */
+/* --- PARTICLE BACKGROUND (Light Blue) --- */
 .particle {
   position:absolute;
   border-radius:50%;
@@ -153,9 +153,8 @@ footer{
   100% {transform: translate(0,0);}
 }
 
-/* --- CURSOR SHADOW EFFECT --- */
-body::after {
-  content: '';
+/* --- GOLD CURSOR SHADOW --- */
+.cursor-shadow {
   position: fixed;
   left: 0;
   top: 0;
@@ -163,11 +162,12 @@ body::after {
   height: 30px;
   border-radius: 50%;
   pointer-events: none;
-  background: rgba(0,198,255,0.6);
+  background: rgba(255,215,0,0.5); /* light gold color */
+  box-shadow: 0 0 20px 10px rgba(255,215,0,0.4);
   transform: translate(-50%, -50%);
-  transition: transform 0.1s ease-out;
-  mix-blend-mode: screen;
+  transition: transform 0.05s ease-out;
   z-index:9999;
+  mix-blend-mode: screen;
 }
 </style>
 </head>
@@ -215,19 +215,7 @@ body::after {
 </footer>
 
 <script>
-// Move floating cursor
-document.addEventListener('mousemove', e => {
-  const cursor = document.body.querySelector('body::after') || document.querySelector('body');
-  const x = e.clientX;
-  const y = e.clientY;
-  const after = document.querySelector('body::after');
-  document.body.style.setProperty('--cursorX', x + 'px');
-  document.body.style.setProperty('--cursorY', y + 'px');
-  const cursorEl = document.querySelector('body::after');
-  if(cursorEl) cursorEl.style.transform = `translate(${x}px, ${y}px)`;
-});
-
-// Floating particles
+// Floating light-blue background particles
 const numParticles = 40;
 for(let i=0; i<numParticles; i++){
   const p = document.createElement('div');
@@ -239,6 +227,15 @@ for(let i=0; i<numParticles; i++){
   p.style.animationDuration = (3+Math.random()*5)+'s';
   document.body.appendChild(p);
 }
+
+// GOLD CURSOR
+const cursor = document.createElement('div');
+cursor.classList.add('cursor-shadow');
+document.body.appendChild(cursor);
+
+document.addEventListener('mousemove', e => {
+  cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+});
 </script>
 
 </body>
