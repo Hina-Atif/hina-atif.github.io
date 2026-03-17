@@ -2,28 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Hina Atif - Projects</title>
+<title>Projects</title>
 
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
     background: #0d0d0d;
     color: white;
-    cursor: none;
-}
-
-/* GOLDEN CURSOR */
-.cursor {
-    position: fixed;
-    width: 15px;
-    height: 15px;
-    background: gold;
-    border-radius: 50%;
-    pointer-events: none;
-    box-shadow: 0 0 15px gold, 0 0 25px gold;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
+    font-family: Arial;
 }
 
 /* NAVBAR */
@@ -37,9 +23,10 @@ nav {
 nav a {
     color: white;
     text-decoration: none;
+    cursor: pointer;
 }
 
-/* CENTER TITLE */
+/* HEADER */
 .header {
     text-align: center;
     margin-top: 40px;
@@ -49,19 +36,31 @@ nav a {
     font-size: 40px;
 }
 
-.header p {
-    color: #aaa;
+/* TYPING ANIMATION */
+.typing {
+    color: pink;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid pink;
+    width: 0;
+    margin: auto;
+    animation: typing 4s steps(30, end) infinite, blink 0.7s infinite;
+}
+
+@keyframes typing {
+    0% { width: 0 }
+    50% { width: 260px }
+    100% { width: 0 }
+}
+
+@keyframes blink {
+    50% { border-color: transparent }
 }
 
 /* SECTION TITLES */
 .section-title {
-    font-size: 24px;
-    margin: 40px 0 20px 60px;
-    transition: 0.3s;
-}
-
-.section-title:hover {
     color: #66ccff;
+    margin: 40px 60px 20px;
 }
 
 /* PROJECT GRID */
@@ -72,7 +71,7 @@ nav a {
     padding: 0 60px;
 }
 
-/* PROJECT CARD */
+/* CARDS */
 .card {
     background: #1a1a1a;
     padding: 20px;
@@ -83,16 +82,7 @@ nav a {
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 15px rgba(102,204,255,0.3);
-}
-
-.card h3 {
-    margin-bottom: 10px;
-}
-
-.card p {
-    color: #aaa;
-    font-size: 14px;
+    box-shadow: 0 0 15px rgba(102,204,255,0.4);
 }
 
 /* FOOTER */
@@ -107,8 +97,6 @@ footer {
 
 <body>
 
-<div class="cursor" id="cursor"></div>
-
 <nav>
     <a href="#">Home</a>
     <a href="#">Posts</a>
@@ -119,52 +107,28 @@ footer {
 
 <div class="header">
     <h1>My Projects</h1>
-    <p>Click project to view details</p>
+    <p class="typing">Click project to view details</p>
 </div>
 
 <h2 class="section-title">Featured Projects</h2>
 
 <div class="projects">
 
-    <div class="card">
-        <h3>AWS EC2 Docker Deployment</h3>
-        <p>AWS EC2 Docker Linux</p>
-    </div>
+<div class="card"><h3>AWS EC2 Docker Deployment</h3><p>AWS EC2 Docker Linux</p></div>
 
-    <div class="card">
-        <h3>Static Website Deployment on S3</h3>
-        <p>AWS S3 Cloud Hosting</p>
-    </div>
+<div class="card"><h3>Static Website Deployment on S3</h3><p>AWS S3 Cloud Hosting</p></div>
 
-    <div class="card">
-        <h3>AWS VPC Networking Project</h3>
-        <p>AWS VPC Subnets Routing</p>
-    </div>
+<div class="card"><h3>AWS VPC Networking Project</h3><p>AWS VPC Subnets Routing</p></div>
 
-    <div class="card">
-        <h3>AWS Serverless Data Management</h3>
-        <p>Lambda DynamoDB Serverless</p>
-    </div>
+<div class="card"><h3>AWS Serverless Data Management</h3><p>Lambda DynamoDB Serverless</p></div>
 
-    <div class="card">
-        <h3>Node.js Deployment on ECS Fargate</h3>
-        <p>Node.js ECS Fargate Docker</p>
-    </div>
+<div class="card"><h3>Node.js Deployment on ECS Fargate</h3><p>Node.js ECS Fargate Docker</p></div>
 
-    <div class="card">
-        <h3>AWS Python HTTP API</h3>
-        <p>Python REST API AWS</p>
-    </div>
+<div class="card"><h3>AWS Python HTTP API</h3><p>Python REST API AWS</p></div>
 
-    <div class="card">
-        <h3>CloudWatch Lite Monitoring</h3>
-        <p>Monitoring Logs Metrics</p>
-    </div>
+<div class="card"><h3>CloudWatch Lite Monitoring</h3><p>Monitoring Logs Metrics</p></div>
 
-    <div class="card">
-        <h3>AWS CloudTrail Security Monitoring</h3>
-        <p>AWS CloudTrail Security</p>
-    </div>
+<div class="card"><h3>AWS CloudTrail Security Monitoring</h3><p>AWS CloudTrail Security</p></div>
 
 </div>
 
@@ -172,41 +136,20 @@ footer {
 
 <div class="projects">
 
-    <div class="card">
-        <h3>SkyRoute Air Ticket Platform</h3>
-        <p>Microservices Docker AWS</p>
-    </div>
+<div class="card"><h3>SkyRoute Air Ticket Platform</h3><p>Microservices Docker AWS</p></div>
 
-    <div class="card">
-        <h3>CloudTel Telecom Platform</h3>
-        <p>Cloud Automation DevOps</p>
-    </div>
+<div class="card"><h3>CloudTel Telecom Platform</h3><p>Cloud Automation DevOps</p></div>
 
-    <div class="card">
-        <h3>CloudBank Microservices Platform</h3>
-        <p>Microservices API Cloud</p>
-    </div>
+<div class="card"><h3>CloudBank Microservices Platform</h3><p>Microservices API Cloud</p></div>
 
-    <div class="card">
-        <h3>CloudWatch Lite Monitoring</h3>
-        <p>Monitoring Logs Observability</p>
-    </div>
+<div class="card"><h3>CloudWatch Lite Monitoring</h3><p>Monitoring Logs Observability</p></div>
 
 </div>
 
 <footer>
-    ✦ Hina Atif <br>
-    © 2026 All Rights Reserved
+✦ Hina Atif <br>
+© 2026 All Rights Reserved
 </footer>
-
-<script>
-const cursor = document.getElementById("cursor");
-
-document.addEventListener("mousemove", (e) => {
-    cursor.style.left = e.clientX + "px";
-    cursor.style.top = e.clientY + "px";
-});
-</script>
 
 </body>
 </html>
