@@ -96,6 +96,9 @@ nav a:hover {
     border-radius: 10px;
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
 .card:hover {
@@ -130,35 +133,35 @@ footer { text-align: center; margin-top: 50px; padding: 20px; color: #aaa; }
 </nav>
 
 <!-- HEADER -->
-<div class="header">
+<div class="header" id="home">
 <h1>My Projects</h1>
 <p class="typing">Click project to view details</p>
 </div>
 
 <!-- FEATURED PROJECTS -->
-<h2 class="section-title">Featured Projects</h2>
+<h2 class="section-title" id="projects">Featured Projects</h2>
 <div class="projects">
-<div class="card"><h3>AWS EC2 Docker Deployment</h3><p>AWS EC2 Docker Linux</p></div>
-<div class="card"><h3>Static Website Deployment on S3</h3><p>AWS S3 Cloud Hosting</p></div>
-<div class="card"><h3>AWS VPC Networking Project</h3><p>AWS VPC Subnets Routing</p></div>
-<div class="card"><h3>AWS Serverless Data Management</h3><p>Lambda DynamoDB Serverless</p></div>
-<div class="card"><h3>Node.js Deployment on ECS Fargate</h3><p>Node.js ECS Fargate Docker</p></div>
-<div class="card"><h3>AWS Python HTTP API</h3><p>Python REST API AWS</p></div>
-<div class="card"><h3>CloudWatch Lite Monitoring</h3><p>Monitoring Logs Metrics</p></div>
-<div class="card"><h3>AWS CloudTrail Security Monitoring</h3><p>AWS CloudTrail Security</p></div>
+<a href="https://github.com/yourusername/aws-ec2-docker" target="_blank" class="card"><h3>AWS EC2 Docker Deployment</h3><p>AWS EC2 Docker Linux</p></a>
+<a href="https://github.com/yourusername/static-website-s3" target="_blank" class="card"><h3>Static Website Deployment on S3</h3><p>AWS S3 Cloud Hosting</p></a>
+<a href="https://github.com/yourusername/aws-vpc-networking" target="_blank" class="card"><h3>AWS VPC Networking Project</h3><p>AWS VPC Subnets Routing</p></a>
+<a href="https://github.com/yourusername/aws-serverless-data" target="_blank" class="card"><h3>AWS Serverless Data Management</h3><p>Lambda DynamoDB Serverless</p></a>
+<a href="https://github.com/yourusername/nodejs-ecs-fargate" target="_blank" class="card"><h3>Node.js Deployment on ECS Fargate</h3><p>Node.js ECS Fargate Docker</p></a>
+<a href="https://github.com/yourusername/aws-python-api" target="_blank" class="card"><h3>AWS Python HTTP API</h3><p>Python REST API AWS</p></a>
+<a href="https://github.com/yourusername/cloudwatch-lite" target="_blank" class="card"><h3>CloudWatch Lite Monitoring</h3><p>Monitoring Logs Metrics</p></a>
+<a href="https://github.com/yourusername/aws-cloudtrail-security" target="_blank" class="card"><h3>AWS CloudTrail Security Monitoring</h3><p>AWS CloudTrail Security</p></a>
 </div>
 
 <!-- ENTERPRISE PROJECTS -->
 <h2 class="section-title">Enterprise Projects</h2>
 <div class="projects">
-<div class="card"><h3>SkyRoute Air Ticket Platform</h3><p>Microservices Docker AWS</p></div>
-<div class="card"><h3>CloudTel Telecom Platform</h3><p>Cloud Automation DevOps</p></div>
-<div class="card"><h3>CloudBank Microservices Platform</h3><p>Microservices API Cloud</p></div>
-<div class="card"><h3>CloudWatch Lite Monitoring</h3><p>Monitoring Logs Observability</p></div>
+<a href="https://github.com/yourusername/skyroute-air-ticket" target="_blank" class="card"><h3>SkyRoute Air Ticket Platform</h3><p>Microservices Docker AWS</p></a>
+<a href="https://github.com/yourusername/cloudtel-telecom" target="_blank" class="card"><h3>CloudTel Telecom Platform</h3><p>Cloud Automation DevOps</p></a>
+<a href="https://github.com/yourusername/cloudbank-microservices" target="_blank" class="card"><h3>CloudBank Microservices Platform</h3><p>Microservices API Cloud</p></a>
+<a href="https://github.com/yourusername/cloudwatch-lite-enterprise" target="_blank" class="card"><h3>CloudWatch Lite Monitoring</h3><p>Monitoring Logs Observability</p></a>
 </div>
 
 <!-- FOOTER -->
-<footer>
+<footer id="contact">
 ✦ Hina Atif <br>
 © 2026 All Rights Reserved
 </footer>
