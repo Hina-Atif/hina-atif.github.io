@@ -1,120 +1,100 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hina Atif Portfolio Projects</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-      padding: 20px;
-    }
-    h2 {
-      color: #333;
-      margin-bottom: 20px;
-      font-size: 28px;
-    }
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-    .project-card {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-      position: relative;
-      overflow: hidden;
-    }
-    .project-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-      border-top: 4px solid #add8e6; /* Light blue hover effect */
-    }
-    .project-card h3 {
-      margin-top: 0;
-      color: #111;
-    }
-    .project-card p {
-      color: #555;
-    }
-    .project-card a {
-      text-decoration: none;
-      color: #ff69b4; /* Light pink for typing */
-      font-weight: bold;
-    }
-    .typing {
-      display: inline-block;
-      border-right: 2px solid #ff69b4;
-      white-space: nowrap;
-      overflow: hidden;
-      width: 0;
-      animation: typing 2s steps(30, end) forwards, blink 0.7s step-end infinite;
-    }
-
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-    @keyframes blink {
-      50% { border-color: transparent; }
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <!-- Featured Projects Section -->
-    <h2>Featured Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <h3>Serverless Data Management</h3>
-        <p>Project using AWS serverless architecture to manage data efficiently.</p>
-        <a href="https://github.com/Hina-Atif/aws-serverless-data-management" target="_blank">
-          <span class="typing">Click project to view details</span>
-        </a>
-      </div>
-      <div class="project-card">
-        <h3>AWS Python HTTP API Project</h3>
-        <p>API project built with Python and AWS services for robust HTTP handling.</p>
-        <a href="https://github.com/Hina-Atif/aws-python-http-api-project" target="_blank">
-          <span class="typing">Click project to view details</span>
-        </a>
-      </div>
+<!-- Add this inside your existing projects section container in your portfolio page -->
+<!-- Featured Projects Section -->
+<div class="projects-section">
+  <h2>Featured Projects</h2>
+  <div class="projects-grid">
+    <div class="project-card">
+      <h3>Serverless Data Management</h3>
+      <p>Project using AWS serverless architecture to manage data efficiently.</p>
+      <a href="https://github.com/Hina-Atif/aws-serverless-data-management" target="_blank">
+        <span class="typing-text">Click project to view details</span>
+      </a>
     </div>
-
-    <!-- Enterprise Projects Section -->
-    <h2 style="margin-top:50px;">Enterprise Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <h3>SkyRoute Air Ticket Booking Platform</h3>
-        <p>Complete air ticket booking platform with front-end, back-end, and database integration.</p>
-        <a href="https://github.com/Hina-Atif/SkyRoute-Air-Ticket-Booking-Platform" target="_blank">
-          <span class="typing">Click project to view details</span>
-        </a>
-      </div>
+    <div class="project-card">
+      <h3>AWS Python HTTP API Project</h3>
+      <p>API project built with Python and AWS services for robust HTTP handling.</p>
+      <a href="https://github.com/Hina-Atif/aws-python-http-api-project" target="_blank">
+        <span class="typing-text">Click project to view details</span>
+      </a>
     </div>
   </div>
+</div>
 
-  <script>
-    // Optional: restart typing animation when card hovered
-    const cards = document.querySelectorAll('.project-card a .typing');
-    cards.forEach(el => {
-      el.parentElement.addEventListener('mouseover', () => {
-        el.style.animation = 'none';
-        void el.offsetWidth; // trigger reflow
-        el.style.animation = 'typing 2s steps(30, end) forwards, blink 0.7s step-end infinite';
-      });
+<!-- Enterprise Projects Section -->
+<div class="projects-section">
+  <h2>Enterprise Projects</h2>
+  <div class="projects-grid">
+    <div class="project-card">
+      <h3>SkyRoute Air Ticket Booking Platform</h3>
+      <p>Complete air ticket booking platform with front-end, back-end, and database integration.</p>
+      <a href="https://github.com/Hina-Atif/SkyRoute-Air-Ticket-Booking-Platform" target="_blank">
+        <span class="typing-text">Click project to view details</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+/* Add to your existing CSS - no layout disruption */
+.projects-section {
+  margin-top: 50px;
+}
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.project-card {
+  background-color: #fff; /* keep original card background */
+  border-radius: 12px;
+  padding: 20px;
+  flex: 1 1 300px; /* responsive */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s, border-top 0.3s;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  border-top: 4px solid #add8e6; /* light blue hover effect */
+}
+.project-card h3 {
+  margin-top: 0;
+}
+.project-card p {
+  color: #555;
+}
+.project-card a {
+  text-decoration: none;
+  color: #ff69b4; /* light pink for typing */
+  font-weight: bold;
+}
+
+/* Typing animation */
+.typing-text {
+  display: inline-block;
+  border-right: 2px solid #ff69b4;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typing 2s steps(30, end) forwards, blink 0.7s step-end infinite;
+}
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+</style>
+
+<script>
+  // Restart typing animation on hover
+  document.querySelectorAll('.project-card a .typing-text').forEach(el => {
+    el.parentElement.addEventListener('mouseover', () => {
+      el.style.animation = 'none';
+      void el.offsetWidth; // trigger reflow
+      el.style.animation = 'typing 2s steps(30, end) forwards, blink 0.7s step-end infinite';
     });
-  </script>
-</body>
-</html>
+  });
+</script>
