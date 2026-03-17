@@ -1,173 +1,202 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact - Hina Atif</title>
+
+<title>Contact | Hina Atif</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0d1117;
-  color: #cbd5e1;
-  cursor: none;
+
+body{
+margin:0;
+font-family:Arial;
+background:#0b0b0f;
+color:white;
 }
 
-/* NAVBAR */
-.navbar {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  padding: 20px;
-  background: rgba(255,255,255,0.05);
+/* NAV */
+nav{
+display:flex;
+justify-content:space-between;
+padding:20px 80px;
 }
 
-.navbar a {
-  color: #cbd5e1;
-  text-decoration: none;
-  font-weight: bold;
+.logo{
+font-size:28px;
+font-weight:bold;
+background:linear-gradient(90deg,#ff7a18,#ff00ff,#00c6ff);
+-webkit-background-clip:text;
+color:transparent;
 }
 
-.navbar a:hover {
-  color: #4f97ff;
+nav ul{
+list-style:none;
+display:flex;
+gap:30px;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+}
+
+nav ul li a:hover{
+color:#00c6ff;
 }
 
 /* CONTAINER */
-.container {
-  text-align: center;
-  padding: 60px 20px;
+.container{
+text-align:center;
+padding:120px 20px;
+max-width:900px;
+margin:auto;
+}
+
+/* GOLD HEADING */
+h1{
+color:gold;
+font-family:Georgia, serif;
 }
 
 /* FORM */
-form {
-  max-width: 500px;
-  margin: auto;
-  background: rgba(255,255,255,0.05);
-  padding: 25px;
-  border-radius: 15px;
-  border: 1px solid rgba(255,255,255,0.1);
+form{
+margin-top:40px;
+text-align:left;
+background:#111;
+padding:30px;
+border-radius:15px;
 }
 
-input, textarea {
-  width: 100%;
-  padding: 12px;
-  margin-top: 10px;
-  border-radius: 8px;
-  border: none;
-  outline: none;
-  background: #161b22;
-  color: white;
+label{
+display:block;
+margin-top:15px;
+font-weight:bold;
+}
+
+/* INPUTS */
+input, textarea{
+width:100%;
+padding:14px;
+margin-top:8px;
+border-radius:10px;
+border:none;
+background:#1a1a22;
+color:white;
+font-size:15px;
+transition:0.3s;
+}
+
+input:hover, textarea:hover{
+box-shadow:0 0 8px #00c6ff;
 }
 
 /* BUTTON */
-button {
-  margin-top: 20px;
-  padding: 12px;
-  width: 100%;
-  border: none;
-  border-radius: 8px;
-  background: #4f97ff;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
+button{
+margin-top:25px;
+width:100%;
+padding:14px;
+border:none;
+border-radius:25px;
+background:linear-gradient(90deg,gold,#ff7a18);
+color:black;
+font-weight:bold;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
 }
 
-button:hover {
-  background: #00e0ff;
-  box-shadow: 0 0 15px #00e0ff;
+button:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px gold;
 }
 
 /* LINKS */
-.links {
-  margin-top: 30px;
-}
-
-.links a {
-  display: block;
-  margin: 10px;
-  color: #4f97ff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.links a:hover {
-  text-decoration: underline;
+.btn{
+display:inline-block;
+padding:12px 30px;
+background:#00c6ff;
+border-radius:20px;
+color:white;
+text-decoration:none;
+margin-top:20px;
 }
 
 /* FOOTER */
-footer {
-  margin-top: 40px;
-  font-size: 0.9rem;
+footer{
+text-align:center;
+padding:40px;
+color:#aaa;
 }
 
-/* CUSTOM CURSOR */
-.cursor {
-  position: fixed;
-  width: 20px;
-  height: 20px;
-  background: #4f97ff;
-  border-radius: 50%;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-}
 </style>
+
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<div class="navbar">
-  <a href="index.html">Home</a>
-  <a href="posts.html">Posts</a>
-  <a href="projects.html">Projects</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-</div>
+<nav>
+<div class="logo">Hina Atif</div>
+
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="posts.html">Posts</a></li>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
 
 <div class="container">
-  <h1>Contact Me</h1>
-  <p>Let's talk. I'm currently open for new opportunities (Remotely).</p>
 
-  <!-- CONTACT FORM -->
-  <form action="mailto:hinaatif355@gmail.com" method="POST" enctype="text/plain">
-    
-    <label>Your Name</label>
-    <input type="text" name="name" placeholder="Enter your name" required>
+<h1>Contact Me</h1>
 
-    <label>Your Email</label>
-    <input type="email" name="email" placeholder="Enter your email" required>
+<p>
+Let's talk. I'm currently open for new opportunities (Remotely).
+</p>
 
-    <label>Message</label>
-    <textarea name="message" rows="5" placeholder="Write your message here..." required></textarea>
+<!-- ✅ PROFESSIONAL FORM (NO WARNING) -->
+<form action="https://formspree.io/f/yourID" method="POST">
 
-    <button type="submit">Send Message</button>
-  </form>
+<label>Your Name</label>
+<input type="text" name="name" placeholder="Enter your name" required>
 
-  <!-- CONTACT INFO -->
-  <div class="links">
-    <p><strong>Email:</strong> hinaatif355@gmail.com</p>
+<label>Your Email</label>
+<input type="email" name="email" placeholder="Enter your email" required>
 
-    <a href="mailto:hinaatif355@gmail.com">Send Email</a>
-    <a href="https://www.linkedin.com/in/hina-atif-devopsengineer" target="_blank">Connect on LinkedIn</a>
-    <a href="https://github.com/Hina-Atif" target="_blank">Connect on GitHub</a>
-  </div>
+<label>Message</label>
+<textarea name="message" rows="5" placeholder="Write your message here..." required></textarea>
 
-  <footer>© 2025 All Rights Reserved</footer>
+<button type="submit">Send Message</button>
+
+</form>
+
+<br>
+
+<p>Email: <strong>hinaatif355@gmail.com</strong></p>
+
+<br>
+
+<a class="btn" href="mailto:hinaatif355@gmail.com">Send Email</a>
+
+<br><br>
+
+<a class="btn" href="https://www.linkedin.com/in/hina-atif-devopsengineer/" target="_blank">
+Connect on LinkedIn
+</a>
+
+<br><br>
+
+<a class="btn" href="https://github.com/Hina-Atif" target="_blank">
+Connect on GitHub
+</a>
+
 </div>
 
-<script>
-let cursor = document.createElement("div");
-cursor.className = "cursor";
-document.body.appendChild(cursor);
+<footer>
 
-document.addEventListener("mousemove", e => {
-  cursor.style.left = e.clientX + "px";
-  cursor.style.top = e.clientY + "px";
-});
-</script>
+✦ Hina Atif  
+© 2025 All Rights Reserved.
+
+</footer>
 
 </body>
 </html>
