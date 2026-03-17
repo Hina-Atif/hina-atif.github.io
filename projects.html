@@ -8,7 +8,7 @@
 /* RESET & BODY */
 * { margin:0; padding:0; box-sizing:border-box; }
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial;
     background-color: #0d0d0d;
     color: white;
     cursor: none;
@@ -34,6 +34,9 @@ nav {
     gap: 30px;
     padding: 20px;
     background: #111;
+    z-index: 10;
+    position: sticky;
+    top: 0;
 }
 
 nav a {
@@ -97,17 +100,17 @@ nav a:hover {
 /* PROJECT CARD */
 .card {
     background: #1a1a1a;
-    border: 1px solid #333;
+    border: 1px solid #444;
     padding: 20px;
     border-radius: 10px;
     display: block;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px rgba(102,204,255,0.5);
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(102,204,255,0.6);
 }
 
 .card h3 {
@@ -160,23 +163,23 @@ footer {
 <!-- FEATURED PROJECTS -->
 <h2 class="section-title">Featured Projects</h2>
 <div class="projects">
-<div class="card"><h3>AWS EC2 Docker Deployment</h3><p>AWS EC2 Docker Linux</p></div>
-<div class="card"><h3>Static Website Deployment on S3</h3><p>AWS S3 Cloud Hosting</p></div>
-<div class="card"><h3>AWS VPC Networking Project</h3><p>AWS VPC Subnets Routing</p></div>
-<div class="card"><h3>AWS Serverless Data Management</h3><p>Lambda DynamoDB Serverless</p></div>
-<div class="card"><h3>Node.js Deployment on ECS Fargate</h3><p>Node.js ECS Fargate Docker</p></div>
-<div class="card"><h3>AWS Python HTTP API</h3><p>Python REST API AWS</p></div>
-<div class="card"><h3>CloudWatch Lite Monitoring</h3><p>Monitoring Logs Metrics</p></div>
-<div class="card"><h3>AWS CloudTrail Security Monitoring</h3><p>AWS CloudTrail Security</p></div>
+<div class="card" onclick="window.open('https://github.com/yourusername/aws-ec2-docker','_blank')"><h3>AWS EC2 Docker Deployment</h3><p>AWS EC2 Docker Linux</p></div>
+<div class="card" onclick="window.open('https://github.com/yourusername/static-website-s3','_blank')"><h3>Static Website Deployment on S3</h3><p>AWS S3 Cloud Hosting</p></div>
+<div class="card" onclick="window.open('https://github.com/yourusername/aws-vpc-networking','_blank')"><h3>AWS VPC Networking Project</h3><p>AWS VPC Subnets Routing</p></div>
+<div class="card" onclick="window.open('https://github.com/yourusername/aws-serverless-data','_blank')"><h3>AWS Serverless Data Management</h3><p>Lambda DynamoDB Serverless</p></div>
+<div class="card" onclick="window.open('https://github.com/yourusername/nodejs-ecs-fargate','_blank')"><h3>Node.js Deployment on ECS Fargate</h3><p>Node.js ECS Fargate Docker</p></div>
+<div class="card" onclick="window.open('https://github.com/yourusername/aws-python-api','_blank')"><h3>AWS Python HTTP API</h3><p>Python REST API AWS</p></div>
+<div class="card" onclick="window.open('https://github.com/yourusername/cloudwatch-lite','_blank')"><h3>CloudWatch Lite Monitoring</h3><p>Monitoring Logs Metrics</p></div>
+<div class="card" onclick="window.open('https://github.com/yourusername/aws-cloudtrail-security','_blank')"><h3>AWS CloudTrail Security Monitoring</h3><p>AWS CloudTrail Security</p></div>
 </div>
 
 <!-- ENTERPRISE PROJECTS -->
 <h2 class="section-title">Enterprise Projects</h2>
 <div class="projects">
-<div class="card"><h3>SkyRoute Air Ticket Platform</h3><p>Microservices Docker AWS</p></div>
-<div class="card"><h3>CloudTel Telecom Platform</h3><p>Cloud Automation DevOps</p></div>
-<div class="card"><h3>CloudBank Microservices Platform</h3><p>Microservices API Cloud</p></div>
-<div class="card"><h3>CloudWatch Lite Monitoring</h3><p>Monitoring Logs Observability</p></div>
+<div class="card" onclick="window.open('https://github.com/yourusername/skyroute-air-ticket','_blank')"><h3>SkyRoute Air Ticket Platform</h3><p>Microservices Docker AWS</p></div>
+<div class="card" onclick="window.open('https://github.com/yourusername/cloudtel-telecom','_blank')"><h3>CloudTel Telecom Platform</h3><p>Cloud Automation DevOps</p></div>
+<div class="card" onclick="window.open('https://github.com/yourusername/cloudbank-microservices','_blank')"><h3>CloudBank Microservices Platform</h3><p>Microservices API Cloud</p></div>
+<div class="card" onclick="window.open('https://github.com/yourusername/cloudwatch-lite-enterprise','_blank')"><h3>CloudWatch Lite Monitoring</h3><p>Monitoring Logs Observability</p></div>
 </div>
 
 <!-- FOOTER -->
