@@ -5,11 +5,33 @@
 <title>Projects</title>
 
 <style>
-body {
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     background: #0d0d0d;
     color: white;
     font-family: Arial;
+}
+
+/* GOLDEN CURSOR */
+body {
+    cursor: none;
+}
+
+.cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: gold;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 0 0 15px gold, 0 0 30px gold;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
 }
 
 /* NAVBAR */
@@ -23,7 +45,12 @@ nav {
 nav a {
     color: white;
     text-decoration: none;
+    font-size: 16px;
     cursor: pointer;
+}
+
+nav a:hover {
+    color: #66ccff;
 }
 
 /* HEADER */
@@ -36,15 +63,15 @@ nav a {
     font-size: 40px;
 }
 
-/* TYPING ANIMATION */
+/* TYPING */
 .typing {
     color: pink;
-    overflow: hidden;
-    white-space: nowrap;
     border-right: 2px solid pink;
+    white-space: nowrap;
+    overflow: hidden;
     width: 0;
     margin: auto;
-    animation: typing 4s steps(30, end) infinite, blink 0.7s infinite;
+    animation: typing 4s steps(30,end) infinite, blink .7s infinite;
 }
 
 @keyframes typing {
@@ -57,7 +84,7 @@ nav a {
     50% { border-color: transparent }
 }
 
-/* SECTION TITLES */
+/* SECTION TITLE */
 .section-title {
     color: #66ccff;
     margin: 40px 60px 20px;
@@ -65,24 +92,34 @@ nav a {
 
 /* PROJECT GRID */
 .projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 20px;
     padding: 0 60px;
 }
 
-/* CARDS */
+/* CARD (FORCED VISIBLE) */
 .card {
+    width: 260px;
     background: #1a1a1a;
+    border: 1px solid #333;
     padding: 20px;
     border-radius: 10px;
-    transition: 0.3s;
-    cursor: pointer;
+    display: block;
 }
 
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 0 15px rgba(102,204,255,0.4);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #aaa;
+    font-size: 14px;
 }
 
 /* FOOTER */
@@ -97,17 +134,19 @@ footer {
 
 <body>
 
+<div class="cursor" id="cursor"></div>
+
 <nav>
-    <a href="#">Home</a>
-    <a href="#">Posts</a>
-    <a href="#">Projects</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
+<a href="#">Home</a>
+<a href="#">Posts</a>
+<a href="#">Projects</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
 </nav>
 
 <div class="header">
-    <h1>My Projects</h1>
-    <p class="typing">Click project to view details</p>
+<h1>My Projects</h1>
+<p class="typing">Click project to view details</p>
 </div>
 
 <h2 class="section-title">Featured Projects</h2>
@@ -115,19 +154,12 @@ footer {
 <div class="projects">
 
 <div class="card"><h3>AWS EC2 Docker Deployment</h3><p>AWS EC2 Docker Linux</p></div>
-
 <div class="card"><h3>Static Website Deployment on S3</h3><p>AWS S3 Cloud Hosting</p></div>
-
 <div class="card"><h3>AWS VPC Networking Project</h3><p>AWS VPC Subnets Routing</p></div>
-
 <div class="card"><h3>AWS Serverless Data Management</h3><p>Lambda DynamoDB Serverless</p></div>
-
 <div class="card"><h3>Node.js Deployment on ECS Fargate</h3><p>Node.js ECS Fargate Docker</p></div>
-
 <div class="card"><h3>AWS Python HTTP API</h3><p>Python REST API AWS</p></div>
-
 <div class="card"><h3>CloudWatch Lite Monitoring</h3><p>Monitoring Logs Metrics</p></div>
-
 <div class="card"><h3>AWS CloudTrail Security Monitoring</h3><p>AWS CloudTrail Security</p></div>
 
 </div>
@@ -137,11 +169,8 @@ footer {
 <div class="projects">
 
 <div class="card"><h3>SkyRoute Air Ticket Platform</h3><p>Microservices Docker AWS</p></div>
-
 <div class="card"><h3>CloudTel Telecom Platform</h3><p>Cloud Automation DevOps</p></div>
-
 <div class="card"><h3>CloudBank Microservices Platform</h3><p>Microservices API Cloud</p></div>
-
 <div class="card"><h3>CloudWatch Lite Monitoring</h3><p>Monitoring Logs Observability</p></div>
 
 </div>
@@ -150,6 +179,15 @@ footer {
 ✦ Hina Atif <br>
 © 2026 All Rights Reserved
 </footer>
+
+<script>
+const cursor = document.getElementById("cursor");
+
+document.addEventListener("mousemove", (e) => {
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+});
+</script>
 
 </body>
 </html>
