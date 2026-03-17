@@ -1,202 +1,245 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <title>Contact | Hina Atif</title>
 
 <style>
-
 body{
-margin:0;
-font-family:Arial;
-background:#0b0b0f;
-color:white;
+  margin:0;
+  font-family:Arial;
+  background:#0b0b0f;
+  color:white;
+  overflow-x:hidden;
+  position:relative;
 }
 
 /* NAV */
 nav{
-display:flex;
-justify-content:space-between;
-padding:20px 80px;
+  display:flex;
+  justify-content:space-between;
+  padding:20px 80px;
+  position:relative;
+  z-index:10;
 }
 
 .logo{
-font-size:28px;
-font-weight:bold;
-background:linear-gradient(90deg,#ff7a18,#ff00ff,#00c6ff);
--webkit-background-clip:text;
-color:transparent;
+  font-size:28px;
+  font-weight:bold;
+  background:linear-gradient(90deg,#ff7a18,#ff00ff,#00c6ff);
+  -webkit-background-clip:text;
+  color:transparent;
 }
 
 nav ul{
-list-style:none;
-display:flex;
-gap:30px;
+  list-style:none;
+  display:flex;
+  gap:30px;
 }
 
 nav ul li a{
-color:white;
-text-decoration:none;
+  color:white;
+  text-decoration:none;
 }
 
 nav ul li a:hover{
-color:#00c6ff;
+  color:#00c6ff;
 }
 
 /* CONTAINER */
 .container{
-text-align:center;
-padding:120px 20px;
-max-width:900px;
-margin:auto;
+  text-align:center;
+  padding:120px 20px;
+  max-width:900px;
+  margin:auto;
+  position:relative;
+  z-index:10;
 }
 
 /* GOLD HEADING */
 h1{
-color:gold;
-font-family:Georgia, serif;
+  color:gold;
+  font-family:Georgia, serif;
 }
 
 /* FORM */
 form{
-margin-top:40px;
-text-align:left;
-background:#111;
-padding:30px;
-border-radius:15px;
+  margin-top:40px;
+  text-align:left;
+  background:#111;
+  padding:30px;
+  border-radius:15px;
+  position:relative;
+  z-index:10;
 }
 
 label{
-display:block;
-margin-top:15px;
-font-weight:bold;
+  display:block;
+  margin-top:15px;
+  font-weight:bold;
 }
 
 /* INPUTS */
 input, textarea{
-width:100%;
-padding:14px;
-margin-top:8px;
-border-radius:10px;
-border:none;
-background:#1a1a22;
-color:white;
-font-size:15px;
-transition:0.3s;
+  width:100%;
+  padding:14px;
+  margin-top:8px;
+  border-radius:10px;
+  border:none;
+  background:#1a1a22;
+  color:white;
+  font-size:15px;
+  transition:0.3s;
 }
 
 input:hover, textarea:hover{
-box-shadow:0 0 8px #00c6ff;
+  box-shadow:0 0 8px #00c6ff;
 }
 
 /* BUTTON */
 button{
-margin-top:25px;
-width:100%;
-padding:14px;
-border:none;
-border-radius:25px;
-background:linear-gradient(90deg,gold,#ff7a18);
-color:black;
-font-weight:bold;
-font-size:16px;
-cursor:pointer;
-transition:0.3s;
+  margin-top:25px;
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:25px;
+  background:linear-gradient(90deg,gold,#ff7a18);
+  color:black;
+  font-weight:bold;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.3s;
 }
 
 button:hover{
-transform:scale(1.05);
-box-shadow:0 0 20px gold;
+  transform:scale(1.05);
+  box-shadow:0 0 20px gold;
 }
 
 /* LINKS */
 .btn{
-display:inline-block;
-padding:12px 30px;
-background:#00c6ff;
-border-radius:20px;
-color:white;
-text-decoration:none;
-margin-top:20px;
+  display:inline-block;
+  padding:12px 30px;
+  background:#00c6ff;
+  border-radius:20px;
+  color:white;
+  text-decoration:none;
+  margin-top:20px;
 }
 
 /* FOOTER */
 footer{
-text-align:center;
-padding:40px;
-color:#aaa;
+  text-align:center;
+  padding:40px;
+  color:#aaa;
+  position:relative;
+  z-index:10;
 }
 
-</style>
+/* --- PARTICLE BACKGROUND --- */
+.particle {
+  position:absolute;
+  border-radius:50%;
+  background:rgba(0,198,255,0.4);
+  pointer-events:none;
+  width:10px;
+  height:10px;
+  mix-blend-mode:screen;
+  animation: float 5s infinite;
+}
 
+@keyframes float {
+  0% {transform: translate(0,0);}
+  50% {transform: translate(20px, -20px);}
+  100% {transform: translate(0,0);}
+}
+
+/* --- CURSOR SHADOW EFFECT --- */
+body::after {
+  content: '';
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: rgba(0,198,255,0.6);
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out;
+  mix-blend-mode: screen;
+  z-index:9999;
+}
+</style>
 </head>
 
 <body>
 
 <nav>
-<div class="logo">Hina Atif</div>
-
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="posts.html">Posts</a></li>
-<li><a href="projects.html">Projects</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
+  <div class="logo">Hina Atif</div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="posts.html">Posts</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
 </nav>
 
 <div class="container">
+  <h1>Contact Me</h1>
+  <p>Let's talk. I'm currently open for new opportunities (Remotely).</p>
 
-<h1>Contact Me</h1>
+  <form action="https://formspree.io/f/mnqlrjpl" method="POST">
+    <label>Your Name</label>
+    <input type="text" name="name" placeholder="Enter your name" required>
+    <label>Your Email</label>
+    <input type="email" name="email" placeholder="Enter your email" required>
+    <label>Message</label>
+    <textarea name="message" rows="5" placeholder="Write your message here..." required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
 
-<p>
-Let's talk. I'm currently open for new opportunities (Remotely).
-</p>
-
-<!-- ✅ PROFESSIONAL FORM (NO WARNING) -->
-<form action="https://formspree.io/f/mdawpowl " method="POST">
-  
-<label>Your Name</label>
-<input type="text" name="name" placeholder="Enter your name" required>
-
-<label>Your Email</label>
-<input type="email" name="email" placeholder="Enter your email" required>
-
-<label>Message</label>
-<textarea name="message" rows="5" placeholder="Write your message here..." required></textarea>
-
-<button type="submit">Send Message</button>
-
-</form>
-
-<br>
-
-<p>Email: <strong>hinaatif355@gmail.com</strong></p>
-
-<br>
-
-<a class="btn" href="mailto:hinaatif355@gmail.com">Send Email</a>
-
-<br><br>
-
-<a class="btn" href="https://www.linkedin.com/in/hina-atif-devopsengineer/" target="_blank">
-Connect on LinkedIn
-</a>
-
-<br><br>
-
-<a class="btn" href="https://github.com/Hina-Atif" target="_blank">
-Connect on GitHub
-</a>
-
+  <br>
+  <p>Email: <strong>hinaatif355@gmail.com</strong></p>
+  <br>
+  <a class="btn" href="mailto:hinaatif355@gmail.com">Send Email</a>
+  <br><br>
+  <a class="btn" href="https://www.linkedin.com/in/hina-atif-devopsengineer/" target="_blank">Connect on LinkedIn</a>
+  <br><br>
+  <a class="btn" href="https://github.com/Hina-Atif" target="_blank">Connect on GitHub</a>
 </div>
 
 <footer>
-
-✦ Hina Atif  
-© 2025 All Rights Reserved.
-
+  ✦ Hina Atif  
+  © 2025 All Rights Reserved.
 </footer>
+
+<script>
+// Move floating cursor
+document.addEventListener('mousemove', e => {
+  const cursor = document.body.querySelector('body::after') || document.querySelector('body');
+  const x = e.clientX;
+  const y = e.clientY;
+  const after = document.querySelector('body::after');
+  document.body.style.setProperty('--cursorX', x + 'px');
+  document.body.style.setProperty('--cursorY', y + 'px');
+  const cursorEl = document.querySelector('body::after');
+  if(cursorEl) cursorEl.style.transform = `translate(${x}px, ${y}px)`;
+});
+
+// Floating particles
+const numParticles = 40;
+for(let i=0; i<numParticles; i++){
+  const p = document.createElement('div');
+  p.classList.add('particle');
+  p.style.left = Math.random()*window.innerWidth+'px';
+  p.style.top = Math.random()*window.innerHeight+'px';
+  p.style.width = (5+Math.random()*10)+'px';
+  p.style.height = p.style.width;
+  p.style.animationDuration = (3+Math.random()*5)+'s';
+  document.body.appendChild(p);
+}
+</script>
 
 </body>
 </html>
