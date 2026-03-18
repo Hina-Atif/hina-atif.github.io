@@ -1,223 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projects | Hina Atif</title>
-
-<style>
-body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:#0b0b0f;
-    color:white;
-    overflow-x:hidden;
-    position:relative;
-    cursor:none;
-}
-
-/* ANIMATED BACKGROUND (SUBTLE GLOW) */
-body::before{
-    content:"";
-    position:fixed;
-    width:200%;
-    height:200%;
-    top:-50%;
-    left:-50%;
-    background:radial-gradient(circle, rgba(0,198,255,0.1), transparent 70%);
-    animation:moveBg 10s linear infinite;
-    z-index:-2;
-}
-
-@keyframes moveBg{
-    0%{transform:translate(0,0);}
-    50%{transform:translate(50px,50px);}
-    100%{transform:translate(0,0);}
-}    
-
-/* NAVBAR */
-nav{
-    display:flex;
-    justify-content:space-between;
-    padding:20px 80px;
-    position:fixed;
-    width:100%;
-    z-index:100;
-    background:#0b0b0f;
-}
-.logo{
-    font-size:28px;
-    font-weight:bold;
-    background:linear-gradient(90deg,#ff7a18,#ff00ff,#00c6ff);
-    -webkit-background-clip:text;
-    color:transparent;
-}
-nav ul{
-    list-style:none;
-    display:flex;
-    gap:30px;
-}
-nav ul li a{
-    color:white;
-    text-decoration:none;
-}
-
-/* CONTAINER */
-.container{
-    text-align:center;
-    padding:160px 40px;
-    max-width:1200px;
-    margin:auto;
-}
-
-/* CATEGORY BUTTONS */
-.category-boxes{
-    display:flex;
-    justify-content:center;
-    gap:40px;
-    margin-top:40px;
-}
-.category{
-    padding:25px 60px;
-    background:#15151c;
-    border-radius:10px;
-    font-size:22px;
-    font-weight:bold;
-    cursor:pointer;
-}
-.category{
-    transition:0.3s;
-}
-
-.category:hover{
-    background:#00c6ff;
-    color:black;
-    transform:translateY(-5px);
-    box-shadow:0 0 15px #00c6ff, 0 0 30px #00c6ff;
-}
-
-
-/* PROJECT GRID */
-.projects{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
-    margin-top:40px;
-    justify-items:center;
-}
-
-/* CARD */
-.card{
-    background:rgba(0,198,255,0.08);
-    width:280px;
-    border-radius:10px;
-    overflow:hidden;
-    transition:0.3s;
-    text-align:left;
-    border:1px solid rgba(0,198,255,0.3);
-}
-
-.card img{
-    width:100%;
-    height:160px;
-    object-fit:cover;
-}
-.card-title{
-    padding:15px;
-    font-weight:bold;
-    font-size:16px;
-}
-.tech{
-    padding:0 15px 15px;
-}
-.badge{
-    display:inline-block;
-    background:#00c6ff;
-    color:black;
-    padding:4px 8px;
-    border-radius:4px;
-    font-size:12px;
-    margin:2px 2px 2px 0;
-}
-.card:hover{
-    transform:translateY(-8px) scale(1.03);
-    box-shadow:0 0 20px #00c6ff, 0 0 40px rgba(0,198,255,0.5);
-    background:rgba(0,198,255,0.15);
-}
-
-/* CLICK EFFECT */
-.card:active{
-    transform:scale(0.97);
-    box-shadow:0 0 30px #00c6ff inset;
-}    
-
-/* FOOTER */
-footer{
-    text-align:center;
-    padding:40px;
-    color:#aaa;
-}
-    
-/* CUSTOM CURSOR */
-.cursor{
-    width:12px;
-    height:12px;
-    border-radius:50%;
-    background:white;
-    position:fixed;
-    pointer-events:none;
-    z-index:9999;
-}
-
-/* TRAIL PARTICLES */
-.trail{
-    position:fixed;
-    width:8px;
-    height:8px;
-    border-radius:50%;
-    background:#00c6ff;
-    pointer-events:none;
-    z-index:9998;
-    opacity:0.7;
-    animation:fadeOut 0.5s linear forwards;
-}
-
-@keyframes fadeOut{
-    to{
-        opacity:0;
-        transform:scale(0.5);
-    }
-}
-    
-</style>
-</head>
-<body>
-<div class="cursor"></div>    
-
-<nav>
-<div class="logo">Hina Atif</div>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="posts.html">Posts</a></li>
-<li><a href="projects.html">Projects</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</nav>
-
-<div class="container">
-<h1>My Projects</h1>
-<p id="typing-text" style="color:#ff00ff;"></p>
-
-<div class="category-boxes">
-<div class="category" onclick="document.getElementById('featured').scrollIntoView()">Featured Projects</div>
-<div class="category" onclick="document.getElementById('enterprise').scrollIntoView()">Enterprise Projects</div>
-</div>
-
 <!-- FEATURED PROJECTS -->
 <h2 id="featured" style="margin-top:100px;">Featured Projects</h2>
 <div class="projects">
 <!-- EC2 Docker -->
+<a href="https://github.com/Hina-Atif/AWS-EC2-DOCKER-DEPLOYMENT-HINA-ATIF" target="_blank">
 <div class="card">
 <img src="https://images.unsplash.com/photo-1605745341112-85968b19335b?fit=crop&w=400&h=160">
 <div class="card-title">AWS EC2 Docker Deployment</div>
@@ -228,8 +13,10 @@ footer{
 <span class="badge">Linux</span>
 </div>
 </div>
+</a>
 
 <!-- Static Website -->
+<a href="https://github.com/Hina-Atif/static-website-deployment-on-s3-hina-atif" target="_blank">
 <div class="card">
 <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?fit=crop&w=400&h=160">
 <div class="card-title">Static Website Deployment on S3</div>
@@ -239,8 +26,10 @@ footer{
 <span class="badge">Cloud Hosting</span>
 </div>
 </div>
+</a>
 
 <!-- VPC Networking -->
+<a href="https://github.com/Hina-Atif/aws-vpc-networking-project" target="_blank">
 <div class="card">
 <img src="https://images.unsplash.com/photo-1605379399642-870262d3d051?fit=crop&w=400&h=160">
 <div class="card-title">AWS VPC Networking Project</div>
@@ -251,8 +40,10 @@ footer{
 <span class="badge">Routing</span>
 </div>
 </div>
+</a>
 
 <!-- Serverless -->
+<a href="https://github.com/Hina-Atif/aws-serverless-data-management" target="_blank">
 <div class="card">
 <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?fit=crop&w=400&h=160">
 <div class="card-title">AWS Serverless Data Management</div>
@@ -262,8 +53,10 @@ footer{
 <span class="badge">Serverless</span>
 </div>
 </div>
+</a>
 
 <!-- ECS Fargate -->
+<a href="https://github.com/Hina-Atif/Scalable-Node.js-Deployment-on-AWS-ECS-Fargate" target="_blank">
 <div class="card">
 <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?fit=crop&w=400&h=160">
 <div class="card-title">Node.js Deployment on ECS Fargate</div>
@@ -274,8 +67,10 @@ footer{
 <span class="badge">Docker</span>
 </div>
 </div>
+</a>
 
 <!-- Python API -->
+<a href="https://github.com/Hina-Atif/aws-python-http-api-project" target="_blank">
 <div class="card">
 <img src="https://images.unsplash.com/photo-1581091870626-3b00cf4cd1ef?fit=crop&w=400&h=160">
 <div class="card-title">AWS Python HTTP API</div>
@@ -285,35 +80,14 @@ footer{
 <span class="badge">AWS</span>
 </div>
 </div>
-
-<!-- CloudWatch -->
-<div class="card">
-<img src="https://images.unsplash.com/photo-1556228724-4a5b820aeaa3?fit=crop&w=400&h=160">
-<div class="card-title">CloudWatch Lite Monitoring</div>
-<div class="tech">
-<span class="badge">Monitoring</span>
-<span class="badge">Logs</span>
-<span class="badge">Metrics</span>
-</div>
-</div>
-
-<!-- CloudTrail -->
-<div class="card">
-<img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?fit=crop&w=400&h=160">
-<div class="card-title">AWS CloudTrail Security Monitoring</div>
-<div class="tech">
-<span class="badge">AWS</span>
-<span class="badge">CloudTrail</span>
-<span class="badge">Security</span>
-</div>
-</div>
-
+</a>
 </div>
 
 <!-- ENTERPRISE PROJECTS -->
 <h2 id="enterprise" style="margin-top:100px;">Enterprise Projects</h2>
 <div class="projects">
 
+<a href="https://github.com/Hina-Atif/SkyRoute-Air-Ticket-Booking-Platform" target="_blank">
 <div class="card">
 <img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?fit=crop&w=400&h=160">
 <div class="card-title">SkyRoute Air Ticket Platform</div>
@@ -323,7 +97,9 @@ footer{
 <span class="badge">AWS</span>
 </div>
 </div>
+</a>
 
+<a href="https://github.com/Hina-Atif/CloudTel-Telecom-Self-Service-Platform" target="_blank">
 <div class="card">
 <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?fit=crop&w=400&h=160">
 <div class="card-title">CloudTel Telecom Platform</div>
@@ -333,7 +109,9 @@ footer{
 <span class="badge">DevOps</span>
 </div>
 </div>
+</a>
 
+<a href="https://github.com/Hina-Atif/CloudBank-Microservices-Banking-Platform" target="_blank">
 <div class="card">
 <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?fit=crop&w=400&h=160">
 <div class="card-title">CloudBank Microservices Platform</div>
@@ -343,7 +121,9 @@ footer{
 <span class="badge">Cloud</span>
 </div>
 </div>
+</a>
 
+<a href="https://github.com/Hina-Atif/CloudWatch-Lite-Monitoring-Platform" target="_blank">
 <div class="card">
 <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?fit=crop&w=400&h=160">
 <div class="card-title">CloudWatch Lite Monitoring</div>
@@ -353,70 +133,6 @@ footer{
 <span class="badge">Observability</span>
 </div>
 </div>
+</a>
 
 </div>
-
-<footer>
-✦ Hina Atif<br>
-© 2026 All Rights Reserved
-</footer>
-
-
-<script>
-// 🔥 TYPING EFFECT
-const text = "Click project to view details";
-let i = 0;
-
-function typeEffect() {
-    if (i < text.length) {
-        document.getElementById("typing-text").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeEffect, 50);
-    }
-}
-
-typeEffect();
-// CURSOR + TRAIL EFFECT
-const cursor = document.querySelector(".cursor");
-
-document.addEventListener("mousemove", e => {
-
-    // main cursor
-    cursor.style.top = e.clientY + "px";
-    cursor.style.left = e.clientX + "px";
-
-    // create trail particle
-    const trail = document.createElement("div");
-    trail.className = "trail";
-    trail.style.top = e.clientY + "px";
-    trail.style.left = e.clientX + "px";
-
-    document.body.appendChild(trail);
-
-    setTimeout(() => {
-        trail.remove();
-    }, 500);
-});
-
- // CLICK SPARK EFFECT
-document.addEventListener("click", e => {
-    for(let i=0; i<8; i++){
-        const spark = document.createElement("div");
-        spark.className = "trail";
-
-        spark.style.top = e.clientY + "px";
-        spark.style.left = e.clientX + "px";
-
-        spark.style.background = "white";
-
-        document.body.appendChild(spark);
-
-        setTimeout(() => {
-            spark.remove();
-        }, 500);
-    }
-});   
-</script>    
-
-</body>
-</html>    
