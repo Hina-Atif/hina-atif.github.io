@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hina Atif | DevOps Cloud Engineer</title>
+
 <style>
 body {
     margin: 0;
@@ -26,14 +27,16 @@ body {
     box-shadow:0 0 15px #00c6ff;
 }
 
-/* Navigation */
+/* ===== FIXED NAVBAR ===== */
 nav{
     display:flex;
     justify-content:space-between;
-    padding:20px 80px;
+    align-items:center;
+    padding:20px 50px; /* FIXED (was 80px causing overflow) */
     position:fixed;
     width:100%;
     z-index:1000;
+    box-sizing:border-box; /* IMPORTANT FIX */
 }
 
 .logo{
@@ -44,16 +47,21 @@ nav{
     color:transparent;
 }
 
+/* FIX: prevent items going outside */
 nav ul{
     list-style:none;
     display:flex;
-    gap:30px;
+    gap:20px; /* reduced from 30 */
+    margin:0;
+    padding:0;
+    flex-wrap:wrap; /* ensures Contact never disappears */
 }
 
 nav ul li a{
     color:white;
     text-decoration:none;
     font-weight:500;
+    white-space:nowrap;
 }
 
 nav ul li a:hover{
@@ -134,6 +142,7 @@ footer {
 }
 </style>
 </head>
+
 <body>
 
 <div id="cursor"></div>
