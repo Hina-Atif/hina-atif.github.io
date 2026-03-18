@@ -205,7 +205,7 @@ typing();
     
 <script>
 document.querySelectorAll(".nav-links a").forEach(link => {
-    if (link.href === window.location.href) {
+    if (link.href.includes(window.location.pathname)) {
         link.classList.add("active");
     }
 });
