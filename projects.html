@@ -89,13 +89,15 @@ nav ul li a{
 
 /* CARD */
 .card{
-    background:#15151c;
+    background:rgba(0,198,255,0.08);
     width:280px;
     border-radius:10px;
     overflow:hidden;
     transition:0.3s;
     text-align:left;
+    border:1px solid rgba(0,198,255,0.3);
 }
+
 .card img{
     width:100%;
     height:160px;
@@ -119,9 +121,16 @@ nav ul li a{
     margin:2px 2px 2px 0;
 }
 .card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 8px 20px rgba(0,198,255,0.4);
+    transform:translateY(-8px) scale(1.03);
+    box-shadow:0 0 20px #00c6ff, 0 0 40px rgba(0,198,255,0.5);
+    background:rgba(0,198,255,0.15);
 }
+
+/* CLICK EFFECT */
+.card:active{
+    transform:scale(0.97);
+    box-shadow:0 0 30px #00c6ff inset;
+}    
 
 /* FOOTER */
 footer{
