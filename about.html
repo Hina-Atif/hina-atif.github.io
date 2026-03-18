@@ -1,152 +1,231 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>About | Hina Atif</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me - Hina Atif</title>
+
 <style>
-body{
-  margin:0;
-  font-family:Arial;
-  background:#0b0b0f;
-  color:white;
-  overflow-x:hidden;
-  position:relative;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0d1117;
+  color: #cbd5e1;
+  cursor: none;
 }
 
-nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 80px;
-  position:relative;
-  z-index:10;
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  background: rgba(255,255,255,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.logo{
-  font-size:28px;
-  font-weight:bold;
-  background:linear-gradient(90deg,#ff7a18,#ff00ff,#00c6ff);
-  -webkit-background-clip:text;
-  color:transparent;
-  animation: glowText 3s infinite alternate;
+.navbar a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
-@keyframes glowText{
-  0%{filter: drop-shadow(0 0 5px gold);}
-  100%{filter: drop-shadow(0 0 20px gold);}
+.navbar a:hover {
+  color: #4f97ff;
 }
 
-.nav-links{
-  display:flex;
-  gap:30px;
+/* CONTENT */
+.container {
+  text-align: center;
+  padding: 80px 20px;
+  position: relative;
+  z-index: 1;
 }
 
-.nav-links a{
-  color:white;
-  text-decoration:none;
+.wave {
+  display: inline-block;
+  animation: wave 1.5s infinite;
+  transform-origin: 70% 70%;
 }
 
-.nav-links a:hover{
-  color:#00c6ff;
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  15% { transform: rotate(14deg); }
+  30% { transform: rotate(-8deg); }
+  50% { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
 }
 
-.container{
-  text-align:center;
-  padding:120px 20px;
-  max-width:900px;
-  margin:auto;
-  position:relative;
-  z-index:10;
+p {
+  max-width: 800px;
+  margin: 20px auto;
+  line-height: 1.6;
 }
 
-h1{
-  color:gold;
-  font-family:Georgia, serif;
+/* EXPERIENCE CARD */
+.experience-card {
+  background: rgba(255,255,255,0.05);
+  padding: 25px;
+  margin: 40px auto;
+  max-width: 700px;
+  border-radius: 15px;
+  transition: 0.4s;
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
-footer{
-  text-align:center;
-  padding:40px;
-  color:#aaa;
-  position:relative;
-  z-index:10;
+.experience-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 0 25px rgba(79,151,255,0.5);
 }
 
-.particle {
-  position:absolute;
-  border-radius:50%;
-  background:rgba(0,198,255,0.4);
-  pointer-events:none;
-  width:10px;
-  height:10px;
-  mix-blend-mode:screen;
-  animation: float 5s infinite;
+.exp-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.company {
+  color: gold;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.duration {
+  margin-top: 5px;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.exp-desc {
+  margin-top: 15px;
+  font-size: 0.95rem;
+}
+
+/* LINKEDIN */
+.linkedin-badge {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #0a66c2;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 5px #0a66c2; }
+  to { box-shadow: 0 0 20px #0a66c2; }
+}
+
+/* FLOATING BUBBLES */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.2;
+  background: #4f97ff;
+  animation: float 20s linear infinite;
 }
 
 @keyframes float {
-  0% {transform: translate(0,0);}
-  50% {transform: translate(20px, -20px);}
-  100% {transform: translate(0,0);}
+  0% { transform: translateY(100vh); }
+  100% { transform: translateY(-120vh); }
 }
 
-.cursor-shadow {
+/* CUSTOM CURSOR */
+.cursor {
   position: fixed;
-  left: 0;
-  top: 0;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
+  background: #4f97ff;
   border-radius: 50%;
   pointer-events: none;
-  background: rgba(255,215,0,0.5);
-  box-shadow: 0 0 20px 10px rgba(255,215,0,0.4);
   transform: translate(-50%, -50%);
-  transition: transform 0.05s ease-out;
-  z-index:9999;
-  mix-blend-mode: screen;
+  z-index: 9999;
 }
 </style>
 </head>
+
 <body>
 
-<nav>
-    <div class="logo">Hina Atif</div>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="posts.html">Posts</a>
-        <a href="projects.html">Projects</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-    </div>
-</nav>
-
-<div class="container">
-<h1>About Me</h1>
-<p>Hi, I'm Hina Atif, exploring DevOps, Cloud, and Automation. I create projects and share blogs to help others learn.</p>
+<!-- ✅ FIXED NAVBAR LINKS -->
+<div class="navbar">
+  <a href="index.html">Home</a>
+  <a href="posts.html">Posts</a>
+  <a href="projects.html">Projects</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
 </div>
 
-<footer>
-✦ Hina Atif  
-© 2025 All Rights Reserved.
-</footer>
+<!-- CONTENT -->
+<div class="container">
+  <h1>Hello <span class="wave">👋</span> I'm Hina Atif</h1>
+
+  <p>
+    I focus on building scalable cloud infrastructure, automating deployment pipelines, and improving system reliability using modern DevOps practices.
+    <br><br>
+    My work involves containerization, CI/CD automation, and cloud platforms like AWS. I enjoy turning complex deployment processes into efficient automated workflows.
+    <br><br>
+    My technical interests include Docker, Kubernetes, Infrastructure as Code, cloud architecture, and automation with Python and Linux.
+  </p>
+
+  <!-- EXPERIENCE -->
+  <div class="experience-card">
+    <div class="exp-title">Experience</div>
+    <div class="company">Al Nafi Cloud</div>
+    <div class="duration">Dec 2024 – May 2025 | Remote</div>
+
+    <div class="exp-desc">
+      Worked as a DevOps Cloud Engineer Intern focusing on real-world hands-on projects.
+      <br><br>
+      • Built and deployed applications using Docker containers  
+      • Implemented CI/CD pipelines using Jenkins  
+      • Managed cloud infrastructure on AWS (EC2, S3)  
+      • Worked with Linux and shell scripting for automation  
+      • Gained experience in monitoring tools and deployment workflows  
+    </div>
+  </div>
+
+  <!-- PORTFOLIO EXPERIENCE -->
+  <div class="experience-card">
+    <div class="exp-title">Portfolio Projects</div>
+    <div class="duration">Self Projects | DevOps & Cloud Engineering</div>
+
+    <div class="exp-desc">
+      • Designed and deployed cloud-based applications  
+      • Created CI/CD pipelines for automated deployment  
+      • Used Docker for containerization and environment consistency  
+      • Worked on real-world DevOps workflows for portfolio development  
+    </div>
+  </div>
+
+  <a href="https://www.linkedin.com/in/hina-atif-devopsengineer" target="_blank" class="linkedin-badge">LinkedIn</a>
+
+  <footer>✦ Hina Atif © 2026 All Rights Reserved</footer>
+</div>
 
 <script>
-const numParticles=40;
-for(let i=0;i<numParticles;i++){
-  const p=document.createElement('div');
-  p.classList.add('particle');
-  p.style.left=Math.random()*window.innerWidth+'px';
-  p.style.top=Math.random()*window.innerHeight+'px';
-  p.style.width=(5+Math.random()*10)+'px';
-  p.style.height=p.style.width;
-  p.style.animationDuration=(3+Math.random()*5)+'s';
-  document.body.appendChild(p);
+/* bubbles */
+for (let i = 0; i < 30; i++) {
+  let b = document.createElement("div");
+  b.className = "bubble";
+  let size = Math.random() * 50 + 10;
+  b.style.width = size + "px";
+  b.style.height = size + "px";
+  b.style.left = Math.random() * 100 + "vw";
+  document.body.appendChild(b);
 }
 
-const cursor=document.createElement('div');
-cursor.classList.add('cursor-shadow');
+/* cursor */
+let cursor = document.createElement("div");
+cursor.className = "cursor";
 document.body.appendChild(cursor);
 
-document.addEventListener('mousemove',e=>{
-  cursor.style.transform=`translate(${e.clientX}px, ${e.clientY}px)`;
+document.addEventListener("mousemove", e => {
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
 });
 </script>
 
