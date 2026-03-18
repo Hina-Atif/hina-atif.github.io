@@ -1,155 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hina Atif | DevOps Cloud Engineer</title>
+<title>Home | Hina Atif</title>
 
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0b0b0f;
-    color: white;
-    overflow-x: hidden;
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0b0b0f;
+  color:white;
+  overflow-x:hidden;
+  position:relative;
 }
 
-/* Cursor */
-#cursor{
-    width:18px;
-    height:18px;
-    border-radius:50%;
-    background:#00c6ff;
-    position:fixed;
-    pointer-events:none;
-    transform:translate(-50%, -50%);
-    z-index:999;
-    box-shadow:0 0 15px #00c6ff;
-}
-
-/* ===== FIXED NAVBAR ===== */
+/* NAV */
 nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 50px; /* FIXED (was 80px causing overflow) */
-    position:fixed;
-    width:100%;
-    z-index:1000;
-    box-sizing:border-box; /* IMPORTANT FIX */
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 80px;
+  position:relative;
+  z-index:10;
 }
 
 .logo{
-    font-size:28px;
-    font-weight:bold;
-    background:linear-gradient(90deg,#ff7a18,#ff00ff,#00c6ff);
-    -webkit-background-clip:text;
-    color:transparent;
+  font-size:28px;
+  font-weight:bold;
+  background:linear-gradient(90deg,#ff7a18,#ff00ff,#00c6ff);
+  -webkit-background-clip:text;
+  color:transparent;
+  animation: glowText 3s infinite alternate;
 }
 
-/* FIX: prevent items going outside */
-nav ul{
-    list-style:none;
-    display:flex;
-    gap:20px; /* reduced from 30 */
-    margin:0;
-    padding:0;
-    flex-wrap:wrap; /* ensures Contact never disappears */
+@keyframes glowText{
+  0%{filter: drop-shadow(0 0 5px gold);}
+  100%{filter: drop-shadow(0 0 20px gold);}
 }
 
-nav ul li a{
-    color:white;
-    text-decoration:none;
-    font-weight:500;
-    white-space:nowrap;
+.nav-links{
+  display:flex;
+  gap:30px;
 }
 
-nav ul li a:hover{
-    color:#00c6ff;
+.nav-links a{
+  color:white;
+  text-decoration:none;
 }
 
-/* Hero Section */
-.hero {
-    text-align:center;
-    padding:160px 20px 80px 20px;
+.nav-links a:hover{
+  color:#00c6ff;
 }
 
-.hero img {
-    width:180px;
-    border-radius:50%;
-    margin-bottom:20px;
-    box-shadow:0 0 20px #00c6ff;
+.container{
+  text-align:center;
+  padding:120px 20px;
+  max-width:900px;
+  margin:auto;
+  position:relative;
+  z-index:10;
 }
 
-.hero h1 {
-    font-size:48px;
-    margin:10px 0;
+h1{
+  color:gold;
+  font-family:Georgia, serif;
 }
 
-.name-white {
-    color:white;
-    font-weight:bold;
+footer{
+  text-align:center;
+  padding:40px;
+  color:#aaa;
+  position:relative;
+  z-index:10;
 }
 
-.title-blue {
-    color:#00c6ff;
-    font-weight:500;
-    font-size:24px;
-    min-height:30px;
+.particle {
+  position:absolute;
+  border-radius:50%;
+  background:rgba(0,198,255,0.4);
+  pointer-events:none;
+  width:10px;
+  height:10px;
+  mix-blend-mode:screen;
+  animation: float 5s infinite;
 }
 
-.hero .quote {
-    margin:20px auto;
-    font-style:italic;
-    color:#aaa;
+@keyframes float {
+  0% {transform: translate(0,0);}
+  50% {transform: translate(20px, -20px);}
+  100% {transform: translate(0,0);}
 }
 
-/* Tech Stack */
-.tech-stack {
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:20px;
-    margin-top:40px;
-}
-
-.tech-stack div {
-    background:#15151c;
-    padding:15px 25px;
-    border-radius:10px;
-    font-weight:bold;
-    box-shadow:0 0 10px #00c6ff;
-}
-
-/* Resume Button */
-.btn {
-    display:inline-block;
-    margin-top:30px;
-    padding:12px 30px;
-    background:#00c6ff;
-    border-radius:20px;
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-/* Footer */
-footer {
-    text-align:center;
-    padding:40px;
-    color:#aaa;
-    margin-top:60px;
+.cursor-shadow {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: rgba(255,215,0,0.5);
+  box-shadow: 0 0 20px 10px rgba(255,215,0,0.4);
+  transform: translate(-50%, -50%);
+  transition: transform 0.05s ease-out;
+  z-index:9999;
+  mix-blend-mode: screen;
 }
 </style>
 </head>
 
 <body>
 
-<div id="cursor"></div>
-
+<!-- NEW NAVBAR -->
 <nav>
     <div class="logo">Hina Atif</div>
-
     <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="posts.html">Posts</a>
@@ -158,58 +121,38 @@ footer {
         <a href="contact.html">Contact</a>
     </div>
 </nav>
-    
-<section class="hero">
-    <img src="assets/images/hina.png" alt="Hina Atif">
-    <h1>Hi, I'm <span class="name-white">Hina Atif</span></h1>
-    <h2 class="title-blue"><span id="typing"></span></h2>
-    <p class="quote">"Cloud is the limit – deploy with confidence."</p>
-    <a class="btn" href="assets/images/hina-resume.pdf" download="Hina_Atif_Resume">Download Resume</a>
 
-    <div class="tech-stack">
-        <div>AWS</div>
-        <div>Docker</div>
-        <div>Kubernetes</div>
-        <div>Terraform</div>
-        <div>Linux</div>
-        <div>Python</div>
-        <div>CI/CD</div>
-    </div>
-</section>
+<div class="container">
+<h1>Welcome to My Portfolio</h1>
+<p>Explore my DevOps projects, blogs, and learnings.</p>
+</div>
 
 <footer>
-    ✦ Hina Atif<br>
-    © 2026 All Rights Reserved.
+✦ Hina Atif  
+© 2025 All Rights Reserved.
 </footer>
 
 <script>
-// Cursor
-const cursor = document.getElementById("cursor");
-document.addEventListener("mousemove", e=>{
-    cursor.style.left = e.clientX + "px";
-    cursor.style.top = e.clientY + "px";
-});
-
-// Typing animation
-const text = "DevOps Cloud Engineer";
-let i = 0;
-function typing(){
-    if(i < text.length){
-        document.getElementById("typing").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typing, 80);
-    }
+const numParticles = 40;
+for(let i=0;i<numParticles;i++){
+  const p=document.createElement('div');
+  p.classList.add('particle');
+  p.style.left=Math.random()*window.innerWidth+'px';
+  p.style.top=Math.random()*window.innerHeight+'px';
+  p.style.width=(5+Math.random()*10)+'px';
+  p.style.height=p.style.width;
+  p.style.animationDuration=(3+Math.random()*5)+'s';
+  document.body.appendChild(p);
 }
-typing();
-</script>
-    
-<script>
-document.querySelectorAll(".nav-links a").forEach(link => {
-    if (link.href.includes(window.location.pathname)) {
-        link.classList.add("active");
-    }
+
+const cursor=document.createElement('div');
+cursor.classList.add('cursor-shadow');
+document.body.appendChild(cursor);
+
+document.addEventListener('mousemove',e=>{
+  cursor.style.transform=`translate(${e.clientX}px, ${e.clientY}px)`;
 });
 </script>
-    
+
 </body>
 </html>
