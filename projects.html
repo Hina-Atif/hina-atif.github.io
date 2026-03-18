@@ -1,96 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>Projects</title>
+<title>Posts | Hina Atif</title>
 
 <style>
-body {
-    margin: 0;
-    background: #0d0d0d;
-    color: white;
-    font-family: Arial;
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0b0b0f;
+  color:white;
+  overflow-x:hidden;
+  position:relative;
 }
 
-/* NAVBAR */
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 20px;
+/* NAV */
+nav{
+  display:flex;
+  justify-content:space-between;
+  padding:20px 80px;
+  position:relative;
+  z-index:10;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
+.logo{
+  font-size:28px;
+  font-weight:bold;
+  background:linear-gradient(90deg,#ff7a18,#ff00ff,#00c6ff);
+  -webkit-background-clip:text;
+  color:transparent;
+  animation: glowText 3s infinite alternate;
 }
 
-/* HEADER */
-.header {
-    text-align: center;
-    margin-top: 40px;
+/* LOGO ANIMATION */
+@keyframes glowText{
+  0%{filter: drop-shadow(0 0 5px gold);}
+  100%{filter: drop-shadow(0 0 20px gold);}
 }
 
-.header h1 {
-    font-size: 40px;
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:30px;
 }
 
-/* TYPING ANIMATION */
-.typing {
-    color: pink;
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 2px solid pink;
-    width: 0;
-    margin: auto;
-    animation: typing 4s steps(30, end) infinite, blink 0.7s infinite;
+nav ul li a{
+  color:white;
+  text-decoration:none;
 }
 
-@keyframes typing {
-    0% { width: 0 }
-    50% { width: 260px }
-    100% { width: 0 }
+nav ul li a:hover{
+  color:#00c6ff;
 }
 
-@keyframes blink {
-    50% { border-color: transparent }
+/* CONTAINER */
+.container{
+  text-align:center;
+  padding:120px 20px;
+  max-width:900px;
+  margin:auto;
+  position:relative;
+  z-index:10;
 }
 
-/* SECTION TITLES */
-.section-title {
-    color: #66ccff;
-    margin: 40px 60px 20px;
-}
-
-/* PROJECT GRID */
-.projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 0 60px;
+h1{
+  color:gold;
+  font-family:Georgia, serif;
 }
 
 /* CARDS */
-.card {
-    background: #1a1a1a;
-    padding: 20px;
-    border-radius: 10px;
-    transition: 0.3s;
-    cursor: pointer;
+.card-container{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  margin-top:40px;
+  flex-wrap:wrap;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 15px rgba(102,204,255,0.4);
+.card{
+  background:#111;
+  padding:30px;
+  border-radius:15px;
+  width:260px;
+  text-decoration:none;
+  color:white;
+  transition:0.3s;
+  box-shadow:0 0 10px rgba(0,198,255,0.2);
+  display:block; /* ensures full card clickable */
+}
+
+.card:hover{
+  transform:translateY(-10px) scale(1.05);
+  box-shadow:0 0 25px #00c6ff; /* LIGHT BLUE HOVER */
 }
 
 /* FOOTER */
-footer {
-    text-align: center;
-    margin-top: 50px;
-    padding: 20px;
-    color: #aaa;
+footer{
+  text-align:center;
+  padding:40px;
+  color:#aaa;
+  position:relative;
+  z-index:10;
+}
+
+/* --- PARTICLES --- */
+.particle {
+  position:absolute;
+  border-radius:50%;
+  background:rgba(0,198,255,0.4);
+  pointer-events:none;
+  width:10px;
+  height:10px;
+  mix-blend-mode:screen;
+  animation: float 5s infinite;
+}
+
+@keyframes float {
+  0% {transform: translate(0,0);}
+  50% {transform: translate(20px, -20px);}
+  100% {transform: translate(0,0);}
+}
+
+/* --- GOLD CURSOR --- */
+.cursor-shadow {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: rgba(255,215,0,0.5);
+  box-shadow: 0 0 20px 10px rgba(255,215,0,0.4);
+  transform: translate(-50%, -50%);
+  transition: transform 0.05s ease-out;
+  z-index:9999;
+  mix-blend-mode: screen;
 }
 </style>
 </head>
@@ -98,58 +142,70 @@ footer {
 <body>
 
 <nav>
-    <a href="#">Home</a>
-    <a href="#">Posts</a>
-    <a href="#">Projects</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
+<div class="logo">Hina Atif</div>
+
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="posts.html">Posts</a></li>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
 </nav>
 
-<div class="header">
-    <h1>My Projects</h1>
-    <p class="typing">Click project to view details</p>
-</div>
+<div class="container">
 
-<h2 class="section-title">Featured Projects</h2>
+<h1>My Blogs</h1>
 
-<div class="projects">
+<p>
+Join me on a journey through DevOps, cloud computing, and automation.
+I share insights, real-world solutions, and practical DevOps strategies.
+</p>
 
-<div class="card"><h3>AWS EC2 Docker Deployment</h3><p>AWS EC2 Docker Linux</p></div>
+<div class="card-container">
 
-<div class="card"><h3>Static Website Deployment on S3</h3><p>AWS S3 Cloud Hosting</p></div>
+<a href="https://medium.com/@hinaatif355" class="card" target="_blank">
+<h3>Follow on Medium</h3>
+<p>Read my DevOps articles and real-world guides.</p>
+</a>
 
-<div class="card"><h3>AWS VPC Networking Project</h3><p>AWS VPC Subnets Routing</p></div>
-
-<div class="card"><h3>AWS Serverless Data Management</h3><p>Lambda DynamoDB Serverless</p></div>
-
-<div class="card"><h3>Node.js Deployment on ECS Fargate</h3><p>Node.js ECS Fargate Docker</p></div>
-
-<div class="card"><h3>AWS Python HTTP API</h3><p>Python REST API AWS</p></div>
-
-<div class="card"><h3>CloudWatch Lite Monitoring</h3><p>Monitoring Logs Metrics</p></div>
-
-<div class="card"><h3>AWS CloudTrail Security Monitoring</h3><p>AWS CloudTrail Security</p></div>
+<a href="https://hashnode.com/@hina-atif355" class="card" target="_blank">
+<h3>Follow on Hashnode</h3>
+<p>Explore my blogs on cloud and automation.</p>
+</a>
 
 </div>
-
-<h2 class="section-title">Enterprise Projects</h2>
-
-<div class="projects">
-
-<div class="card"><h3>SkyRoute Air Ticket Platform</h3><p>Microservices Docker AWS</p></div>
-
-<div class="card"><h3>CloudTel Telecom Platform</h3><p>Cloud Automation DevOps</p></div>
-
-<div class="card"><h3>CloudBank Microservices Platform</h3><p>Microservices API Cloud</p></div>
-
-<div class="card"><h3>CloudWatch Lite Monitoring</h3><p>Monitoring Logs Observability</p></div>
 
 </div>
 
 <footer>
-✦ Hina Atif <br>
-© 2026 All Rights Reserved
+✦ Hina Atif  
+© 2025 All Rights Reserved.
 </footer>
+
+<script>
+// FLOATING PARTICLES
+const numParticles = 40;
+for(let i=0; i<numParticles; i++){
+  const p = document.createElement('div');
+  p.classList.add('particle');
+  p.style.left = Math.random()*window.innerWidth+'px';
+  p.style.top = Math.random()*window.innerHeight+'px';
+  p.style.width = (5+Math.random()*10)+'px';
+  p.style.height = p.style.width;
+  p.style.animationDuration = (3+Math.random()*5)+'s';
+  document.body.appendChild(p);
+}
+
+// GOLD CURSOR
+const cursor = document.createElement('div');
+cursor.classList.add('cursor-shadow');
+document.body.appendChild(cursor);
+
+document.addEventListener('mousemove', e => {
+  cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+});
+</script>
 
 </body>
 </html>
