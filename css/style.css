@@ -41,3 +41,29 @@ header nav a:hover {color:#00f0ff;}
 @keyframes glowStack {0%{text-shadow:0 0 5px #00f0ff;} 100%{text-shadow:0 0 20px #00f0ff;}}
 @keyframes glowName {0%{text-shadow:0 0 5px #00f0ff;} 100%{text-shadow:0 0 20px #00f0ff;}}
 @keyframes fadeQuote {0%,100%{opacity:0;}50%{opacity:1;}}
+
+/* ===== NAVBAR VISIBILITY FIX (SAFE) ===== */
+
+/* Keep nav layout same */
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+/* Ensure all links always show */
+header nav a {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Fix missing last item (Contact) */
+header nav a:last-child {
+    display: inline-block !important;
+}
+
+/* Optional active state */
+header nav a.active {
+    color: #00f0ff;
+    font-weight: 600;
+}
