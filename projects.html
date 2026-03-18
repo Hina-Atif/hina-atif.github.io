@@ -13,6 +13,7 @@ body{
     color:white;
     overflow-x:hidden;
     position:relative;
+    cursor:none;
 }
 
 /* NAVBAR */
@@ -128,9 +129,23 @@ footer{
     padding:40px;
     color:#aaa;
 }
+    
+/* CUSTOM CURSOR */
+.cursor{
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:white;
+    position:fixed;
+    pointer-events:none;
+    box-shadow:0 0 10px white, 0 0 20px white, 0 0 40px white;
+    z-index:9999;
+}
+    
 </style>
 </head>
 <body>
+<div class="cursor"></div>    
 
 <nav>
 <div class="logo">Hina Atif</div>
@@ -299,7 +314,6 @@ footer{
 © 2026 All Rights Reserved
 </footer>
 
-</footer>
 
 <script>
 // 🔥 TYPING EFFECT
@@ -315,6 +329,13 @@ function typeEffect() {
 }
 
 typeEffect();
+// ✅ CURSOR EFFECT
+const cursor = document.querySelector(".cursor");
+
+document.addEventListener("mousemove", e => {
+    cursor.style.top = e.clientY + "px";
+    cursor.style.left = e.clientX + "px";
+}); 
 </script>
 
 </body>
