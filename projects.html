@@ -65,10 +65,17 @@ nav ul li a{
     font-weight:bold;
     cursor:pointer;
 }
-.category:hover{
-    background:#1d1d27;
-    transform:translateY(-5px);
+.category{
+    transition:0.3s;
 }
+
+.category:hover{
+    background:#00c6ff;
+    color:black;
+    transform:translateY(-5px);
+    box-shadow:0 0 15px #00c6ff, 0 0 30px #00c6ff;
+}
+
 
 /* PROJECT GRID */
 .projects{
