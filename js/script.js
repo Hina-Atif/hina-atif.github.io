@@ -1,14 +1,11 @@
-// FIXED NAVBAR - DO NOT HIDE MENU ITEMS
+// SAFE NAVBAR FIX - DOES NOT HIDE ANY LINKS
 
 document.addEventListener("DOMContentLoaded", function () {
-    const links = document.querySelectorAll("nav ul li a");
+    const links = document.querySelectorAll("header nav a");
 
     links.forEach(link => {
         link.addEventListener("click", function () {
-            // Remove active class from all links
             links.forEach(l => l.classList.remove("active"));
-
-            // Add active class to clicked link
             this.classList.add("active");
         });
     });
