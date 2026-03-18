@@ -17,6 +17,7 @@ body{
 nav{
   display:flex;
   justify-content:space-between;
+  align-items:center;
   padding:20px 80px;
   position:relative;
   z-index:10;
@@ -37,18 +38,17 @@ nav{
   100%{filter: drop-shadow(0 0 20px gold);}
 }
 
-nav ul{
-  list-style:none;
+.nav-links{
   display:flex;
   gap:30px;
 }
 
-nav ul li a{
+.nav-links a{
   color:white;
   text-decoration:none;
 }
 
-nav ul li a:hover{
+.nav-links a:hover{
   color:#00c6ff;
 }
 
@@ -141,16 +141,17 @@ footer{
 
 <body>
 
+<!-- 🔥 NEW NAVBAR -->
 <nav>
-<div class="logo">Hina Atif</div>
+    <div class="logo">Hina Atif</div>
 
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="posts.html">Posts</a></li>
-<li><a href="projects.html">Projects</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="posts.html">Posts</a>
+        <a href="projects.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
 </nav>
 
 <div class="container">
