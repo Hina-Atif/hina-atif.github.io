@@ -18,6 +18,20 @@ body {
     background: var(--bg-dark);
     color: white;
     overflow-x: hidden;
+    position: relative;
+}
+
+/* GOLDEN CURSOR */
+.cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: gold;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 0 0 15px gold, 0 0 30px gold;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
 }
 
 /* NAVBAR */
@@ -25,54 +39,84 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5%;
+    padding: 20px 80px;
     position: fixed;
-    width: 90%;
+    width: 100%;
+    box-sizing: border-box;
     z-index: 100;
     background: rgba(11, 11, 15, 0.95);
     backdrop-filter: blur(10px);
 }
 
 .logo {
-    font-size: 26px;
+    font-size: 28px;
     font-weight: bold;
     background: linear-gradient(90deg, #ff7a18, #ff00ff, #00c6ff);
     -webkit-background-clip: text;
     color: transparent;
-    text-decoration: none;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 25px;
+    gap: 30px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 15px;
+    transition: 0.3s;
 }
+
+nav ul li a:hover { color: var(--primary-cyan); }
 
 /* CONTAINER */
 .container {
     text-align: center;
-    padding: 140px 5% 60px;
+    padding: 160px 40px 60px;
     max-width: 1200px;
     margin: auto;
 }
 
-/* PROJECT GRID */
-.projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+/* CATEGORY BUTTONS */
+.category-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
     margin-top: 40px;
+    flex-wrap: wrap;
 }
 
-/* CARD - Layout Protection */
+.category {
+    padding: 20px 50px;
+    background: var(--card-bg);
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.category:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-cyan);
+}
+
+/* GRID */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    justify-items: center;
+}
+
+/* CARD */
 .card {
     background: var(--card-bg);
+    width: 100%;
+    max-width: 320px;
     border-radius: 12px;
     overflow: hidden;
     transition: 0.4s;
@@ -83,35 +127,36 @@ nav ul li a {
     border: 1px solid rgba(255,255,255,0.05);
 }
 
-.img-box {
+.img-container {
     width: 100%;
-    aspect-ratio: 16 / 9; /* Keeps all images the same height */
+    aspect-ratio: 16 / 9;
     overflow: hidden;
-    background: #000;
 }
 
 .card img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Prevents squashing/stretching */
+    object-fit: cover;
 }
 
 .card-title {
-    padding: 20px 20px 5px;
+    padding: 15px 15px 5px;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
+    text-align: left;
 }
 
 .tech {
-    padding: 10px 20px 25px;
+    padding: 0 15px 20px;
     margin-top: auto;
+    text-align: left;
 }
 
 .badge {
     display: inline-block;
     background: var(--primary-cyan);
     color: black;
-    padding: 4px 10px;
+    padding: 4px 8px;
     border-radius: 4px;
     font-size: 11px;
     font-weight: bold;
@@ -120,70 +165,121 @@ nav ul li a {
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 198, 255, 0.2);
+    box-shadow: 0 10px 25px rgba(0, 198, 255, 0.3);
     border-color: var(--primary-cyan);
 }
 
+footer { text-align: center; padding: 60px; color: #aaa; }
+
 /* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
-    nav { flex-direction: column; padding: 15px 0; width: 100%; }
-    nav ul { margin-top: 10px; gap: 15px; }
-    .container { padding-top: 180px; }
+    nav { padding: 20px; flex-direction: column; }
+    nav ul { gap: 15px; padding: 10px 0; }
+    .cursor { display: none; }
+    .category { width: 100%; padding: 15px; }
 }
 </style>
 </head>
 <body>
 
+<div class="cursor" id="cursor"></div>
+
 <nav>
-    <a href="index.html" class="logo">Hina Atif</a>
+    <div class="logo">Hina Atif</div>
     <ul>
         <li><a href="index.html">Home</a></li>
+        <li><a href="posts.html">Posts</a></li>
         <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
     </ul>
 </nav>
 
 <div class="container">
-    <h1>Project Portfolio</h1>
-    
+    <h1>My Projects</h1>
+    <p>Infrastructure & Cloud Engineering Portfolio</p>
+
+    <div class="category-boxes">
+        <div class="category" onclick="document.getElementById('featured').scrollIntoView({behavior: 'smooth'})">Featured</div>
+        <div class="category" onclick="document.getElementById('enterprise').scrollIntoView({behavior: 'smooth'})">Enterprise</div>
+    </div>
+
+    <h2 id="featured" style="margin-top:100px; text-align: left;">Featured Projects</h2>
     <div class="projects">
         
         <a href="https://github.com/Hina-Atif/aws-vpc-networking-project" target="_blank" class="card">
-            <div class="img-box">
-                <img src="VPC Networking.png" alt="VPC Networking">
-            </div>
+            <div class="img-container"><img src="VPC Networking.png" alt="VPC"></div>
             <div class="card-title">AWS VPC Networking</div>
-            <div class="tech">
-                <span class="badge">VPC</span><span class="badge">Subnets</span><span class="badge">Networking</span>
-            </div>
+            <div class="tech"><span class="badge">VPC</span><span class="badge">AWS</span></div>
         </a>
 
         <a href="https://github.com/Hina-Atif/Scalable-Node.js-Deployment-on-AWS-ECS-Fargate" target="_blank" class="card">
-            <div class="img-box">
-                <img src="https://miro.medium.com/v2/resize:fit:1200/1*uPXK8mWGmh9JE63cfClY3g.png" alt="ECS Fargate">
-            </div>
+            <div class="img-container"><img src="https://miro.medium.com/v2/resize:fit:1200/1*uPXK8mWGmh9JE63cfClY3g.png" alt="ECS"></div>
             <div class="card-title">Node.js ECS Fargate</div>
-            <div class="tech">
-                <span class="badge">ECS</span><span class="badge">Fargate</span><span class="badge">Docker</span>
-            </div>
+            <div class="tech"><span class="badge">ECS</span><span class="badge">Docker</span></div>
         </a>
 
         <a href="https://github.com/Hina-Atif/aws-python-http-api-project" target="_blank" class="card">
-            <div class="img-box">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwvE3BiLowL7-6cwDlIP4-g7_3nrsaGqqfDQ&s" alt="Python API">
-            </div>
+            <div class="img-container"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwvE3BiLowL7-6cwDlIP4-g7_3nrsaGqqfDQ&s" alt="API"></div>
             <div class="card-title">AWS Python HTTP API</div>
-            <div class="tech">
-                <span class="badge">Python</span><span class="badge">API Gateway</span><span class="badge">Lambda</span>
-            </div>
+            <div class="tech"><span class="badge">Lambda</span><span class="badge">API Gateway</span></div>
         </a>
 
+        <a href="https://github.com/Hina-Atif/AWS-EC2-DOCKER-DEPLOYMENT-HINA-ATIF" target="_blank" class="card">
+            <div class="img-container"><img src="https://images.unsplash.com/photo-1605745341112-85968b19335b?w=400" alt="Docker"></div>
+            <div class="card-title">EC2 Docker Deployment</div>
+            <div class="tech"><span class="badge">EC2</span><span class="badge">Docker</span></div>
+        </a>
+
+        <a href="https://github.com/Hina-Atif/static-website-deployment-on-s3-hina-atif" target="_blank" class="card">
+            <div class="img-container"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400" alt="S3"></div>
+            <div class="card-title">Static Website S3</div>
+            <div class="tech"><span class="badge">S3</span><span class="badge">CloudFront</span></div>
+        </a>
+
+        <a href="https://github.com/Hina-Atif/aws-serverless-data-management" target="_blank" class="card">
+            <div class="img-container"><img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?w=400" alt="Serverless"></div>
+            <div class="card-title">Serverless Data MGMT</div>
+            <div class="tech"><span class="badge">DynamoDB</span><span class="badge">Lambda</span></div>
+        </a>
+    </div>
+
+    <h2 id="enterprise" style="margin-top:100px; text-align: left;">Enterprise Projects</h2>
+    <div class="projects">
+        <a href="https://github.com/Hina-Atif/SkyRoute-Air-Ticket-Booking-Platform" target="_blank" class="card">
+            <div class="img-container"><img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=400" alt="SkyRoute"></div>
+            <div class="card-title">SkyRoute Air Ticket</div>
+            <div class="tech"><span class="badge">Microservices</span></div>
+        </a>
+
+        <a href="https://github.com/Hina-Atif/CloudBank-Microservices-Banking-Platform" target="_blank" class="card">
+            <div class="img-container"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400" alt="Banking"></div>
+            <div class="card-title">CloudBank Platform</div>
+            <div class="tech"><span class="badge">FinTech</span></div>
+        </a>
+
+        <a href="https://github.com/Hina-Atif/CloudTel-Telecom-Self-Service-Platform" target="_blank" class="card">
+            <div class="img-container"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400" alt="Telecom"></div>
+            <div class="card-title">CloudTel Platform</div>
+            <div class="tech"><span class="badge">Automation</span></div>
+        </a>
+
+        <a href="https://github.com/Hina-Atif/CloudWatch-Lite-Monitoring-Platform" target="_blank" class="card">
+            <div class="img-container"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400" alt="Monitoring"></div>
+            <div class="card-title">CloudWatch Lite</div>
+            <div class="tech"><span class="badge">Observability</span></div>
+        </a>
     </div>
 </div>
 
-<footer>
-    ✦ Hina Atif | © 2026 Portfolio
-</footer>
+<footer>✦ Hina Atif | © 2026 Portfolio</footer>
 
+<script>
+    const cursor = document.getElementById("cursor");
+    document.addEventListener("mousemove", e => {
+        cursor.style.left = e.clientX + "px";
+        cursor.style.top = e.clientY + "px";
+    });
+</script>
 </body>
 </html>
