@@ -6,293 +6,184 @@
 <title>Projects | Hina Atif</title>
 
 <style>
-body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:#0b0b0f;
-    color:white;
-    overflow-x:hidden;
-    position:relative;
-    cursor:none;
+:root {
+    --bg-dark: #0b0b0f;
+    --card-bg: #15151c;
+    --primary-cyan: #00c6ff;
 }
 
-/* GOLDEN CURSOR */
-.cursor {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    background: gold;
-    border-radius: 50%;
-    pointer-events: none;
-    box-shadow: 0 0 15px gold, 0 0 30px gold;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--bg-dark);
+    color: white;
+    overflow-x: hidden;
 }
 
 /* NAVBAR */
-nav{
-    display:flex;
-    justify-content:space-between;
-    padding:20px 80px;
-    position:fixed;
-    width:100%;
-    z-index:100;
-    background:#0b0b0f;
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    position: fixed;
+    width: 90%;
+    z-index: 100;
+    background: rgba(11, 11, 15, 0.95);
+    backdrop-filter: blur(10px);
 }
-.logo{
-    font-size:28px;
-    font-weight:bold;
-    background:linear-gradient(90deg,#ff7a18,#ff00ff,#00c6ff);
-    -webkit-background-clip:text;
-    color:transparent;
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff7a18, #ff00ff, #00c6ff);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-decoration: none;
 }
-nav ul{
-    list-style:none;
-    display:flex;
-    gap:30px;
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
 }
-nav ul li a{
-    color:white;
-    text-decoration:none;
-    cursor:pointer;
-}
-nav ul li a:hover{
-    color:#66ccff;
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
 }
 
 /* CONTAINER */
-.container{
-    text-align:center;
-    padding:160px 40px;
-    max-width:1200px;
-    margin:auto;
-}
-
-/* CATEGORY BUTTONS */
-.category-boxes{
-    display:flex;
-    justify-content:center;
-    gap:40px;
-    margin-top:40px;
-}
-.category{
-    padding:25px 60px;
-    background:#15151c;
-    border-radius:10px;
-    font-size:22px;
-    font-weight:bold;
-    cursor:pointer;
-}
-.category:hover{
-    background:#1d1d27;
-    transform:translateY(-5px);
+.container {
+    text-align: center;
+    padding: 140px 5% 60px;
+    max-width: 1200px;
+    margin: auto;
 }
 
 /* PROJECT GRID */
-.projects{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
-    margin-top:40px;
-    justify-items:center;
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
 }
 
-/* CARD */
-.card{
-    background:#15151c;
-    width:280px;
-    border-radius:10px;
-    overflow:hidden;
-    transition:0.3s;
-    text-align:left;
-    text-decoration:none;
-    color:inherit;
-    display:block;
-}
-.card img{
-    width:100%;
-    height:160px;
-    object-fit:cover;
-}
-.card-title{
-    padding:15px;
-    font-weight:bold;
-    font-size:16px;
-}
-.tech{
-    padding:0 15px 15px;
-}
-.badge{
-    display:inline-block;
-    background:#00c6ff;
-    color:black;
-    padding:4px 8px;
-    border-radius:4px;
-    font-size:12px;
-    margin:2px 2px 2px 0;
-}
-.card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 8px 20px rgba(0,198,255,0.4);
+/* CARD - Layout Protection */
+.card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.4s;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255,255,255,0.05);
 }
 
-/* FOOTER */
-footer{
-    text-align:center;
-    padding:40px;
-    color:#aaa;
+.img-box {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Keeps all images the same height */
+    overflow: hidden;
+    background: #000;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Prevents squashing/stretching */
+}
+
+.card-title {
+    padding: 20px 20px 5px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.tech {
+    padding: 10px 20px 25px;
+    margin-top: auto;
+}
+
+.badge {
+    display: inline-block;
+    background: var(--primary-cyan);
+    color: black;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    margin: 2px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 198, 255, 0.2);
+    border-color: var(--primary-cyan);
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    nav { flex-direction: column; padding: 15px 0; width: 100%; }
+    nav ul { margin-top: 10px; gap: 15px; }
+    .container { padding-top: 180px; }
 }
 </style>
 </head>
 <body>
 
-<!-- GOLDEN CURSOR -->
-<div class="cursor" id="cursor"></div>
-
 <nav>
-<div class="logo">Hina Atif</div>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="posts.html">Posts</a></li>
-<li><a href="projects.html">Projects</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
+    <a href="index.html" class="logo">Hina Atif</a>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
 </nav>
 
-<div class="container" id="home">
-<h1>My Projects</h1>
-<p>Click project to view details</p>
+<div class="container">
+    <h1>Project Portfolio</h1>
+    
+    <div class="projects">
+        
+        <a href="https://github.com/Hina-Atif/aws-vpc-networking-project" target="_blank" class="card">
+            <div class="img-box">
+                <img src="VPC Networking.png" alt="VPC Networking">
+            </div>
+            <div class="card-title">AWS VPC Networking</div>
+            <div class="tech">
+                <span class="badge">VPC</span><span class="badge">Subnets</span><span class="badge">Networking</span>
+            </div>
+        </a>
 
-<div class="category-boxes">
-<div class="category" onclick="document.getElementById('featured').scrollIntoView()">Featured Projects</div>
-<div class="category" onclick="document.getElementById('enterprise').scrollIntoView()">Enterprise Projects</div>
-</div>
+        <a href="https://github.com/Hina-Atif/Scalable-Node.js-Deployment-on-AWS-ECS-Fargate" target="_blank" class="card">
+            <div class="img-box">
+                <img src="https://miro.medium.com/v2/resize:fit:1200/1*uPXK8mWGmh9JE63cfClY3g.png" alt="ECS Fargate">
+            </div>
+            <div class="card-title">Node.js ECS Fargate</div>
+            <div class="tech">
+                <span class="badge">ECS</span><span class="badge">Fargate</span><span class="badge">Docker</span>
+            </div>
+        </a>
 
-<!-- FEATURED PROJECTS -->
-<h2 id="featured" style="margin-top:100px;">Featured Projects</h2>
-<div class="projects">
-<a href="https://github.com/Hina-Atif/AWS-EC2-DOCKER-DEPLOYMENT-HINA-ATIF" target="_blank" class="card">
-<img src="https://images.unsplash.com/photo-1605745341112-85968b19335b?fit=crop&w=400&h=160">
-<div class="card-title">AWS EC2 Docker Deployment</div>
-<div class="tech">
-<span class="badge">AWS</span>
-<span class="badge">EC2</span>
-<span class="badge">Docker</span>
-<span class="badge">Linux</span>
-</div>
-</a>
+        <a href="https://github.com/Hina-Atif/aws-python-http-api-project" target="_blank" class="card">
+            <div class="img-box">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwvE3BiLowL7-6cwDlIP4-g7_3nrsaGqqfDQ&s" alt="Python API">
+            </div>
+            <div class="card-title">AWS Python HTTP API</div>
+            <div class="tech">
+                <span class="badge">Python</span><span class="badge">API Gateway</span><span class="badge">Lambda</span>
+            </div>
+        </a>
 
-<a href="https://github.com/Hina-Atif/static-website-deployment-on-s3-hina-atif" target="_blank" class="card">
-<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?fit=crop&w=400&h=160">
-<div class="card-title">Static Website Deployment on S3</div>
-<div class="tech">
-<span class="badge">AWS</span>
-<span class="badge">S3</span>
-<span class="badge">Cloud Hosting</span>
-</div>
-</a>
-
-<a href="https://github.com/Hina-Atif/aws-vpc-networking-project" target="_blank" class="card">
-<img src="https://images.unsplash.com/photo-1605379399642-870262d3d051?fit=crop&w=400&h=160">
-<div class="card-title">AWS VPC Networking Project</div>
-<div class="tech">
-<span class="badge">AWS</span>
-<span class="badge">VPC</span>
-<span class="badge">Subnets</span>
-<span class="badge">Routing</span>
-</div>
-</a>
-
-<a href="https://github.com/Hina-Atif/aws-serverless-data-management" target="_blank" class="card">
-<img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?fit=crop&w=400&h=160">
-<div class="card-title">AWS Serverless Data Management</div>
-<div class="tech">
-<span class="badge">Lambda</span>
-<span class="badge">DynamoDB</span>
-<span class="badge">Serverless</span>
-</div>
-</a>
-
-<a href="https://github.com/Hina-Atif/Scalable-Node.js-Deployment-on-AWS-ECS-Fargate" target="_blank" class="card">
-<img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?fit=crop&w=400&h=160">
-<div class="card-title">Node.js Deployment on ECS Fargate</div>
-<div class="tech">
-<span class="badge">Node.js</span>
-<span class="badge">ECS</span>
-<span class="badge">Fargate</span>
-<span class="badge">Docker</span>
-</div>
-</a>
-
-<a href="https://github.com/Hina-Atif/aws-python-http-api-project" target="_blank" class="card">
-<img src="https://images.unsplash.com/photo-1581091870626-3b00cf4cd1ef?fit=crop&w=400&h=160">
-<div class="card-title">AWS Python HTTP API</div>
-<div class="tech">
-<span class="badge">Python</span>
-<span class="badge">REST API</span>
-<span class="badge">AWS</span>
-</div>
-</a>
+    </div>
 </div>
 
-<!-- ENTERPRISE PROJECTS -->
-<h2 id="enterprise" style="margin-top:100px;">Enterprise Projects</h2>
-<div class="projects">
-<a href="https://github.com/Hina-Atif/SkyRoute-Air-Ticket-Booking-Platform" target="_blank" class="card">
-<img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?fit=crop&w=400&h=160">
-<div class="card-title">SkyRoute Air Ticket Platform</div>
-<div class="tech">
-<span class="badge">Microservices</span>
-<span class="badge">Docker</span>
-<span class="badge">AWS</span>
-</div>
-</a>
-
-<a href="https://github.com/Hina-Atif/CloudTel-Telecom-Self-Service-Platform" target="_blank" class="card">
-<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?fit=crop&w=400&h=160">
-<div class="card-title">CloudTel Telecom Platform</div>
-<div class="tech">
-<span class="badge">Cloud</span>
-<span class="badge">Automation</span>
-<span class="badge">DevOps</span>
-</div>
-</a>
-
-<a href="https://github.com/Hina-Atif/CloudBank-Microservices-Banking-Platform" target="_blank" class="card">
-<img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?fit=crop&w=400&h=160">
-<div class="card-title">CloudBank Microservices Platform</div>
-<div class="tech">
-<span class="badge">Microservices</span>
-<span class="badge">API</span>
-<span class="badge">Cloud</span>
-</div>
-</a>
-
-<a href="https://github.com/Hina-Atif/CloudWatch-Lite-Monitoring-Platform" target="_blank" class="card">
-<img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?fit=crop&w=400&h=160">
-<div class="card-title">CloudWatch Lite Monitoring</div>
-<div class="tech">
-<span class="badge">Monitoring</span>
-<span class="badge">Logs</span>
-<span class="badge">Observability</span>
-</div>
-</a>
-</div>
-
-<footer id="contact">
-✦ Hina Atif<br>
-© 2026 All Rights Reserved
+<footer>
+    ✦ Hina Atif | © 2026 Portfolio
 </footer>
-
-<script>
-// GOLDEN CURSOR
-const cursor = document.getElementById("cursor");
-document.addEventListener("mousemove", e=>{
-    cursor.style.left = e.clientX + "px";
-    cursor.style.top = e.clientY + "px";
-});
-</script>
 
 </body>
 </html>
