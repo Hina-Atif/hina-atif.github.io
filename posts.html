@@ -1,211 +1,262 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Posts | Hina Atif</title>
 
 <style>
-body{
-  margin:0;
-  font-family:Arial;
-  background:#0b0b0f;
-  color:white;
-  overflow-x:hidden;
-  position:relative;
+:root {
+  --primary-cyan: #00c6ff;
+  --bg-dark: #0b0b0f;
 }
 
-/* NAV */
-nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 80px;
-  position:relative;
-  z-index:10;
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--bg-dark);
+  color: white;
+  overflow-x: hidden;
+  position: relative;
 }
 
-.logo{
-  font-size:28px;
-  font-weight:bold;
-  background:linear-gradient(90deg,#ff7a18,#ff00ff,#00c6ff);
-  -webkit-background-clip:text;
-  color:transparent;
+/* --- NAV --- */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  position: fixed; /* Keep nav at top while scrolling */
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 100;
+  background: rgba(11, 11, 15, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff7a18, #ff00ff, var(--primary-cyan));
+  -webkit-background-clip: text;
+  color: transparent;
   animation: glowText 3s infinite alternate;
+  white-space: nowrap;
 }
 
-/* LOGO ANIMATION */
-@keyframes glowText{
-  0%{filter: drop-shadow(0 0 5px gold);}
-  100%{filter: drop-shadow(0 0 20px gold);}
+@keyframes glowText {
+  0% { filter: drop-shadow(0 0 2px gold); }
+  100% { filter: drop-shadow(0 0 10px gold); }
 }
 
-.nav-links{
-  display:flex;
-  gap:30px;
+.nav-links {
+  display: flex;
+  gap: 20px;
 }
 
-.nav-links a{
-  color:white;
-  text-decoration:none;
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
 }
 
-.nav-links a:hover{
-  color:#00c6ff;
+.nav-links a:hover {
+  color: var(--primary-cyan);
 }
 
-/* CONTAINER */
-.container{
-  text-align:center;
-  padding:120px 20px;
-  max-width:900px;
-  margin:auto;
-  position:relative;
-  z-index:10;
+/* --- CONTAINER --- */
+.container {
+  text-align: center;
+  padding: 140px 20px 60px; /* Top padding increased for fixed nav */
+  max-width: 900px;
+  margin: auto;
+  position: relative;
+  z-index: 10;
 }
 
-h1{
-  color:gold;
-  font-family:Georgia, serif;
+h1 {
+  color: gold;
+  font-family: Georgia, serif;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
-/* CARDS */
-.card-container{
-  display:flex;
-  justify-content:center;
-  gap:30px;
-  margin-top:40px;
-  flex-wrap:wrap;
+p.subtitle {
+  color: #ccc;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 40px;
 }
 
-.card{
-  background:#111;
-  padding:30px;
-  border-radius:15px;
-  width:260px;
-  text-decoration:none;
-  color:white;
-  transition:0.3s;
-  box-shadow:0 0 10px rgba(0,198,255,0.2);
-  display:block; /* ensures full card clickable */
+/* --- CARDS --- */
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
 }
 
-.card:hover{
-  transform:translateY(-10px) scale(1.05);
-  box-shadow:0 0 25px #00c6ff; /* LIGHT BLUE HOVER */
+.card {
+  background: #111;
+  padding: 30px 20px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 300px; /* Larger cards for desktop */
+  text-decoration: none;
+  color: white;
+  transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 5px 15px rgba(0, 198, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:40px;
-  color:#aaa;
-  position:relative;
-  z-index:10;
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px var(--primary-cyan);
+  border-color: var(--primary-cyan);
+}
+
+.card h3 {
+  margin: 0 0 10px;
+  color: var(--primary-cyan);
+}
+
+.card p {
+  font-size: 14px;
+  color: #aaa;
+  margin: 0;
+}
+
+/* --- FOOTER --- */
+footer {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-size: 13px;
 }
 
 /* --- PARTICLES --- */
 .particle {
-  position:absolute;
-  border-radius:50%;
-  background:rgba(0,198,255,0.4);
-  pointer-events:none;
-  width:10px;
-  height:10px;
-  mix-blend-mode:screen;
-  animation: float 5s infinite;
+  position: fixed; /* Changed to fixed so they stay in view */
+  border-radius: 50%;
+  background: rgba(0, 198, 255, 0.3);
+  pointer-events: none;
+  mix-blend-mode: screen;
+  animation: float 5s infinite ease-in-out;
+  z-index: 1;
 }
 
 @keyframes float {
-  0% {transform: translate(0,0);}
-  50% {transform: translate(20px, -20px);}
-  100% {transform: translate(0,0);}
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(20px, -20px); }
 }
 
-/* --- GOLD CURSOR --- */
+/* --- GOLD CURSOR SHADOW --- */
 .cursor-shadow {
   position: fixed;
-  left: 0;
-  top: 0;
   width: 30px;
   height: 30px;
   border-radius: 50%;
   pointer-events: none;
-  background: rgba(255,215,0,0.5);
-  box-shadow: 0 0 20px 10px rgba(255,215,0,0.4);
-  transform: translate(-50%, -50%);
-  transition: transform 0.05s ease-out;
-  z-index:9999;
+  background: rgba(255, 215, 0, 0.4);
+  box-shadow: 0 0 20px 10px rgba(255, 215, 0, 0.3);
+  z-index: 9999;
   mix-blend-mode: screen;
+  display: none; /* Hidden by default for touch devices */
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    padding: 15px;
+  }
+  
+  .nav-links {
+    margin-top: 15px;
+    gap: 15px;
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .container {
+    padding-top: 160px;
+  }
+
+  .card {
+    max-width: 100%; /* Full width on small phones */
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- 🔥 NEW NAVBAR -->
-<nav>
-    <div class="logo">Hina Atif</div>
+<div class="cursor-shadow" id="cursor"></div>
 
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="posts.html">Posts</a>
-        <a href="projects.html">Projects</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-    </div>
+<nav>
+  <div class="logo">Hina Atif</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="posts.html">Posts</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
 </nav>
 
 <div class="container">
+  <h1>My Blogs</h1>
+  <p class="subtitle">
+    Join me on a journey through DevOps, cloud computing, and automation.
+    I share insights, real-world solutions, and practical DevOps strategies.
+  </p>
 
-<h1>My Blogs</h1>
+  <div class="card-container">
+    <a href="https://medium.com/@hinaatif355" class="card" target="_blank">
+      <h3>Follow on Medium</h3>
+      <p>Read my DevOps articles and real-world guides.</p>
+    </a>
 
-<p>
-Join me on a journey through DevOps, cloud computing, and automation.
-I share insights, real-world solutions, and practical DevOps strategies.
-</p>
-
-<div class="card-container">
-
-<a href="https://medium.com/@hinaatif355" class="card" target="_blank">
-<h3>Follow on Medium</h3>
-<p>Read my DevOps articles and real-world guides.</p>
-</a>
-
-<a href="https://hashnode.com/@hina-atif355" class="card" target="_blank">
-<h3>Follow on Hashnode</h3>
-<p>Explore my blogs on cloud and automation.</p>
-</a>
-
-</div>
-
+    <a href="https://hashnode.com/@hina-atif355" class="card" target="_blank">
+      <h3>Follow on Hashnode</h3>
+      <p>Explore my blogs on cloud and automation.</p>
+    </a>
+  </div>
 </div>
 
 <footer>
-✦ Hina Atif  
-© 2025 All Rights Reserved.
+  ✦ Hina Atif | © 2026 All Rights Reserved.
 </footer>
 
 <script>
 // FLOATING PARTICLES
-const numParticles = 40;
+const numParticles = 30;
 for(let i=0; i<numParticles; i++){
   const p = document.createElement('div');
   p.classList.add('particle');
-  p.style.left = Math.random()*window.innerWidth+'px';
-  p.style.top = Math.random()*window.innerHeight+'px';
-  p.style.width = (5+Math.random()*10)+'px';
-  p.style.height = p.style.width;
-  p.style.animationDuration = (3+Math.random()*5)+'s';
+  p.style.left = Math.random() * 100 + 'vw';
+  p.style.top = Math.random() * 100 + 'vh';
+  const size = (5 + Math.random() * 10) + 'px';
+  p.style.width = size;
+  p.style.height = size;
+  p.style.animationDuration = (4 + Math.random() * 6) + 's';
+  p.style.animationDelay = Math.random() * 5 + 's';
   document.body.appendChild(p);
 }
 
-// GOLD CURSOR
-const cursor = document.createElement('div');
-cursor.classList.add('cursor-shadow');
-document.body.appendChild(cursor);
-
-document.addEventListener('mousemove', e => {
-  cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-});
+// GOLD CURSOR (Desktop only logic)
+const cursor = document.getElementById('cursor');
+if (window.matchMedia("(hover: hover)").matches) {
+  cursor.style.display = 'block';
+  document.addEventListener('mousemove', e => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+  });
+}
 </script>
 
 </body>
