@@ -1,173 +1,205 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact | Hina Atif</title>
 
 <style>
-body{
-  margin:0;
-  font-family:Arial;
-  background:#0b0b0f;
-  color:white;
-  overflow-x:hidden;
-  position:relative;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b0b0f;
+  color: white;
+  overflow-x: hidden;
+  position: relative;
 }
 
 /* NAV */
-nav{
-  display:flex;
-  justify-content:space-between;
-  padding:20px 80px;
-  position:relative;
-  z-index:10;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%; /* Use percentages for mobile */
+  position: relative;
+  z-index: 100;
 }
 
-.logo{
-  font-size:28px;
-  font-weight:bold;
-  background:linear-gradient(90deg,#ff7a18,#ff00ff,#00c6ff);
-  -webkit-background-clip:text;
-  color:transparent;
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff7a18, #ff00ff, #00c6ff);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
-nav ul{
-  list-style:none;
-  display:flex;
-  gap:30px;
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
 }
 
-nav ul li a{
-  color:white;
-  text-decoration:none;
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
 }
 
-nav ul li a:hover{
-  color:#00c6ff;
+nav ul li a:hover {
+  color: #00c6ff;
 }
 
 /* CONTAINER */
-.container{
-  text-align:center;
-  padding:120px 20px;
-  max-width:900px;
-  margin:auto;
-  position:relative;
-  z-index:10;
+.container {
+  text-align: center;
+  padding: 100px 20px 40px;
+  max-width: 600px; /* Narrower for better reading */
+  margin: auto;
+  position: relative;
+  z-index: 10;
 }
 
-/* GOLD HEADING */
-h1{
-  color:gold;
-  font-family:Georgia, serif;
+h1 {
+  color: gold;
+  font-family: Georgia, serif;
+  font-size: 2.5rem;
 }
 
 /* FORM */
-form{
-  margin-top:40px;
-  text-align:left;
-  background:#111;
-  padding:30px;
-  border-radius:15px;
-  position:relative;
-  z-index:10;
+form {
+  margin-top: 40px;
+  text-align: left;
+  background: rgba(26, 26, 34, 0.8);
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
 }
 
-label{
-  display:block;
-  margin-top:15px;
-  font-weight:bold;
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 14px;
 }
 
-/* INPUTS */
-input, textarea{
-  width:100%;
-  padding:14px;
-  margin-top:8px;
-  border-radius:10px;
-  border:none;
-  background:#1a1a22;
-  color:white;
-  font-size:15px;
-  transition:0.3s;
+input, textarea {
+  width: 100%;
+  padding: 14px;
+  margin-top: 8px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: #111;
+  color: white;
+  font-size: 15px;
+  box-sizing: border-box; /* Fixes padding issues on mobile */
+  transition: 0.3s;
 }
 
-input:hover, textarea:hover{
-  box-shadow:0 0 8px #00c6ff;
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #00c6ff;
+  box-shadow: 0 0 10px rgba(0, 198, 255, 0.3);
 }
 
 /* BUTTON */
-button{
-  margin-top:25px;
-  width:100%;
-  padding:14px;
-  border:none;
-  border-radius:25px;
-  background:linear-gradient(90deg,gold,#ff7a18);
-  color:black;
-  font-weight:bold;
-  font-size:16px;
-  cursor:pointer;
-  transition:0.3s;
+button {
+  margin-top: 25px;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(90deg, gold, #ff7a18);
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-button:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 20px gold;
+button:hover:not(:disabled) {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px gold;
 }
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* STATUS MESSAGE */
+#status {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  display: none;
+  font-weight: bold;
+}
+
+.success { background: rgba(0, 255, 0, 0.1); color: #00ff00; display: block !important; }
+.error { background: rgba(255, 0, 0, 0.1); color: #ff0000; display: block !important; }
 
 /* LINKS */
-.btn{
-  display:inline-block;
-  padding:12px 30px;
-  background:#00c6ff;
-  border-radius:20px;
-  color:white;
-  text-decoration:none;
-  margin-top:20px;
+.btn {
+  display: block;
+  width: 100%;
+  padding: 12px 0;
+  background: #1a1a22;
+  border: 1px solid #00c6ff;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  margin-top: 15px;
+  font-size: 14px;
+  transition: 0.3s;
+  box-sizing: border-box;
 }
+
+.btn:hover { background: #00c6ff; color: black; }
 
 /* FOOTER */
-footer{
-  text-align:center;
-  padding:40px;
-  color:#aaa;
-  position:relative;
-  z-index:10;
+footer {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-size: 12px;
 }
 
-/* --- PARTICLE BACKGROUND (Light Blue) --- */
+/* --- PARTICLE BACKGROUND --- */
 .particle {
-  position:absolute;
-  border-radius:50%;
-  background:rgba(0,198,255,0.4);
-  pointer-events:none;
-  width:10px;
-  height:10px;
-  mix-blend-mode:screen;
-  animation: float 5s infinite;
+  position: fixed; /* Fixed so it doesn't move when scrolling */
+  border-radius: 50%;
+  background: rgba(0,198,255,0.4);
+  pointer-events: none;
+  z-index: 1;
+  animation: float 5s infinite ease-in-out;
 }
 
 @keyframes float {
-  0% {transform: translate(0,0);}
-  50% {transform: translate(20px, -20px);}
-  100% {transform: translate(0,0);}
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(15px, -15px); }
 }
 
 /* --- GOLD CURSOR SHADOW --- */
 .cursor-shadow {
   position: fixed;
-  left: 0;
-  top: 0;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   pointer-events: none;
-  background: rgba(255,215,0,0.5); /* light gold color */
-  box-shadow: 0 0 20px 10px rgba(255,215,0,0.4);
-  transform: translate(-50%, -50%);
-  transition: transform 0.05s ease-out;
-  z-index:9999;
+  background: rgba(255, 215, 0, 0.5);
+  box-shadow: 0 0 20px 10px rgba(255, 215, 0, 0.3);
+  z-index: 9999;
   mix-blend-mode: screen;
+  display: none; /* Hidden on mobile by script */
+}
+
+/* MOBILE RESPONSIVE FIXES */
+@media (max-width: 768px) {
+  nav { flex-direction: column; padding: 20px; }
+  nav ul { margin-top: 15px; gap: 15px; }
+  h1 { font-size: 2rem; }
+  .container { padding-top: 150px; }
 }
 </style>
 </head>
@@ -187,55 +219,99 @@ footer{
 
 <div class="container">
   <h1>Contact Me</h1>
-  <p>Let's talk. I'm currently open for new opportunities (Remotely).</p>
+  <p>I'm currently open for new opportunities (Remotely).</p>
 
-  <form action="https://formspree.io/f/mdawpowl" method="POST">
+  <form id="contact-form" action="https://formspree.io/f/mdawpowl" method="POST">
     <label>Your Name</label>
     <input type="text" name="name" placeholder="Enter your name" required>
+    
     <label>Your Email</label>
-    <input type="email" name="email" placeholder="Enter your email" required>
+    <input type="email" name="_replyto" placeholder="Enter your email" required>
+    
     <label>Message</label>
     <textarea name="message" rows="5" placeholder="Write your message here..." required></textarea>
-    <button type="submit">Send Message</button>
+    
+    <button type="submit" id="submit-btn">Send Message</button>
+    <div id="status"></div>
   </form>
 
-  <br>
-  <p>Email: <strong>hinaatif355@gmail.com</strong></p>
-  <br>
-  <a class="btn" href="mailto:hinaatif355@gmail.com">Send Email</a>
-  <br><br>
-  <a class="btn" href="https://www.linkedin.com/in/hina-atif-devopsengineer/" target="_blank">Connect on LinkedIn</a>
-  <br><br>
-  <a class="btn" href="https://github.com/Hina-Atif" target="_blank">Connect on GitHub</a>
+  <div style="margin-top: 40px;">
+    <p>Email: <strong>hinaatif355@gmail.com</strong></p>
+    <a class="btn" href="mailto:hinaatif355@gmail.com">Send Direct Email</a>
+    <a class="btn" href="https://www.linkedin.com/in/hina-atif-devopsengineer/" target="_blank">LinkedIn</a>
+    <a class="btn" href="https://github.com/Hina-Atif" target="_blank">GitHub</a>
+  </div>
 </div>
 
 <footer>
-  ✦ Hina Atif  
-  © 2025 All Rights Reserved.
+  ✦ Hina Atif | © 2026 Portfolio
 </footer>
 
 <script>
-// Floating light-blue background particles
-const numParticles = 40;
+// Floating light-blue particles
+const numParticles = 30;
 for(let i=0; i<numParticles; i++){
   const p = document.createElement('div');
   p.classList.add('particle');
-  p.style.left = Math.random()*window.innerWidth+'px';
-  p.style.top = Math.random()*window.innerHeight+'px';
-  p.style.width = (5+Math.random()*10)+'px';
+  p.style.left = Math.random()*100+'vw';
+  p.style.top = Math.random()*100+'vh';
+  p.style.width = (4+Math.random()*6)+'px';
   p.style.height = p.style.width;
-  p.style.animationDuration = (3+Math.random()*5)+'s';
+  p.style.animationDelay = Math.random()*5+'s';
   document.body.appendChild(p);
 }
 
-// GOLD CURSOR
+// Gold Cursor (Desktop Only)
 const cursor = document.createElement('div');
 cursor.classList.add('cursor-shadow');
-document.body.appendChild(cursor);
+if (!('ontouchstart' in window)) {
+    cursor.style.display = 'block';
+    document.body.appendChild(cursor);
+    document.addEventListener('mousemove', e => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+}
 
-document.addEventListener('mousemove', e => {
-  cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-});
+// FORM HANDLING (AJAX)
+const form = document.getElementById("contact-form");
+const button = document.getElementById("submit-btn");
+const status = document.getElementById("status");
+
+form.onsubmit = async (e) => {
+  e.preventDefault();
+  
+  // Show sending state
+  button.disabled = true;
+  button.innerText = "Sending...";
+  status.className = "";
+  status.innerText = "";
+
+  const formData = new FormData(form);
+  
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      status.innerText = "Message sent successfully! ✓";
+      status.className = "success";
+      form.reset();
+      button.innerText = "Send Message";
+      button.disabled = false;
+    } else {
+      throw new Error();
+    }
+  } catch (error) {
+    status.innerText = "Oops! There was a problem sending your message.";
+    status.className = "error";
+    button.innerText = "Send Message";
+    button.disabled = false;
+  }
+};
 </script>
 
 </body>
