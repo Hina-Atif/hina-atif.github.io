@@ -78,7 +78,7 @@ nav ul li a:hover { color: var(--primary-cyan); }
     margin: auto;
 }
 
-/* CATEGORY BUTTONS */
+/* CATEGORY BOXES */
 .category-boxes {
     display: flex;
     justify-content: center;
@@ -131,6 +131,7 @@ nav ul li a:hover { color: var(--primary-cyan); }
     width: 100%;
     aspect-ratio: 16 / 9;
     overflow: hidden;
+    background: #222;
 }
 
 .card img {
@@ -173,7 +174,7 @@ footer { text-align: center; padding: 60px; color: #aaa; }
 
 /* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
-    nav { padding: 20px; flex-direction: column; }
+    nav { padding: 20px; flex-direction: column; width: 100%; }
     nav ul { gap: 15px; padding: 10px 0; }
     .cursor { display: none; }
     .category { width: 100%; padding: 15px; }
@@ -197,7 +198,6 @@ footer { text-align: center; padding: 60px; color: #aaa; }
 
 <div class="container">
     <h1>My Projects</h1>
-    <p>Infrastructure & Cloud Engineering Portfolio</p>
 
     <div class="category-boxes">
         <div class="category" onclick="document.getElementById('featured').scrollIntoView({behavior: 'smooth'})">Featured</div>
