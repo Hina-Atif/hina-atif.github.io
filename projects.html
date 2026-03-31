@@ -9,7 +9,7 @@
 :root {
     --bg-dark: #0b0b0f;
     --card-bg: #15151c;
-    --primary-blue: #00c6ff;
+    --primary-cyan: #00c6ff;
 }
 
 body{
@@ -57,7 +57,7 @@ nav{
     text-decoration: none;
 }
 
-/* MOBILE NAV TOGGLE */
+/* MOBILE MENU TOGGLE */
 .menu-btn {
     display: none;
     flex-direction: column;
@@ -86,7 +86,7 @@ nav ul li a{
 }
 
 nav ul li a:hover{
-    color: var(--primary-blue);
+    color: var(--primary-cyan);
 }
 
 /* CONTAINER */
@@ -118,7 +118,7 @@ nav ul li a:hover{
 .category:hover{
     background:#1d1d27;
     transform:translateY(-5px);
-    border-color: var(--primary-blue);
+    border-color: var(--primary-cyan);
 }
 
 /* PROJECT GRID */
@@ -161,7 +161,7 @@ nav ul li a:hover{
 }
 .badge{
     display:inline-block;
-    background: var(--primary-blue);
+    background: var(--primary-cyan);
     color:black;
     padding:4px 10px;
     border-radius:4px;
@@ -172,7 +172,7 @@ nav ul li a:hover{
 .card:hover{
     transform:translateY(-10px);
     box-shadow:0 10px 25px rgba(0,198,255,0.3);
-    border-color: var(--primary-blue);
+    border-color: var(--primary-cyan);
 }
 
 /* FOOTER */
@@ -192,7 +192,7 @@ footer{
     .menu-btn { display: flex; }
     
     nav ul {
-        display: none; /* Hidden by default on mobile */
+        display: none; /* Hidden on mobile by default */
         flex-direction: column;
         position: absolute;
         top: 70px;
@@ -201,7 +201,7 @@ footer{
         background: var(--bg-dark);
         padding: 20px 0;
         text-align: center;
-        border-bottom: 2px solid var(--primary-blue);
+        border-bottom: 2px solid var(--primary-cyan);
     }
     
     nav ul.active { display: flex; }
@@ -335,7 +335,7 @@ footer{
 </footer>
 
 <script>
-// GOLDEN CURSOR (Disabled on touch devices automatically via CSS/JS check)
+// GOLDEN CURSOR (Desktop Only)
 const cursor = document.getElementById("cursor");
 if (window.matchMedia("(pointer: fine)").matches) {
     document.addEventListener("mousemove", e=>{
@@ -354,15 +354,13 @@ menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
 
-// SMOOTH SCROLL
+// SMOOTH SCROLL WITH HEADER OFFSET
 function scrollToId(id) {
     const element = document.getElementById(id);
     if (element) {
-        const offset = 80;
-        const bodyRect = document.body.getBoundingClientRect().top;
-        const elementRect = element.getBoundingClientRect().top;
-        const elementPosition = elementRect - bodyRect;
-        const offsetPosition = elementPosition - offset;
+        const headerOffset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
         window.scrollTo({
             top: offsetPosition,
